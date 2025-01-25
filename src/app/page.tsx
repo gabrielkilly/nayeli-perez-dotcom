@@ -1,5 +1,12 @@
+import Navbar from "@/components/Navbar";
+import Head from "next/head";
+
 export default function Home() {
     return (
-        <h1>In Progress</h1>
+        <>
+            <main>
+                <Navbar />
+            </main>
+        </>
     )
 }
