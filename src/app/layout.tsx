@@ -2,24 +2,24 @@ import type { Metadata } from "next";
 import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12 } from "next/font/google";
 import "../styles/globals.css";
 
-const ibmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm-plex-serif",
+export const fontIbmPlexSerif = IBM_Plex_Serif({
+  variable: "--font-ibm",
   subsets: ["latin"],
   weight: "400"
 });
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
+export const fontWorkSans = Work_Sans({
+  variable: "--font-work",
   subsets: ["latin"],
 });
 
-const familjenGrotesk = Familjen_Grotesk({
-  variable: "--font-familjen-grotesk",
+export const fontFamiljenGrotesk = Familjen_Grotesk({
+  variable: "--font-familjen",
   subsets: ["latin"],
 });
 
-const yarndings12 = Yarndings_12({
-  variable: "--font-familjen-grotesk",
+export const fontYarndings12 = Yarndings_12({
+  variable: "--font-yarndings",
   weight: "400"
 })
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexSerif.variable} ${workSans.variable} ${yarndings12.variable} ${familjenGrotesk.variable} antialiased`}
+        className={`${fontIbmPlexSerif.variable} ${fontWorkSans.variable} ${fontYarndings12.variable} ${fontFamiljenGrotesk.variable} antialiased`}
       >
         {children}
       </body>

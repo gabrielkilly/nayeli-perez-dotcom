@@ -3,7 +3,7 @@ export default function Navbar() {
     return (
         <nav>
             <div className="bg-neutral-1 border-b-2 border-type-1 w-full flex justify-center">
-                <div className="px-8 lg:px-16 flex items-center justify-between w-full max-w-screen-2xl">
+                <div className={`flex items-center justify-between w-full max-w-screen-xl`}>
                     <div className="flex items-center justify-between py-4">
                         <a>Placeholder</a>
                     </div>

@@ -1,14 +1,14 @@
-import { AppColor } from "./AppColor";
+import { AppColor, globalClassNames } from "./AppStyleConstants";
 
 interface SectionProps {
-    color: AppColor, 
+    backgroundColor: AppColor, 
     children?: React.ReactNode
 }
 
-export default function Section({color, children}: SectionProps) {
+export default function Section({backgroundColor: color, children}: SectionProps) {
     
     return (
-        <div className={`w-full max-w-screen-2xl bg-${color}`}>
+        <div className={`w-full ${globalClassNames.maxWidth} bg-${color} py-16`}>
             {children}
         </div>
     )

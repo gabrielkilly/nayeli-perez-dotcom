@@ -8,7 +8,7 @@ export interface HomeContent {
     inspirationContent: InspirationContent
 }
 
-const homeContent: HomeContent = {
+export const homeContent: HomeContent = {
     nayeliName: "Nayeli A. Perez T",
     mainDescription: "is a product designer with 8 years of experience across product design, user research, and visual design currently designing the MES platform at Gantri. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     yarndingsIcon: "e",

@@ -27,3 +27,11 @@ export enum AppColor {
     Type_Link = "type-link",
     Type_Alt = "type-alt",
 }
+
+interface GlobalClassNames {
+    maxWidth: string
+}
+
+export const globalClassNames: GlobalClassNames = {
+    maxWidth: "max-w-screen-xl",
+}
