@@ -1,36 +1,42 @@
+import { TecxtIconColor } from "@/components/AppStyleConstants"
+
 export interface HomeContent {
     nayeliName: string,
     mainDescription: string,
     yarndingsIcon: string,
     additionalDescription: string, 
-    skillsContent: SkillsContent[],
+    skills: Skill[],
     experienceContent: ExperienceContent,
     inspirationContent: InspirationContent
 }
 
 export const homeContent: HomeContent = {
-    nayeliName: "Nayeli A. Perez T",
+    nayeliName: "Nayeli A. Pérez T",
     mainDescription: "is a product designer with 8 years of experience across product design, user research, and visual design currently designing the MES platform at Gantri. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     yarndingsIcon: "e",
     additionalDescription: "My approach to design is grounded in key values nventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    skillsContent: [
+    skills: [
         {
             yanrdingsIcon: "q",
+            iconColor: TecxtIconColor.Icon_Gold,
             title: "Craft", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "m",
+            iconColor: TecxtIconColor.Icon_Green,
             title: "Systems-thinking", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "I",
+            iconColor: TecxtIconColor.Icon_Plum,
             title: "Sincerity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "p",
+            iconColor: TecxtIconColor.Icon_Neutral,
             title: "Curiosity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
@@ -100,10 +106,11 @@ export const homeContent: HomeContent = {
     }
 }
 
-export interface SkillsContent {
+export interface Skill {
     title: String, 
     description: String,
-    yanrdingsIcon: String
+    yanrdingsIcon: String,
+    iconColor: TecxtIconColor
 }
 
 export interface ExperienceContent {

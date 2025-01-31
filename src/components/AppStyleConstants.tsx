@@ -28,10 +28,19 @@ export enum AppColor {
     Type_Alt = "type-alt",
 }
 
+export enum TecxtIconColor {
+    Icon_Gold = "text-gold-2",
+    Icon_Plum = "text-plum-2",
+    Icon_Neutral = "text-neutral-2",
+    Icon_Green = "text-pine-2"
+}
+
 interface GlobalClassNames {
-    maxWidth: string
+    maxWidth: string,
+    defaultXPadding: string
 }
 
 export const globalClassNames: GlobalClassNames = {
     maxWidth: "max-w-screen-xl",
+    defaultXPadding: "px-8"
 }

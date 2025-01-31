@@ -8,7 +8,7 @@ interface SectionProps {
 export default function Section({backgroundColor: color, children}: SectionProps) {
     
     return (
-        <div className={`w-full ${globalClassNames.maxWidth} bg-${color} py-16`}>
+        <div className={`w-full ${globalClassNames.maxWidth} ${globalClassNames.defaultXPadding} bg-${color} py-16`}>
             {children}
         </div>
     )
