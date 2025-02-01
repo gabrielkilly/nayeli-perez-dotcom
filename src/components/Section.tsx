@@ -1,7 +1,7 @@
-import { AppColor, globalClassNames } from "./AppStyleConstants";
+import { Color, globalClassNames } from "./StyleConstants";
 
 interface SectionProps {
-    backgroundColor: AppColor, 
+    backgroundColor: Color, 
     children?: React.ReactNode
 }
 

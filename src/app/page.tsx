@@ -1,4 +1,4 @@
-import { AppColor, getTextColorClassName } from "@/components/AppStyleConstants";
+import { Color, getTextColorClassName } from "@/components/StyleConstants";
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { homeContent, Skill } from "./content";
@@ -13,14 +13,14 @@ export default function Home() {
             <main>
             <Navbar />
                 <div className="flex flex-col items-center justify-center">
-                    <Section backgroundColor={AppColor.Neutral_1}>
+                    <Section backgroundColor={Color.Neutral_1}>
                         <div className="flex flex-col space-y-10">
                             <p>
                                 <span className={`${fontIbmPlexSerif.className} text-type-1 text-5xl leading-10 italic`}>{content.nayeliName}</span> &nbsp; 
                                 <span className={`${fontFamiljenGrotesk.className} text-type-2 text-4xl leading-10`}>{content.mainDescription}</span> &nbsp;                            
                                 <span className={`${fontYarndings12.className} text-gold-2 text-4xl`}>{content.yarndingsIcon}</span>
                             </p>
-                            <p className={`${fontWorkSans.className} ${getTextColorClassName(AppColor.Icon_Gold)} text-type-1 text-xl`}>{content.additionalDescription}</p>
+                            <p className={`${fontWorkSans.className} ${getTextColorClassName(Color.Icon_Gold)} text-type-1 text-xl`}>{content.additionalDescription}</p>
                             <SkillsContainer skills={content.skills} />
                         </div>
                     </Section>

@@ -1,5 +1,5 @@
 
-export enum AppColor {
+export enum Color {
     Neutral_1 = "neutral-1",
     Neutral_1_Overlay = "neutral-1-overlay",
     Neutral_2 = "neutral-2",
@@ -42,6 +42,6 @@ export const globalClassNames: GlobalClassNames = {
     defaultXPadding: "px-8"
 }
 
-export function getTextColorClassName(color: AppColor): String {
+export function getTextColorClassName(color: Color): String {
     return `text-${color}`
 }

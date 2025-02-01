@@ -1,4 +1,4 @@
-import { AppColor } from "@/components/AppStyleConstants"
+import { Color } from "@/components/StyleConstants"
 
 export interface HomeContent {
     nayeliName: string,
@@ -18,25 +18,25 @@ export const homeContent: HomeContent = {
     skills: [
         {
             yanrdingsIcon: "q",
-            iconColor: AppColor.Icon_Gold,
+            iconColor: Color.Icon_Gold,
             title: "Craft", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "m",
-            iconColor: AppColor.Icon_Green,
+            iconColor: Color.Icon_Green,
             title: "Systems-thinking", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "I",
-            iconColor: AppColor.Icon_Plum,
+            iconColor: Color.Icon_Plum,
             title: "Sincerity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "p",
-            iconColor: AppColor.Icon_Neutral,
+            iconColor: Color.Icon_Neutral,
             title: "Curiosity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
@@ -110,7 +110,7 @@ export interface Skill {
     title: String, 
     description: String,
     yanrdingsIcon: String,
-    iconColor: AppColor
+    iconColor: Color
 }
 
 export interface ExperienceContent {

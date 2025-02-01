@@ -1,4 +1,4 @@
-import { globalClassNames } from "./AppStyleConstants";
+import { globalClassNames } from "./StyleConstants";
 
 export default function Navbar() {
     return (
