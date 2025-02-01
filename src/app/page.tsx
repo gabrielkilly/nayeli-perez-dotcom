@@ -1,7 +1,8 @@
-import { Color, getTextColorClassName } from "@/components/StyleConstants";
+import { Color, getBgColorClassName, getBorderColorClassName, getTextColorClassName } from "@/components/StyleConstants";
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, homeContent, Skill } from "./content";
+import Image from 'next/image';
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "./layout";
 
 
@@ -47,6 +48,11 @@ function SkillsContainer({skills}: SkillsContainerProps) {
                 <SkillItem skill={skills[1]}/>
             </div>
             <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+            <div className="flex justify-between w-full">
+                <SkillItem skill={skills[2]}/>
+                <div className="inline-block min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10"></div>                
+                <SkillItem skill={skills[3]}/>
+            </div>
         </div>
     )
 }
@@ -73,13 +79,26 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({content}: ExperienceSectionProps) {
     return (
-        <Section backgroundColor={Color.Pine_3}>
+        <Section backgroundColor={Color.Pine_2}>
             <div className="flex flex-col space-y-10">
-                <h4>{content.title}</h4>
-                <div>
-                    
-                </div>
-                <a href="/"/>
+                <h4 className={`${fontWorkSans.className} text-xl font-semibold ${getTextColorClassName(Color.Type_2)}`}>{content.title}</h4>
+                <ul className="flex flex-col space-y-2">
+                    {
+                        content.listItems.map((item) => {
+                            return (
+                                <li key={item.company + item.role + item.timeRange} className="flex flex-row w-full justify-between">
+                                    <div className="flex flex-row space-x-2">
+                                        <Image src="/plus-sign.svg" alt="Expand icon" width={24} height={24} className="mr-1"/>
+                                        <h5 className={`${fontWorkSans.className} text-lg font-semibold ${getTextColorClassName(Color.Type_2)}`}>{item.role} at <span className="">{item.company}</span></h5>
+                                    </div>
+                                    <div className="border-b-2 border-dashed border-[#262315] flex-grow h-5 mx-2" />
+                                    <p className={`${fontWorkSans.className} text-lg ${getTextColorClassName(Color.Type_2)}`}>{item.timeRange}</p>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+                <a className={`${fontWorkSans.className} text-base font-semibold border-b-2 ${getTextColorClassName(Color.Type_2)} ${getBorderColorClassName(Color.Border_Pine)} w-fit`} href={content.cta.url}>{content.cta.title}</a>
             </div>
         </Section>
     )

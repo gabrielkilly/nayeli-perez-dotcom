@@ -120,14 +120,14 @@ export interface ExperienceContent {
 }
 
 export interface ExperienceListItem {
-    role: String, 
-    company: String,
-    timeRange: String,
+    role: string, 
+    company: string,
+    timeRange: string,
 }
 
 export interface CtaLink {
-    title: String, 
-    url: String,
+    title: string, 
+    url: string,
 }
 
 export interface InspirationContent {

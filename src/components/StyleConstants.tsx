@@ -1,3 +1,4 @@
+import exp from "constants"
 
 export enum Color {
     Neutral_1 = "neutral-1",
@@ -29,7 +30,8 @@ export enum Color {
     Icon_Gold = "text-gold-2",
     Icon_Plum = "text-plum-2",
     Icon_Neutral = "text-neutral-2",
-    Icon_Green = "text-pine-2"
+    Icon_Green = "text-pine-2",
+    Border_Pine = "border-pine"
 }
 
 interface GlobalClassNames {
@@ -44,4 +46,12 @@ export const globalClassNames: GlobalClassNames = {
 
 export function getTextColorClassName(color: Color): String {
     return `text-${color}`
+}
+
+export function getBgColorClassName(color: Color): String {
+    return `bg-${color}`
+}
+
+export function getBorderColorClassName(color: Color): String {
+    return `border-${color}`
 }

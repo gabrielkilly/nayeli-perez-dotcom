@@ -35,9 +35,13 @@ export default {
         "type-3": "var(--type-3)",
         "type-link": "var(--type-link)",
         "type-alt": "var(--type-alt)",
+        "border-pine": "var(--border-pine)",
       },
     },
   },
+  safelist: [
+    {pattern: /(bg|text|border)-./}
+  ],
   plugins: [],
   darkMode: 'selector'
 } satisfies Config;

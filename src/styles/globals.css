@@ -29,6 +29,7 @@
   --type-3: #707070;
   --type-link: #487B40;
   --type-alt: #FFFFFF;
+  --border-pine: #90BC89
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,6 +60,7 @@
     --type-3: #9EA18A;
     --type-link: #90BC89;
     --type-alt: #FFFFFF;
+    --border-pine: #90BC89
   }
 }
 
