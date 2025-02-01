@@ -1,4 +1,4 @@
-import { TecxtIconColor } from "@/components/AppStyleConstants"
+import { AppColor } from "@/components/AppStyleConstants"
 
 export interface HomeContent {
     nayeliName: string,
@@ -18,25 +18,25 @@ export const homeContent: HomeContent = {
     skills: [
         {
             yanrdingsIcon: "q",
-            iconColor: TecxtIconColor.Icon_Gold,
+            iconColor: AppColor.Icon_Gold,
             title: "Craft", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "m",
-            iconColor: TecxtIconColor.Icon_Green,
+            iconColor: AppColor.Icon_Green,
             title: "Systems-thinking", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "I",
-            iconColor: TecxtIconColor.Icon_Plum,
+            iconColor: AppColor.Icon_Plum,
             title: "Sincerity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
         {
             yanrdingsIcon: "p",
-            iconColor: TecxtIconColor.Icon_Neutral,
+            iconColor: AppColor.Icon_Neutral,
             title: "Curiosity", 
             description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         },
@@ -110,7 +110,7 @@ export interface Skill {
     title: String, 
     description: String,
     yanrdingsIcon: String,
-    iconColor: TecxtIconColor
+    iconColor: AppColor
 }
 
 export interface ExperienceContent {

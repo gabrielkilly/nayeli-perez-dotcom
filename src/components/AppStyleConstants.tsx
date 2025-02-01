@@ -26,9 +26,6 @@ export enum AppColor {
     Type_3 = "type-3",
     Type_Link = "type-link",
     Type_Alt = "type-alt",
-}
-
-export enum TecxtIconColor {
     Icon_Gold = "text-gold-2",
     Icon_Plum = "text-plum-2",
     Icon_Neutral = "text-neutral-2",
@@ -43,4 +40,8 @@ interface GlobalClassNames {
 export const globalClassNames: GlobalClassNames = {
     maxWidth: "max-w-screen-xl",
     defaultXPadding: "px-8"
+}
+
+export function getTextColorClassName(color: AppColor): String {
+    return `text-${color}`
 }
