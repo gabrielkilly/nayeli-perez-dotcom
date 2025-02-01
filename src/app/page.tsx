@@ -1,7 +1,7 @@
 import { Color, getTextColorClassName } from "@/components/StyleConstants";
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
-import { homeContent, Skill } from "./content";
+import { ExperienceContent, homeContent, Skill } from "./content";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "./layout";
 
 
@@ -24,6 +24,7 @@ export default function Home() {
                             <SkillsContainer skills={content.skills} />
                         </div>
                     </Section>
+                    <ExperienceSection content={content.experienceContent} />
                 </div>
             </main>
         </>
@@ -46,11 +47,6 @@ function SkillsContainer({skills}: SkillsContainerProps) {
                 <SkillItem skill={skills[1]}/>
             </div>
             <hr className="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
-            <div className="flex justify-between w-full">
-                <SkillItem skill={skills[2]}/>
-                <div className="inline-block min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10"></div>                
-                <SkillItem skill={skills[3]}/>
-            </div>
         </div>
     )
 }
@@ -68,5 +64,23 @@ function SkillItem({ skill } : SkillItemProps) {
             </h3>
             <p className={`${fontWorkSans.className} text-xl`}>{skill.description}</p>
         </div>
+    )
+}
+
+interface ExperienceSectionProps {
+    content: ExperienceContent
+}
+
+function ExperienceSection({content}: ExperienceSectionProps) {
+    return (
+        <Section backgroundColor={Color.Pine_3}>
+            <div className="flex flex-col space-y-10">
+                <h4>{content.title}</h4>
+                <div>
+                    
+                </div>
+                <a href="/"/>
+            </div>
+        </Section>
     )
 }
