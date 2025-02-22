@@ -7,12 +7,11 @@ interface SectionProps {
 }
 
 export default function Section({backgroundColor, children}: SectionProps) {
-    const bgClassName = getBgColorClassName(backgroundColor);
-    log(bgClassName);
-    
     return (
-        <div className={`w-full ${globalClassNames.maxWidth} ${globalClassNames.defaultXPadding} ${getBgColorClassName(backgroundColor)} py-16`}>
-            {children}
+        <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} ${getBgColorClassName(backgroundColor)} py-16`}>
+            <div className={`w-full ${globalClassNames.maxWidth}`}>
+                {children}
+            </div>
         </div>
     )
 }

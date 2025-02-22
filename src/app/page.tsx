@@ -79,8 +79,8 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({content}: ExperienceSectionProps) {
     return (
-        <Section backgroundColor={Color.Pine_2}>
-            <div className="flex flex-col space-y-10">
+        <Section backgroundColor={Color.Gold_0}>
+            <div className="flex flex-col space-y-10 w-full">
                 <h4 className={`${fontWorkSans.className} text-xl font-semibold ${getTextColorClassName(Color.Type_2)}`}>{content.title}</h4>
                 <ul className="flex flex-col space-y-2">
                     {
