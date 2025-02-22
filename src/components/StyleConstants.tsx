@@ -32,7 +32,8 @@ export enum Color {
     Icon_Neutral = "text-neutral-2",
     Icon_Green = "text-pine-2",
     Border_Pine = "border-pine",
-    Border_Medium ="border-medium"
+    Border_Medium ="border-medium",
+    Icon_Primary = "icon-primary"
 }
 
 interface GlobalClassNames {

@@ -15,7 +15,7 @@ export default function Home() {
             <main>
             <Navbar />
                 <div className="flex flex-col items-center justify-center">
-                    <Section backgroundColor={Color.Neutral_1}>
+                    <Section backgroundColor={Color.Neutral_2}>
                         <div className="flex flex-col space-y-10">
                             <p>
                                 <span className={`${fontIbmPlexSerif.className} text-type-1 text-5xl leading-10 italic`}>{content.nayeliName}</span> &nbsp; 
