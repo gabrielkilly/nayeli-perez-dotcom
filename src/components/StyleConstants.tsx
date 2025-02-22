@@ -31,7 +31,8 @@ export enum Color {
     Icon_Plum = "text-plum-2",
     Icon_Neutral = "text-neutral-2",
     Icon_Green = "text-pine-2",
-    Border_Pine = "border-pine"
+    Border_Pine = "border-pine",
+    Border_Medium ="border-medium"
 }
 
 interface GlobalClassNames {
@@ -44,14 +45,18 @@ export const globalClassNames: GlobalClassNames = {
     defaultXPadding: "px-8"
 }
 
-export function getTextColorClassName(color: Color): String {
+export function getTextColorClassName(color: Color): string {
     return `text-${color}`
 }
 
-export function getBgColorClassName(color: Color): String {
+export function getBgColorClassName(color: Color): string {
     return `bg-${color}`
 }
 
-export function getBorderColorClassName(color: Color): String {
+export function getBorderColorClassName(color: Color): string {
     return `border-${color}`
+}
+
+export function getColorCssValue(color: Color): string {
+    return `var(--${color})`
 }

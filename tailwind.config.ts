@@ -36,6 +36,7 @@ export default {
         "type-link": "var(--type-link)",
         "type-alt": "var(--type-alt)",
         "border-pine": "var(--border-pine)",
+        "border-medium": "var(--border-medium)"
       },
     },
   },

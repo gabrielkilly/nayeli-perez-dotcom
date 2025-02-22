@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import { ExperienceContent, homeContent, Skill } from "./content";
 import Image from 'next/image';
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "./layout";
+import { SvgPlusSign } from '../components/Svg';
 
 
 export default function Home() {
@@ -88,10 +89,10 @@ function ExperienceSection({content}: ExperienceSectionProps) {
                             return (
                                 <li key={item.company + item.role + item.timeRange} className="flex flex-row w-full justify-between">
                                     <div className="flex flex-row space-x-2">
-                                        <Image src="/plus-sign.svg" alt="Expand icon" width={24} height={24} className="mr-1"/>
+                                        <SvgPlusSign color={Color.Type_2} width="24" height="24" />
                                         <h5 className={`${fontWorkSans.className} text-lg font-semibold ${getTextColorClassName(Color.Type_2)}`}>{item.role} at <span className="">{item.company}</span></h5>
                                     </div>
-                                    <div className="border-b-2 border-dashed border-[#262315] flex-grow h-5 mx-2" />
+                                    <div className={`border-b-2 border-dashed ${getBorderColorClassName(Color.Border_Medium)} flex-grow h-5 mx-2`} />
                                     <p className={`${fontWorkSans.className} text-lg ${getTextColorClassName(Color.Type_2)}`}>{item.timeRange}</p>
                                 </li>
                             )
