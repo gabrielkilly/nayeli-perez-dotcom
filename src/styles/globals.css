@@ -32,6 +32,7 @@
   --border-pine: #90BC89;
   --border-medium: rgba(38, 35, 21, 0.4);
   --icon-primary: rgba(32, 38, 21, 0.9);
+  --icon-plum: rgba(138, 56, 103, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,7 +65,8 @@
     --type-alt: #FFFFFF;
     --border-pine: #90BC89;
     --border-medium: rgba(154, 156, 147, 0.6);
-    --icon-primary: rgba(194, 194, 194, 0.95)
+    --icon-primary: rgba(194, 194, 194, 0.95);
+    --icon-plum: rgba(224, 148, 192, 1);
   }
 }
 

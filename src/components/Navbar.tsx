@@ -1,4 +1,4 @@
-import { fontIbmPlexSerif } from "@/app/layout";
+import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
 import { Color, getBgColorClassName, getTextColorClassName, globalClassNames } from "./StyleConstants";
 import { SvgDisplayModeIcon, SvgMenu, SvgVerticalLine } from "./Svg";
 
@@ -41,13 +41,13 @@ export default function Navbar({currentPage}: NavbarProps) {
                         <h2 className={`${fontIbmPlexSerif.className} ${getTextColorClassName(Color.Type_1)} text-xl italic`}>Nayeli A. Pérez T.</h2>
                     </a>
                     <div>
-                        <ul className="flex items-center justify-between py-4 space-x-8 hidden lg:flex">
+                        <ul className="flex items-center justify-between py-4 space-x-2 hidden lg:flex">
                             {   
                                 pages.map(page => {
                                     const isCurrentPage = page.name == currentPage
-                                    const activeCssStyle = (isCurrentPage) ? `${getBgColorClassName(Color.Neutral_3)} p-2 rounded` : ""
+                                    const activeCssStyle = (isCurrentPage) ? `${getBgColorClassName(Color.Neutral_3)} rounded` : ""
                                     return (
-                                        <li><a href={page.href} className={`${getTextColorClassName(Color.Type_2)} ${activeCssStyle}`}>{page.name}</a></li>
+                                        <li><a href={page.href} className={`${getTextColorClassName(Color.Type_2)} ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
                                     )
                                 })
                             }

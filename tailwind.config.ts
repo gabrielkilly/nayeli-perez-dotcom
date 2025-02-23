@@ -37,7 +37,8 @@ export default {
         "type-alt": "var(--type-alt)",
         "border-pine": "var(--border-pine)",
         "border-medium": "var(--border-medium)",
-        "icon-primary": "var(--icon-primary)"
+        "icon-primary": "var(--icon-primary)",
+        "icon-plum": "var(--icon-plum)",
       },
     },
   },
