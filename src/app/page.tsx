@@ -1,5 +1,5 @@
 import { Color, getBgColorClassName, getBorderColorClassName, getTextColorClassName } from "@/components/StyleConstants";
-import Navbar from "@/components/Navbar";
+import Navbar, { PageName } from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, homeContent, Skill } from "./content";
 import Image from 'next/image';
@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <>
             <main>
-            <Navbar />
+            <Navbar currentPage={PageName.About}/>
                 <div className="flex flex-col items-center justify-center">
                     <Section backgroundColor={Color.Neutral_2}>
                         <div className="flex flex-col space-y-10">
