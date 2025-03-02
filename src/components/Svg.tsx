@@ -1,3 +1,4 @@
+import exp from "constants"
 import { Color, getColorCssValue } from "./StyleConstants"
 
 interface SvgProps {
@@ -33,6 +34,17 @@ export function SvgDisplayModeIcon(svgProps: SvgProps) {
                 fill={getColorCssValue(svgProps.color)} fill-opacity="0.9"/>
         </svg>
     )
+}
+
+export function SvgMoonIcon(svgProps: SvgProps) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18.9626 15.9556C19.1439 15.5236 18.6257 15.1556 18.1911 15.3476C17.3221 15.7286 16.3834 15.9247 15.4346 15.9236C11.7146 15.9236 8.69954 12.9689 8.69954 9.32359C8.69916 8.09293 9.04875 6.88754 9.70753 5.84805C9.95998 5.44983 9.65687 4.89872 9.19465 5.01605C5.6311 5.92538 3 9.10048 3 12.8774C3 17.3636 6.7111 21 11.2898 21C14.7564 21 17.7253 18.9156 18.9626 15.9556Z" 
+                stroke={getColorCssValue(svgProps.color)} stroke-opacity="0.9" stroke-width="1.49998"/>
+            <path d="M15.9113 3.10279C15.3813 2.74879 14.7493 3.38079 15.1023 3.91079L15.7323 4.85579C15.9881 5.23885 16.1247 5.68915 16.1247 6.14978C16.1247 6.61042 15.9881 7.06071 15.7323 7.44378L15.1023 8.38878C14.7493 8.91877 15.3823 9.55077 15.9123 9.19677L16.8563 8.56678C17.2394 8.31096 17.6897 8.17442 18.1503 8.17442C18.6109 8.17442 19.0612 8.31096 19.4443 8.56678L20.3893 9.19677C20.9193 9.55077 21.5513 8.91877 21.1973 8.38878L20.5673 7.44378C20.3115 7.06071 20.1749 6.61042 20.1749 6.14978C20.1749 5.68915 20.3115 5.23885 20.5673 4.85579L21.1973 3.91079C21.5513 3.38079 20.9193 2.74879 20.3883 3.10279L19.4443 3.73279C19.0612 3.98861 18.6109 4.12515 18.1503 4.12515C17.6897 4.12515 17.2394 3.98861 16.8563 3.73279L15.9113 3.10279Z" 
+                fill={getColorCssValue(svgProps.color)} fill-opacity="0.9" stroke={getColorCssValue(svgProps.color)} stroke-opacity="0.9" stroke-width="1.34998"/>
+        </svg>
+    );
 }
 
 export function SvgVerticalLine(svgProps: SvgProps) {

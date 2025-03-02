@@ -1,6 +1,10 @@
+"use client" 
+
 import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
-import { Color, getBgColorClassName, getTextColorClassName, globalClassNames } from "./StyleConstants";
-import { SvgDisplayModeIcon, SvgMenu, SvgVerticalLine } from "./Svg";
+import { Color, getBgColorClassName, getBorderColorClassName, getTextColorClassName, globalClassNames } from "./StyleConstants";
+import { SvgDisplayModeIcon, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
+import { useState } from "react";
+import { useTheme } from "next-themes";
 
 export enum PageName {
     About="About", 
@@ -28,14 +32,15 @@ interface NavbarProps {
 }
 
 export default function Navbar({currentPage}: NavbarProps) {
+
     return (
         <nav>
             <div className={`${getBgColorClassName(Color.Neutral_1)} w-full flex justify-center px-8`}>
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
-                    <div className="flex items-center justify-between py-4 space-x-4">
-                        <a href="/"><SvgMenu color={Color.Icon_Primary} width="24" height="24"/></a>
+                    <div className="flex items-center justify-between py-2 space-x-2">
+                        <button className="p-2"><SvgMenu color={Color.Icon_Primary} width="24" height="24"/></button>
                         <SvgVerticalLine color={Color.Icon_Primary} width="1" height="24" />
-                        <a href="/"><SvgDisplayModeIcon color={Color.Icon_Primary} width="24" height="24"/></a>
+                        <DarkLightModeButton />
                     </div>
                     <a href="/">
                         <h2 className={`${fontIbmPlexSerif.className} ${getTextColorClassName(Color.Type_1)} text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
@@ -58,4 +63,54 @@ export default function Navbar({currentPage}: NavbarProps) {
             </div>
         </nav>
     )
+}
+
+function DarkLightModeButton() {
+    const [selectorDisplayed, updateSelectorDisplayed] = useState(false)
+    const {resolvedTheme, setTheme} = useTheme()
+
+    function getIcon(theme: string | undefined) {
+        if (theme == "light" || undefined) {
+            return <SvgDisplayModeIcon color={Color.Icon_Primary} width="24" height="24"/> 
+        } else {
+            return <SvgMoonIcon color={Color.Icon_Primary} width="24" height="24"/> 
+        }
+    }
+
+    if (selectorDisplayed) {
+        return (
+            <div className={`flex flex-col border rounded-2xl p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
+
+                {
+                    ["light", "dark"].map(
+                        theme =>
+                            <button 
+                                onClick={
+                                    () => {
+                                        setTheme(theme)
+                                        updateSelectorDisplayed(false)
+                                    }
+                                }
+                                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
+                                { getIcon(theme) }
+                            </button>
+                        
+                    )
+                }
+
+            </div>
+        )
+        
+    } else {
+
+        return (
+            <button 
+                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}
+                onClick={() => updateSelectorDisplayed(true)}
+                >
+                { getIcon(resolvedTheme) }
+            </button>
+        )
+    }
+    
 }

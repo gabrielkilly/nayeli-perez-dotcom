@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+
 import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12 } from "next/font/google";
 import "../styles/globals.css";
+import * as React from "react"
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const fontIbmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm",
@@ -23,11 +25,6 @@ export const fontYarndings12 = Yarndings_12({
   weight: "400"
 })
 
-export const metadata: Metadata = {
-  title: "Nayeli Perez | Product Designer",
-  description: "Need to fill this out",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +35,14 @@ export default function RootLayout({
       <body
         className={`${fontIbmPlexSerif.variable} ${fontWorkSans.variable} ${fontYarndings12.variable} ${fontFamiljenGrotesk.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

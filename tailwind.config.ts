@@ -46,5 +46,5 @@ export default {
     {pattern: /(bg|text|border)-./}
   ],
   plugins: [],
-  darkMode: 'selector'
+  darkMode: 'class'
 } satisfies Config;
