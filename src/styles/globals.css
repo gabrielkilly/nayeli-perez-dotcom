@@ -5,7 +5,7 @@
 :root {
   --neutral-1: #F8F8F6;
   --neutral-1-overlay: #FFFFFF;
-  --neutral-2: #F3F3F1;
+  --neutral-2: rgba(243, 243, 241, 1);
   --neutral-3: #E2E3DC;
   --neutral-4: #D2D3C8;
   --pine-1: #E8EEE7;
@@ -39,7 +39,7 @@
   :root {
     --neutral-1: #232320;
     --neutral-1-overlay: #41433D;
-    --neutral-2: #52534F;
+    --neutral-2: rgba(50, 51, 47, 1);
     --neutral-3: #73766C;
     --neutral-4: #84876F;
     --pine-1: #2C3228;

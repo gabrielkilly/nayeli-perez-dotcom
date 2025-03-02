@@ -20,7 +20,7 @@ export const aboutContent: AboutContent = {
             icon: ButtonIcon.Download
         },
         cta2: {
-            title: "Resume", 
+            title: "Resumé", 
             url: "#",
         }
     },

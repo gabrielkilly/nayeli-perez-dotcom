@@ -2,8 +2,9 @@ import { Color, getColorCssValue } from "./StyleConstants"
 
 interface SvgProps {
     color: Color,
-    width: string, 
-    height: string
+    width?: string, 
+    height?: string,
+    className?: string
 }
 
 export function SvgPlusSign({color, width, height}: SvgProps) {
@@ -44,7 +45,7 @@ export function SvgVerticalLine(svgProps: SvgProps) {
 
 export function SvgDownload(svgProps: SvgProps) {
     return (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={svgProps.className} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 3.33496L8 12.6683M8 12.6683L4 8.66829M8 12.6683L12 8.66829" stroke={getColorCssValue(svgProps.color)} stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     )

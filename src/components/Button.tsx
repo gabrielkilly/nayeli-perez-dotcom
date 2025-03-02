@@ -1,5 +1,6 @@
 import { fontWorkSans } from "@/app/layout";
 import { Color, getBorderColorClassName, getTextColorClassName } from "./StyleConstants";
+import { SvgDownload } from "./Svg";
 
 export interface ButtonLinkProps {
     title: string,
@@ -13,7 +14,13 @@ export enum ButtonIcon {
 }
 
 export default function ButtonLink(props: ButtonLinkProps) {
+    let icon
+    if (props.icon == ButtonIcon.Download) {
+        icon = <SvgDownload className="inline" color={Color.Border_Pine}/>
+    } 
     return (
-        <a className={`${fontWorkSans.className} text-base font-semibold border-b-2 ${getTextColorClassName(Color.Type_2)} ${getBorderColorClassName(Color.Border_Pine)} w-fit`} href={props.url}>{props.title}</a>
+        <a className={`${fontWorkSans.className} inline text-base font-semibold border-b-2 ${getTextColorClassName(Color.Type_2)} ${getBorderColorClassName(Color.Border_Pine)} w-fit`} href={props.url}>
+            {icon} {props.title}
+        </a>
     )
 }

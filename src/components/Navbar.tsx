@@ -30,7 +30,7 @@ interface NavbarProps {
 export default function Navbar({currentPage}: NavbarProps) {
     return (
         <nav>
-            <div className={`${getBgColorClassName(Color.Neutral_1)} w-full flex justify-center`}>
+            <div className={`${getBgColorClassName(Color.Neutral_1)} w-full flex justify-center px-8`}>
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-4 space-x-4">
                         <a href="/"><SvgMenu color={Color.Icon_Primary} width="24" height="24"/></a>
@@ -38,10 +38,10 @@ export default function Navbar({currentPage}: NavbarProps) {
                         <a href="/"><SvgDisplayModeIcon color={Color.Icon_Primary} width="24" height="24"/></a>
                     </div>
                     <a href="/">
-                        <h2 className={`${fontIbmPlexSerif.className} ${getTextColorClassName(Color.Type_1)} text-xl italic`}>Nayeli A. Pérez T.</h2>
+                        <h2 className={`${fontIbmPlexSerif.className} ${getTextColorClassName(Color.Type_1)} text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
                     </a>
                     <div>
-                        <ul className="flex items-center justify-between py-4 space-x-2 hidden lg:flex">
+                        <ul className="flex items-center justify-between py-4 space-x-2">
                             {   
                                 pages.map(page => {
                                     const isCurrentPage = page.name == currentPage

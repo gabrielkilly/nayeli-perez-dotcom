@@ -7,7 +7,7 @@ export interface YarndingsIconProps {
     className?: string
 }
 
-export default function YarngdingsIcon({icon, color, className}: YarndingsIconProps) {
+export default function YarndingsIcon({icon, color, className}: YarndingsIconProps) {
     return (
         <span className={`${fontYarndings12.className} ${getTextColorClassName(color)} ${className}`}>{icon}</span>
     )
