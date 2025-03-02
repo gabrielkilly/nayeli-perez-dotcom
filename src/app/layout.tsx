@@ -3,6 +3,8 @@ import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12 } from "next/
 import "../styles/globals.css";
 import * as React from "react"
 import { ThemeProvider } from "@/components/ThemeProvider";
+import exp from "constants";
+import { Metadata } from "next";
 
 export const fontIbmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm",

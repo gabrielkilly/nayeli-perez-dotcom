@@ -79,25 +79,32 @@ function DarkLightModeButton() {
 
     if (selectorDisplayed) {
         return (
-            <div className={`flex flex-col border rounded-2xl p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
+            <div className="relative">
+                <button 
+                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)} invisible`}
+                onClick={() => updateSelectorDisplayed(true)}
+                >
+                { getIcon(resolvedTheme) }
+            </button>
+                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 ${getBorderColorClassName(Color.Border_Medium)}`}>
 
-                {
-                    ["light", "dark"].map(
-                        theme =>
-                            <button 
-                                onClick={
-                                    () => {
-                                        setTheme(theme)
-                                        updateSelectorDisplayed(false)
+                    {
+                        ["light", "dark"].map(
+                            theme =>
+                                <button 
+                                    onClick={
+                                        () => {
+                                            setTheme(theme)
+                                            updateSelectorDisplayed(false)
+                                        }
                                     }
-                                }
-                                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
-                                { getIcon(theme) }
-                            </button>
-                        
-                    )
-                }
-
+                                    className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
+                                    { getIcon(theme) }
+                                </button>
+                            
+                        )
+                    }
+                </div>
             </div>
         )
         
