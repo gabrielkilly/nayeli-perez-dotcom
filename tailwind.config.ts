@@ -43,7 +43,7 @@ export default {
     },
   },
   safelist: [
-    {pattern: /(bg|text|border)-./}
+    {pattern: /(bg|text|border|hover)-./}
   ],
   plugins: [],
   darkMode: 'class'

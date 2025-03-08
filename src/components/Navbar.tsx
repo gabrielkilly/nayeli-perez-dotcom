@@ -77,16 +77,24 @@ function DarkLightModeButton() {
         }
     }
 
+    function getSelectedClassName(theme: string): string {
+        if (resolvedTheme == theme) {
+            return getBgColorClassName(Color.Neutral_4)
+        } else {
+            return ""
+        }
+    }
+
     if (selectorDisplayed) {
         return (
-            <div className="relative">
+            <div className="relative" >
                 <button 
-                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)} invisible`}
-                onClick={() => updateSelectorDisplayed(true)}
+                    className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)} invisible`}
+                    onClick={() => updateSelectorDisplayed(true)} 
                 >
-                { getIcon(resolvedTheme) }
-            </button>
-                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 ${getBorderColorClassName(Color.Border_Medium)}`}>
+                    { getIcon(resolvedTheme) }
+                </button>
+                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 ${getBgColorClassName(Color.Neutral_1)} ${getBorderColorClassName(Color.Border_Medium)}`}>
 
                     {
                         ["light", "dark"].map(
@@ -98,7 +106,7 @@ function DarkLightModeButton() {
                                             updateSelectorDisplayed(false)
                                         }
                                     }
-                                    className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}>
+                                    className={`rounded-2xl p-2 my-1 border ${getBorderColorClassName(Color.Neutral_1)} hover:${getBorderColorClassName(Color.Border_Medium)} ${getSelectedClassName(theme)}`}>
                                     { getIcon(theme) }
                                 </button>
                             
@@ -112,7 +120,7 @@ function DarkLightModeButton() {
 
         return (
             <button 
-                className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)}`}
+                className={`rounded-2xl border p-2 ${getBorderColorClassName(Color.Neutral_1)} hover:border-border-medium`}
                 onClick={() => updateSelectorDisplayed(true)}
                 >
                 { getIcon(resolvedTheme) }
