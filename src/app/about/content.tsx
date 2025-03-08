@@ -1,5 +1,4 @@
 import { ButtonIcon, ButtonLinkProps } from "@/components/Button"
-import { Color } from "@/components/StyleConstants"
 
 export interface AboutContent {
     welcomeSection: WelcomeSection,
@@ -29,25 +28,25 @@ export const aboutContent: AboutContent = {
         skills: [
             {
                 yanrdingsIcon: "q",
-                iconColor: Color.Icon_Gold,
+                textColorClassName: "text-icon-gold",
                 title: "Craft", 
                 description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             },
             {
                 yanrdingsIcon: "m",
-                iconColor: Color.Icon_Green,
+                textColorClassName: "text-icon-green",
                 title: "Systems-thinking", 
                 description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             },
             {
                 yanrdingsIcon: "I",
-                iconColor: Color.Icon_Plum,
+                textColorClassName: "text-icon-plum",
                 title: "Sincerity", 
                 description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             },
             {
                 yanrdingsIcon: "p",
-                iconColor: Color.Icon_Neutral,
+                textColorClassName: "text-icon-neutral",
                 title: "Curiosity", 
                 description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             },
@@ -111,7 +110,7 @@ export interface Skill {
     title: string, 
     description: string,
     yanrdingsIcon: string,
-    iconColor: Color
+    textColorClassName: string
 }
 
 export interface ExperienceContent {

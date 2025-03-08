@@ -42,9 +42,6 @@ export default {
       },
     },
   },
-  safelist: [
-    {pattern: /(bg|text|border|hover)-./}
-  ],
   plugins: [],
   darkMode: 'class'
 } satisfies Config;

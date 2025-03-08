@@ -1,7 +1,7 @@
 "use client" 
 
 import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
-import { Color, getBgColorClassName, getBorderColorClassName, getTextColorClassName, globalClassNames } from "./StyleConstants";
+import { globalClassNames } from "./StyleConstants";
 import { SvgDisplayModeIcon, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
 import { useState } from "react";
 import { useTheme } from "next-themes";
@@ -35,24 +35,24 @@ export default function Navbar({currentPage}: NavbarProps) {
 
     return (
         <nav>
-            <div className={`${getBgColorClassName(Color.Neutral_1)} w-full flex justify-center px-8`}>
+            <div className="bg-neutral-1 w-full flex justify-center px-8">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
-                        <button className="p-2"><SvgMenu color={Color.Icon_Primary} width="24" height="24"/></button>
-                        <SvgVerticalLine color={Color.Icon_Primary} width="1" height="24" />
+                        <button className="p-2"><SvgMenu color="var(--icon-primary)" width="24" height="24"/></button>
+                        <SvgVerticalLine color="var(--icon-primary)" width="1" height="24" />
                         <DarkLightModeButton />
                     </div>
                     <a href="/">
-                        <h2 className={`${fontIbmPlexSerif.className} ${getTextColorClassName(Color.Type_1)} text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
+                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
                     </a>
                     <div>
                         <ul className="flex items-center justify-between py-4 space-x-2">
                             {   
                                 pages.map(page => {
                                     const isCurrentPage = page.name == currentPage
-                                    const activeCssStyle = (isCurrentPage) ? `${getBgColorClassName(Color.Neutral_3)} rounded` : ""
+                                    const activeCssStyle = (isCurrentPage) ? `bg-neutral-3 rounded` : ""
                                     return (
-                                        <li><a href={page.href} className={`${getTextColorClassName(Color.Type_2)} ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
+                                        <li><a href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
                                     )
                                 })
                             }
@@ -71,15 +71,15 @@ function DarkLightModeButton() {
 
     function getIcon(theme: string | undefined) {
         if (theme == "light" || undefined) {
-            return <SvgDisplayModeIcon color={Color.Icon_Primary} width="24" height="24"/> 
+            return <SvgDisplayModeIcon color="var(--icon-primary)" width="24" height="24"/> 
         } else {
-            return <SvgMoonIcon color={Color.Icon_Primary} width="24" height="24"/> 
+            return <SvgMoonIcon color="var(--icon-primary)" width="24" height="24"/> 
         }
     }
 
     function getSelectedClassName(theme: string): string {
         if (resolvedTheme == theme) {
-            return getBgColorClassName(Color.Neutral_4)
+            return "bg-neutral-4"
         } else {
             return ""
         }
@@ -89,12 +89,12 @@ function DarkLightModeButton() {
         return (
             <div className="relative" >
                 <button 
-                    className={`hover:rounded-2xl hover:border p-2 ${getBorderColorClassName(Color.Border_Medium)} invisible`}
+                    className={`hover:rounded-2xl hover:border p-2 border-border-medium invisible`}
                     onClick={() => updateSelectorDisplayed(true)} 
                 >
                     { getIcon(resolvedTheme) }
                 </button>
-                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 ${getBgColorClassName(Color.Neutral_1)} ${getBorderColorClassName(Color.Border_Medium)}`}>
+                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 bg-neutral-1 border-border-medium`}>
 
                     {
                         ["light", "dark"].map(
@@ -106,7 +106,7 @@ function DarkLightModeButton() {
                                             updateSelectorDisplayed(false)
                                         }
                                     }
-                                    className={`rounded-2xl p-2 my-1 border ${getBorderColorClassName(Color.Neutral_1)} hover:${getBorderColorClassName(Color.Border_Medium)} ${getSelectedClassName(theme)}`}>
+                                    className={`rounded-2xl p-2 my-1 border border-neutral-1 hover:border-border-medium ${getSelectedClassName(theme)}`}>
                                     { getIcon(theme) }
                                 </button>
                             
@@ -120,7 +120,7 @@ function DarkLightModeButton() {
 
         return (
             <button 
-                className={`rounded-2xl border p-2 ${getBorderColorClassName(Color.Neutral_1)} hover:border-border-medium`}
+                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium`}
                 onClick={() => updateSelectorDisplayed(true)}
                 >
                 { getIcon(resolvedTheme) }

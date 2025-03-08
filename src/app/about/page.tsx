@@ -1,4 +1,3 @@
-import { Color, getBgColorClassName, getBorderColorClassName, getTextColorClassName } from "@/components/StyleConstants";
 import Navbar, { PageName } from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill } from "./content";
@@ -27,12 +26,12 @@ export default function Home() {
                             <SkillsContainer skills={content.skills} />
                         </div>
                     </Section> */}
-                    <Section backgroundColor={Color.Neutral_2}>
+                    <Section backgroundColorClassName="bg-neutral-2">
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">
                             <div className="flex flex-col items-center lg:items-start space-y-10 w-full md:w-1/2">
                                 <h1 className={`${fontFamiljenGrotesk.className} text-5xl lead ng-10`}>{content.welcomeSection.welcomeTitle}</h1>
                                 <p className={`${fontIbmPlexSerif.className} italic text-2xl text-center`}>{content.welcomeSection.welcomeText}
-                                    <YarndingsIcon color={Color.Icon_Plum} icon={content.welcomeSection.welcomeIcon} className="px-2" /></p>
+                                    <YarndingsIcon textColorClassName="text-icon-plum" icon={content.welcomeSection.welcomeIcon} className="px-2" /></p>
                                 <div className="flex flex-row space-x-10">
                                     <ButtonLink {...content.welcomeSection.cta1} />
                                     <ButtonLink {...content.welcomeSection.cta2} />
@@ -81,7 +80,7 @@ function SkillItem({ skill } : SkillItemProps) {
     return (
         <div className="flex flex-col space-y-4 px-8">
             <h3>
-                <YarndingsIcon icon={skill.yanrdingsIcon} color={skill.iconColor} /> &nbsp; 
+                <YarndingsIcon icon={skill.yanrdingsIcon} textColorClassName={skill.textColorClassName} /> &nbsp; 
                 <span className={`${fontIbmPlexSerif.className} text-2xl italic`}>{skill.title}</span>
             </h3>
             <p className={`${fontWorkSans.className} text-xl`}>{skill.description}</p>
@@ -95,20 +94,20 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({content}: ExperienceSectionProps) {
     return (
-        <Section backgroundColor={Color.Gold_0}>
+        <Section backgroundColorClassName="bg-gold-0">
             <div className="flex flex-col space-y-10 w-full">
-                <h4 className={`${fontWorkSans.className} text-xl font-semibold ${getTextColorClassName(Color.Type_2)}`}>{content.title}</h4>
+                <h4 className={`${fontWorkSans.className} text-xl font-semibold text-type-2`}>{content.title}</h4>
                 <ul className="flex flex-col space-y-2">
                     {
                         content.listItems.map((item) => {
                             return (
                                 <li key={item.company + item.role + item.timeRange} className="flex flex-row w-full justify-between">
                                     <div className="flex flex-row space-x-2">
-                                        <SvgPlusSign color={Color.Type_2} width="24" height="24" />
-                                        <h5 className={`${fontWorkSans.className} text-lg font-semibold ${getTextColorClassName(Color.Type_2)}`}>{item.role} at <span className="">{item.company}</span></h5>
+                                        <SvgPlusSign color="var(--type-2)" width="24" height="24" />
+                                        <h5 className={`${fontWorkSans.className} text-lg font-semibold text-type-2`}>{item.role} at <span className="">{item.company}</span></h5>
                                     </div>
-                                    <div className={`border-b-2 border-dashed ${getBorderColorClassName(Color.Border_Medium)} flex-grow h-5 mx-2`} />
-                                    <p className={`${fontWorkSans.className} text-lg ${getTextColorClassName(Color.Type_2)}`}>{item.timeRange}</p>
+                                    <div className={`border-b-2 border-dashed border-border-medium flex-grow h-5 mx-2`} />
+                                    <p className={`${fontWorkSans.className} text-lg text-type-2`}>{item.timeRange}</p>
                                 </li>
                             )
                         })
