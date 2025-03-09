@@ -2,7 +2,7 @@
 
 import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
 import { globalClassNames } from "./StyleConstants";
-import { SvgDisplayModeIcon, SvgIconPlaceholder, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
+import { SvgDisplayModeIcon, SvgIconPlaceholder, SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgMoonIcon, SvgPin, SvgVerticalLine } from "./Svg";
 import { JSX, use, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { eventNames } from "node:process";
@@ -25,22 +25,44 @@ const pages: Page[] = [
 ]
 
 interface NavbarProps {
-    currentPage: "About" | "Work"
+    currentPage: "About" | "Work" | null
 }
 
 export default function Navbar(props: NavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isDarkModeSelectorDisplayed, updateDarkModeSelectorDisplayed] = useState(false)
 
+    function getMenuIcon() {
+        if (isMenuOpen) {
+            return <SvgMenuOpen colorCssValue="var(--icon-primary)"/>
+        } else {
+            return <SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/>
+        }
+    }
 
+    function openDarkModeSelector() {
+        if (isMenuOpen) {
+            setIsMenuOpen(false)
+        }
+        updateDarkModeSelectorDisplayed(true)
+    }
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add("stop-scrolling");
+        } else {
+            document.body.classList.remove("stop-scrolling");
+        }
+    }, [isMenuOpen])
 
     return (
         <nav>
             <div className="bg-neutral-1 w-full flex justify-center px-8">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
-                        <button className="p-2" onClick={() => setIsMenuOpen(true)}><SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/></button>
+                        <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
                         <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" />
-                        <DarkLightModeSelector />
+                        <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} />
                     </div>
                     <a href="/">
                         <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
@@ -62,31 +84,57 @@ export default function Navbar(props: NavbarProps) {
                 </div>
             </div>
             {
-                (isMenuOpen) ? <Menu /> : <></>
+                (isMenuOpen) ? <Menu closeMenu={() => setIsMenuOpen(false)} /> : <></>
             }
         </nav>
     )
 }
 
-function Menu() {
+interface MenuProps {
+    closeMenu: () => void
+}
+
+function Menu({closeMenu}: MenuProps) {
+
+    const menuRef = useRef<HTMLDivElement>(null)
+
+    function closeMenuWhenWrapperClicked(target: EventTarget) {
+        if (target == menuRef.current) {
+            closeMenu()
+        }
+    }
+
     return (
-        <div className="h-screen w-screen bg-[rgba(0,0,0,0.2)] absolute">
+        <div className="h-full w-screen bg-black/20 absolute" ref={menuRef} onClick={mouseEvent => closeMenuWhenWrapperClicked(mouseEvent.target)}>
             <Section backgroundColorClassName="bg-neutral-1">
-                <div className="w-full flex flex-col">
-                    <div className="flex flex-col">
-                        <a>Inspiration Library</a>
-                        <a>Download Resumé</a>
+                <div className="w-full flex flex-col space-y-8">
+                    <div className="flex flex-col space-y-2 px-2">
+                        <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a>
+                        <a href="" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
                     </div>
-                    <div></div>
-                    <div className="flex flex-col">
-                        <h2>Contact</h2>
-                        <a href="" target="_blank">LinkedIn</a>
-                        <a href="" target="_blank">nayeliaperezt@gmail.com</a>
+                    <div className="w-full h-0 relative ring-1 ring-black/20"></div>
+                    <div className="flex flex-col px-2 space-y-2">
+                        <h2 className={`text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none mb-2`}>Contact</h2>
+                        <a href="https://www.linkedin.com/in/nayelip" target="_blank">
+                            <div className="flex space-x-1">
+                                <SvgLinkedIn colorCssValue="var(--icon-primary)"/>
+                                <p className={`text-black text-base font-normal ${fontWorkSans.className} leading-normal`}>LinkedIn</p>
+                            </div>
+                        </a>
+                        <a href="mailto:nayeliaperezt@gmail.com">
+                            <div className="flex space-x-1">
+                                <SvgMail colorCssValue="var(--icon-primary)"/>
+                                <p className={`text-black text-base font-normal ${fontWorkSans.className} leading-normal`}>nayeliaperezt@gmail.com</p>
+                            </div>
+                        </a>
                     </div>
-                    <div></div>
-                    <div className="flex space-between">
-                        <p>Based in <b>San Antonio, TX</b></p>
-                        <p>Find me on <a href="" target="_blank">Are.na</a></p>
+                    <div className="w-full h-0 relative ring-1 ring-black/20"></div>
+                    <div className="flex justify-between w-full px-2">
+                        <div className="flex">
+                            <SvgPin colorCssValue="var(--icon-primary)" />
+                            <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>Based in <b>San Antonio, TX</b></p>
+                        </div>
+                        <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>Find me on <a href="https://www.are.na/nayeli-perez/channels" className="text-type-link text-sm underline" target="_blank">Are.na</a></p>
                     </div>
                 </div>
             </Section>
@@ -94,10 +142,13 @@ function Menu() {
     )
 }
 
+interface DarkLightModeSelectorProps {
+    selectorDisplayed: boolean,
+    openSelector: () => void, 
+    closeSelector: () => void
+}
 
-
-function DarkLightModeSelector() {
-    const [selectorDisplayed, updateSelectorDisplayed] = useState(false)
+function DarkLightModeSelector({selectorDisplayed, openSelector, closeSelector}: DarkLightModeSelectorProps) {
     const {resolvedTheme, setTheme} = useTheme()
     const [isLoading, setIsLoading] = useState(true)
 
@@ -121,7 +172,7 @@ function DarkLightModeSelector() {
 
     function hideSelectorIfNotFocused(elementReceivingFocus: (EventTarget & Element) | null) {
         if (!selectorRef.current?.contains(elementReceivingFocus)) {
-            updateSelectorDisplayed(false)
+            closeSelector()
         }
     }
 
@@ -156,7 +207,7 @@ function DarkLightModeSelector() {
                                     onClick={
                                         () => {
                                             setTheme(theme)
-                                            updateSelectorDisplayed(false)
+                                            closeSelector()
                                         }
                                     }
                                     onBlur={(focusEvent) => hideSelectorIfNotFocused(focusEvent.relatedTarget)}
@@ -175,7 +226,7 @@ function DarkLightModeSelector() {
         return (
             <button 
                 className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow ${isLoading ? "invisible" : ""}`}
-                onClick={() => updateSelectorDisplayed(true)}
+                onClick={() => openSelector()}
                 >
                 { getIcon(resolvedTheme) }
             </button>

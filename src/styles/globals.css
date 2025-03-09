@@ -71,7 +71,7 @@
 } */
 
 :root.dark {
-  --neutral-1: #232320;
+  --neutral-1: #232320; 
   --neutral-1-overlay: #41433D;
   --neutral-2: rgba(50, 51, 47, 1);
   --neutral-3: #73766C;
@@ -106,4 +106,9 @@
 body {
   color: var(--type-1);
   background: var(--neutral-1);
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
