@@ -103,7 +103,7 @@ function ExperienceSection({content}: ExperienceSectionProps) {
                             return (
                                 <li key={item.company + item.role + item.timeRange} className="flex flex-row w-full justify-between">
                                     <div className="flex flex-row space-x-2">
-                                        <SvgPlusSign color="var(--type-2)" width="24" height="24" />
+                                        <SvgPlusSign colorCssValue="var(--type-2)" width="24" height="24" />
                                         <h5 className={`${fontWorkSans.className} text-lg font-semibold text-type-2`}>{item.role} at <span className="">{item.company}</span></h5>
                                     </div>
                                     <div className={`border-b-2 border-dashed border-border-medium flex-grow h-5 mx-2`} />

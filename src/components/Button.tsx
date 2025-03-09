@@ -15,7 +15,7 @@ export enum ButtonIcon {
 export default function ButtonLink(props: ButtonLinkProps) {
     let icon
     if (props.icon == ButtonIcon.Download) {
-        icon = <SvgDownload className="inline" color="var(--border-pine)"/>
+        icon = <SvgDownload className="inline" colorCssValue="var(--border-pine)"/>
     } 
     return (
         <a className={`${fontWorkSans.className} inline text-base font-semibold border-b-2 text-type-2 border-border-pine w-fit`} href={props.url}>

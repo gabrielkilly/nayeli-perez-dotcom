@@ -3,8 +3,9 @@
 import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
 import { globalClassNames } from "./StyleConstants";
 import { SvgDisplayModeIcon, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
-import { useState } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { eventNames } from "node:process";
 
 export enum PageName {
     About="About", 
@@ -38,8 +39,8 @@ export default function Navbar({currentPage}: NavbarProps) {
             <div className="bg-neutral-1 w-full flex justify-center px-8">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
-                        <button className="p-2"><SvgMenu color="var(--icon-primary)" width="24" height="24"/></button>
-                        <SvgVerticalLine color="var(--icon-primary)" width="1" height="24" />
+                        <button className="p-2"><SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/></button>
+                        <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" />
                         <DarkLightModeButton />
                     </div>
                     <a href="/">
@@ -69,11 +70,13 @@ function DarkLightModeButton() {
     const [selectorDisplayed, updateSelectorDisplayed] = useState(false)
     const {resolvedTheme, setTheme} = useTheme()
 
+    const selectorRef = useRef<HTMLDivElement>(null)
+
     function getIcon(theme: string | undefined) {
         if (theme == "light" || undefined) {
-            return <SvgDisplayModeIcon color="var(--icon-primary)" width="24" height="24"/> 
+            return <SvgDisplayModeIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
         } else {
-            return <SvgMoonIcon color="var(--icon-primary)" width="24" height="24"/> 
+            return <SvgMoonIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
         }
     }
 
@@ -85,28 +88,45 @@ function DarkLightModeButton() {
         }
     }
 
+    function hideSelectorIfNotFocused(elementReceivingFocus: (EventTarget & Element) | null) {
+        console.log(elementReceivingFocus)
+        if (!selectorRef.current?.contains(elementReceivingFocus)) {
+            updateSelectorDisplayed(false)
+        }
+    }
+
+    useEffect(() => {
+        if (selectorRef.current && selectorDisplayed) {
+            selectorRef.current.querySelector("button")?.focus()
+        }
+    }, [selectorDisplayed])
+
     if (selectorDisplayed) {
         return (
             <div className="relative" >
                 <button 
                     className={`hover:rounded-2xl hover:border p-2 border-border-medium invisible`}
-                    onClick={() => updateSelectorDisplayed(true)} 
                 >
                     { getIcon(resolvedTheme) }
                 </button>
-                <div className={`flex flex-col border rounded-2xl p-1 absolute -top-1 bg-neutral-1 border-border-medium`}>
+                <div 
+                    className={`flex flex-col border rounded-2xl px-1 py-2 absolute -top-1 bg-neutral-1 border-border-medium space-y-1 shadow`} 
+                    ref={selectorRef} 
+                    >
 
                     {
                         ["light", "dark"].map(
                             theme =>
                                 <button 
+                                    key={theme}
                                     onClick={
                                         () => {
                                             setTheme(theme)
                                             updateSelectorDisplayed(false)
                                         }
                                     }
-                                    className={`rounded-2xl p-2 my-1 border border-neutral-1 hover:border-border-medium ${getSelectedClassName(theme)}`}>
+                                    onBlur={(focusEvent) => hideSelectorIfNotFocused(focusEvent.relatedTarget)}
+                                    className={`rounded-2xl p-2 border border-neutral-1 hover:border-border-medium hover:shadow ${getSelectedClassName(theme)}`}>
                                     { getIcon(theme) }
                                 </button>
                             
@@ -120,7 +140,7 @@ function DarkLightModeButton() {
 
         return (
             <button 
-                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium`}
+                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow`}
                 onClick={() => updateSelectorDisplayed(true)}
                 >
                 { getIcon(resolvedTheme) }
