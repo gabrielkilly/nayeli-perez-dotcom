@@ -2,8 +2,8 @@
 
 import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
 import { globalClassNames } from "./StyleConstants";
-import { SvgDisplayModeIcon, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
-import { JSX, useEffect, useRef, useState } from "react";
+import { SvgDisplayModeIcon, SvgIconPlaceholder, SvgMenu, SvgMoonIcon, SvgVerticalLine } from "./Svg";
+import { JSX, use, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { eventNames } from "node:process";
 
@@ -69,6 +69,7 @@ export default function Navbar({currentPage}: NavbarProps) {
 function DarkLightModeButton() {
     const [selectorDisplayed, updateSelectorDisplayed] = useState(false)
     const {resolvedTheme, setTheme} = useTheme()
+    const [isLoading, setIsLoading] = useState(true)
 
     const selectorRef = useRef<HTMLDivElement>(null)
 
@@ -100,6 +101,10 @@ function DarkLightModeButton() {
             selectorRef.current.querySelector("button")?.focus()
         }
     }, [selectorDisplayed])
+
+    useEffect(() => {
+        setIsLoading(false)
+    }, [])
 
     if (selectorDisplayed) {
         return (
@@ -140,7 +145,7 @@ function DarkLightModeButton() {
 
         return (
             <button 
-                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow`}
+                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow ${isLoading ? "invisible" : ""}`}
                 onClick={() => updateSelectorDisplayed(true)}
                 >
                 { getIcon(resolvedTheme) }

@@ -25,6 +25,14 @@ export function SvgMenu(svgProps: SvgProps) {
     )
 }
 
+export function SvgIconPlaceholder(svgProps: SvgProps) {
+    return (
+        <svg width={svgProps.width} height={svgProps.height} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="50" stroke="black" stroke-width="2" fill={svgProps.colorCssValue} />
+        </svg>
+    )
+}
+
 export function SvgDisplayModeIcon(svgProps: SvgProps) {
     return (
         <svg width={svgProps.width} height={svgProps.height} fill="none" xmlns="http://www.w3.org/2000/svg">
