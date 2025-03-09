@@ -1,4 +1,4 @@
-import Navbar, { PageName } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill } from "./content";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "../layout";
@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <>
             <main>
-                <Navbar currentPage={PageName.About}/>
+                <Navbar currentPage={"About"}/>
                 <div className="flex flex-col items-center justify-center">
                     {/* <Section backgroundColor={Color.Neutral_2}>
                         <div className="flex flex-col space-y-10">

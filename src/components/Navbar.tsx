@@ -7,32 +7,28 @@ import { JSX, use, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { eventNames } from "node:process";
 
-export enum PageName {
-    About="About", 
-    Work="Work"
-}
-
 interface Page {
-    name: PageName,
+    name: string,
     href: string
 }
 
 const pages: Page[] = [
     {
-        name: PageName.About,
+        name: "About",
         href: "/about"
     },
     {
-        name: PageName.Work,
+        name: "Work",
         href:"/"
     }
 ]
 
 interface NavbarProps {
-    currentPage: PageName
+    currentPage: "About" | "Work"
 }
 
-export default function Navbar({currentPage}: NavbarProps) {
+export default function Navbar(props: NavbarProps) {
+    console.log(props.currentPage)
 
     return (
         <nav>
@@ -50,10 +46,11 @@ export default function Navbar({currentPage}: NavbarProps) {
                         <ul className="flex items-center justify-between py-4 space-x-2">
                             {   
                                 pages.map(page => {
-                                    const isCurrentPage = page.name == currentPage
+                                    const isCurrentPage = page.name == props.currentPage
+                                    console.log(page.name)
                                     const activeCssStyle = (isCurrentPage) ? `bg-neutral-3 rounded` : ""
                                     return (
-                                        <li><a href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
+                                        <li key={page.name}><a href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
                                     )
                                 })
                             }

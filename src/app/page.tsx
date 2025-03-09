@@ -1,4 +1,4 @@
-import Navbar, { PageName } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, homeContent, Skill } from "./content";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "./layout";
@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
             <main>
-            <Navbar currentPage={PageName.About}/>
+            <Navbar currentPage={"Work"}/>
                <h1>Hey</h1>
             </main>
         </>
