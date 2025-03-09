@@ -6,6 +6,7 @@ import { SvgDisplayModeIcon, SvgIconPlaceholder, SvgMenu, SvgMoonIcon, SvgVertic
 import { JSX, use, useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { eventNames } from "node:process";
+import Section from "./Section";
 
 interface Page {
     name: string,
@@ -28,16 +29,18 @@ interface NavbarProps {
 }
 
 export default function Navbar(props: NavbarProps) {
-    console.log(props.currentPage)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+
 
     return (
         <nav>
             <div className="bg-neutral-1 w-full flex justify-center px-8">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
-                        <button className="p-2"><SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/></button>
+                        <button className="p-2" onClick={() => setIsMenuOpen(true)}><SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/></button>
                         <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" />
-                        <DarkLightModeButton />
+                        <DarkLightModeSelector />
                     </div>
                     <a href="/">
                         <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
@@ -47,7 +50,6 @@ export default function Navbar(props: NavbarProps) {
                             {   
                                 pages.map(page => {
                                     const isCurrentPage = page.name == props.currentPage
-                                    console.log(page.name)
                                     const activeCssStyle = (isCurrentPage) ? `bg-neutral-3 rounded` : ""
                                     return (
                                         <li key={page.name}><a href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
@@ -59,11 +61,42 @@ export default function Navbar(props: NavbarProps) {
                     </div>
                 </div>
             </div>
+            {
+                (isMenuOpen) ? <Menu /> : <></>
+            }
         </nav>
     )
 }
 
-function DarkLightModeButton() {
+function Menu() {
+    return (
+        <div className="h-screen w-screen bg-[rgba(0,0,0,0.2)] absolute">
+            <Section backgroundColorClassName="bg-neutral-1">
+                <div className="w-full flex flex-col">
+                    <div className="flex flex-col">
+                        <a>Inspiration Library</a>
+                        <a>Download Resumé</a>
+                    </div>
+                    <div></div>
+                    <div className="flex flex-col">
+                        <h2>Contact</h2>
+                        <a href="" target="_blank">LinkedIn</a>
+                        <a href="" target="_blank">nayeliaperezt@gmail.com</a>
+                    </div>
+                    <div></div>
+                    <div className="flex space-between">
+                        <p>Based in <b>San Antonio, TX</b></p>
+                        <p>Find me on <a href="" target="_blank">Are.na</a></p>
+                    </div>
+                </div>
+            </Section>
+        </div>
+    )
+}
+
+
+
+function DarkLightModeSelector() {
     const [selectorDisplayed, updateSelectorDisplayed] = useState(false)
     const {resolvedTheme, setTheme} = useTheme()
     const [isLoading, setIsLoading] = useState(true)
@@ -87,7 +120,6 @@ function DarkLightModeButton() {
     }
 
     function hideSelectorIfNotFocused(elementReceivingFocus: (EventTarget & Element) | null) {
-        console.log(elementReceivingFocus)
         if (!selectorRef.current?.contains(elementReceivingFocus)) {
             updateSelectorDisplayed(false)
         }
