@@ -1,30 +1,7 @@
-
-import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12 } from "next/font/google";
 import "../styles/globals.css";
 import * as React from "react"
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-export const fontIbmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm",
-  subsets: ["latin"],
-  weight: "400"
-});
-
-export const fontWorkSans = Work_Sans({
-  variable: "--font-work",
-  subsets: ["latin"],
-});
-
-export const fontFamiljenGrotesk = Familjen_Grotesk({
-  variable: "--font-familjen",
-  subsets: ["latin"],
-});
-
-export const fontYarndings12 = Yarndings_12({
-  variable: "--font-yarndings",
-  weight: "400",
-  subsets: ["symbols"],
-})
+import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 
 export default function RootLayout({
   children,

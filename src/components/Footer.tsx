@@ -1,4 +1,4 @@
-import { fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/app/layout";
+import { fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Section from "./Section";
 
 export default function Footer() {

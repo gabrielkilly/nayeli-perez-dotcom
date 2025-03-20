@@ -1,6 +1,6 @@
 "use client" 
 
-import { fontIbmPlexSerif, fontWorkSans } from "@/app/layout";
+import { fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
 import { globalClassNames } from "./StyleConstants";
 import { SvgDisplayModeIcon, SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgMoonIcon, SvgPin, SvgVerticalLine } from "./Svg";
 import { useEffect, useRef, useState } from "react";

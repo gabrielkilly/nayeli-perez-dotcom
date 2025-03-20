@@ -1,4 +1,4 @@
-import { fontYarndings12 } from "@/app/layout";
+import { fontYarndings12 } from "@/components/Fonts";
 
 export interface YarndingsIconProps {
     icon: string,

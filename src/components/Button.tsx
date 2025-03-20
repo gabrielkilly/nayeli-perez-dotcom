@@ -1,4 +1,4 @@
-import { fontWorkSans } from "@/app/layout";
+import { fontWorkSans } from "@/components/Fonts";
 import { SvgDownload } from "./Svg";
 
 export interface ButtonLinkProps {

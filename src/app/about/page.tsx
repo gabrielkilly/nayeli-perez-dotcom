@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill, SkillsSectionContent } from "./content";
-import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "../layout";
+import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
 import { SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/Button';
 import YarndingsIcon from "@/components/YarndingsIcon";
