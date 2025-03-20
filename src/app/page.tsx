@@ -1,13 +1,6 @@
 import Navbar from "@/components/Navbar";
-import Section from "@/components/Section";
-import { ExperienceContent, homeContent, Skill } from "./content";
-import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "./layout";
-import { SvgPlusSign } from '../components/Svg';
-
 
 export default function Home() {
-    const content = homeContent;    
-
     return (
         <>
             <main>

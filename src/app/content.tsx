@@ -106,14 +106,14 @@ export const homeContent: HomeContent = {
 }
 
 export interface Skill {
-    title: String, 
-    description: String,
-    yanrdingsIcon: String,
+    title: string, 
+    description: string,
+    yanrdingsIcon: string,
     textColorClassName: string
 }
 
 export interface ExperienceContent {
-    title: String, 
+    title: string, 
     listItems: ExperienceListItem[],
     cta: CtaLink
 }
@@ -130,13 +130,13 @@ export interface CtaLink {
 }
 
 export interface InspirationContent {
-    title: String, 
+    title: string, 
     blocks: InspirationBlock[],
     cta: CtaLink
 }
 
 export interface InspirationBlock {
-    imgUrl: String,
-    title: String,
-    label: String
+    imgUrl: string,
+    title: string,
+    label: string
 }

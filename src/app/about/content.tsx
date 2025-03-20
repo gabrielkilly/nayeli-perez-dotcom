@@ -114,7 +114,7 @@ export interface Skill {
 }
 
 export interface ExperienceContent {
-    title: String, 
+    title: string, 
     listItems: ExperienceListItem[],
     cta: CtaLink
 }
