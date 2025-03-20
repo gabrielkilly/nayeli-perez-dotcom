@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill, SkillsSectionContent } from "./content";
-import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "../layout";
+import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "../layout";
 import { SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/Button';
 import YarndingsIcon from "@/components/YarndingsIcon";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
                     <SkillsSection content={content.skillsSection} />
                     <ExperienceSection content={content.experienceContent} />
                 </div>
+                <Footer />
             </main>
         </>
     )
@@ -43,6 +45,9 @@ interface SkillsSectionProps {
 
 function SkillsSection({content}: SkillsSectionProps) { 
     const {skills, title} = content
+    const verticalLineClassName = "self-stretch relative origin-top-left ring-[0.675px] ring-border-subtle flex-shrink"
+    const horizontalLineClassName = "self-stretch h-0 relative ring-[0.675px] ring-border-subtle"
+
     if (skills.length != 4) {
         throw Error("Skills content length is not equal to 4")
     }
@@ -55,13 +60,13 @@ function SkillsSection({content}: SkillsSectionProps) {
                 <div className="flex flex-col w-full space-y-8">
                     <div className="flex flex-col lg:flex-row justify-around w-full space-y-8 lg:space-x-8 lg:space-y-0">
                         <SkillItem skill={skills[0]}/>
-                        <div className="self-stretch relative origin-top-left ring-1 ring-border-subtle flex-shrink"></div>                
+                        <div className={verticalLineClassName}></div>                
                         <SkillItem skill={skills[1]}/>
                     </div>
-                    <div className="self-stretch h-0 relative ring-1 ring-border-subtle"></div>
+                    <div className={horizontalLineClassName}></div>
                     <div className="flex flex-col lg:flex-row justify-around w-full space-y-8 lg:space-x-8 lg:space-y-0">
                         <SkillItem skill={skills[2]}/>
-                        <div className="self-stretch border-border-subtle relative origin-top-left ring-1 ring-border-subtle flex-shrink"></div>                
+                        <div className={verticalLineClassName}></div>                
                         <SkillItem skill={skills[3]}/>
                     </div>
                 </div>
@@ -119,4 +124,4 @@ function ExperienceSection({content}: ExperienceSectionProps) {
             </div>
         </Section>
     )
-}
+}   
