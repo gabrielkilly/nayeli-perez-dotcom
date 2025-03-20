@@ -22,7 +22,8 @@ export const fontFamiljenGrotesk = Familjen_Grotesk({
 
 export const fontYarndings12 = Yarndings_12({
   variable: "--font-yarndings",
-  weight: "400"
+  weight: "400",
+  subsets: ["symbols"],
 })
 
 export default function RootLayout({
