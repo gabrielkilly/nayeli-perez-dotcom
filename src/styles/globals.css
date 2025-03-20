@@ -98,9 +98,14 @@
   --type-link: #90BC89;
   --type-alt: #FFFFFF;
   --border-pine: #90BC89;
+  --border-pine-medium: rgba(72, 123, 64, 1);
   --border-medium: rgba(154, 156, 147, 0.6);
+  --border-subtle: rgba(154, 156, 147, 0.35);
   --icon-primary: rgba(194, 194, 194, 0.95);
   --icon-plum: rgba(224, 148, 192, 1);
+  --icon-gold: rgba(206, 168, 63, 1);
+  --icon-green: rgba(110, 164, 101, 1);
+  --icon-neutral: rgba(226, 227, 220, 1);
 }
 
 body {

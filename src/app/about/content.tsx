@@ -1,10 +1,10 @@
 import { ButtonIcon, ButtonLinkProps } from "@/components/Button"
 
 export interface AboutContent {
-    welcomeSection: WelcomeSection,
-    skillsSection: SkillsSection,
+    welcomeSection: WelcomeSectionContent,
+    skillsSection: SkillsSectionContent,
     experienceContent: ExperienceContent,
-    opportunitiesSection: OpportunitiesSection
+    opportunitiesSection: OpportunitiesSectionContent
 }
 
 export const aboutContent: AboutContent = {
@@ -29,26 +29,26 @@ export const aboutContent: AboutContent = {
             {
                 yanrdingsIcon: "q",
                 textColorClassName: "text-icon-gold",
-                title: "Craft", 
-                description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                title: "Crafted", 
+                description: "Doing things well matters to me. I am ambitious when it comes to the quality I want to accomplish in my work.\n\nOver time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute. I am excited to continue honing these skills!"
             },
             {
                 yanrdingsIcon: "m",
                 textColorClassName: "text-icon-green",
-                title: "Systems-thinking", 
-                description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                title: "Systems-Thinking First", 
+                description: "Systems thinking is all about keeping in mind that our actions, behaviors, and decisions have an impact on our community and our world. It’s also about realizing that as humans, we are all connected and rely on each other.\n\nMy commitment to practicing systems-thinking in my life translates to my approach to design and design strategy."
             },
             {
                 yanrdingsIcon: "I",
                 textColorClassName: "text-icon-plum",
-                title: "Sincerity", 
-                description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                title: "Pragmatic", 
+                description: "I firmly believe that designers should be committed to designing and shipping products and services that solve for real needs, while considering lasting ramifications.\n\nIn my work, I seek to understand what real, constant-over-time, needs a user has. Therefore, I am biased towards designing for platforms that aim to pragmatically & ethically solve for real user needs."
             },
             {
                 yanrdingsIcon: "p",
                 textColorClassName: "text-icon-neutral",
                 title: "Curiosity", 
-                description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                description: "My curious nature seeks to understand how things work, how systems function, why things are the way they are - what led them to be this way?\n\nThis constant curiosity drives me to connect and dialogue with others to better deeply understand the context of any design problem. I am constantly grateful that my work as a designer fully engages my deep-seated sense of curiosity and openness!"
             },
         ]
     },
@@ -92,7 +92,7 @@ export const aboutContent: AboutContent = {
     }
 }
 
-export interface WelcomeSection {
+export interface WelcomeSectionContent {
     welcomeTitle: string,
     welcomeText: string,
     welcomeIcon: string,
@@ -101,7 +101,7 @@ export interface WelcomeSection {
     cta2: ButtonLinkProps
 }
 
-export interface SkillsSection {
+export interface SkillsSectionContent {
     title: string, 
     skills: Skill[]
 }
@@ -130,7 +130,7 @@ export interface CtaLink {
     url: string,
 }
 
-export interface OpportunitiesSection {
+export interface OpportunitiesSectionContent {
     yIcon: string,
     title: string,
 }

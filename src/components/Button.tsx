@@ -18,7 +18,7 @@ export default function ButtonLink(props: ButtonLinkProps) {
         icon = <SvgDownload className="inline" colorCssValue="var(--border-pine)"/>
     } 
     return (
-        <a className={`${fontWorkSans.className} inline text-base font-semibold border-b-2 text-type-2 border-border-pine w-fit`} href={props.url}>
+        <a className={`${fontWorkSans.className} inline text-base font-semibold border-b-2 text-type-2 border-border-pine-medium w-fit`} href={props.url}>
             {icon} {props.title}
         </a>
     )
