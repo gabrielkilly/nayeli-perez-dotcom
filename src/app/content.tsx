@@ -2,141 +2,99 @@
 export interface HomeContent {
     nayeliName: string,
     mainDescription: string,
-    yarndingsIcon: string,
-    additionalDescription: string, 
-    skills: Skill[],
-    experienceContent: ExperienceContent,
-    inspirationContent: InspirationContent
+    skillChips: SkillChipContent[],
+    exploreWorkContent: ExploreWorkContent
 }
 
-export const homeContent: HomeContent = {
-    nayeliName: "Nayeli A. Pérez T",
-    mainDescription: "is a product designer with 8 years of experience across product design, user research, and visual design currently designing the MES platform at Gantri. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    yarndingsIcon: "e",
-    additionalDescription: "My approach to design is grounded in key values nventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    skills: [
-        {
-            yanrdingsIcon: "q",
-            textColorClassName: "text-icon-gold",
-            title: "Craft", 
-            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-        },
-        {
-            yanrdingsIcon: "m",
-            textColorClassName: "text-icon-green",
-            title: "Systems-thinking", 
-            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-        },
-        {
-            yanrdingsIcon: "I",
-            textColorClassName: "text-icon-plum",
-            title: "Sincerity", 
-            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-        },
-        {
-            yanrdingsIcon: "p",
-            textColorClassName: "text-icon-neutral",
-            title: "Curiosity", 
-            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-        },
-    ],
-    experienceContent: {
-        title: "Experience", 
-        listItems: [
-            {
-                role: "Senior Product Designer", 
-                company: "Gantri", 
-                timeRange: "2020 - Present"
-            },
-            {
-                role: "Product Design Manager", 
-                company: "Chargify", 
-                timeRange: "March 2021 - May 2022"
-            },
-            {
-                role: "Product Designer", 
-                company: "Chargify", 
-                timeRange: "Sep 20-18 - March 2021"
-            },
-            {
-                role: "Visual Designer", 
-                company: "esd & associates", 
-                timeRange: "Aug 2016 - Aug 2018"
-            },
-            {
-                role: "Graphic Design Intern",
-                company: "Trinity University Press",
-                timeRange: "Jan 2015 - May 2016"
-            }
-        ],
-        cta: {
-            title: "View Resumé", 
-            url: "#"
-        }
-    },
-    inspirationContent: {
-        title: "Currently Inspiring Me",
-        blocks: [
-            {
-                imgUrl: "https://source.unsplash.com/random",
-                title: "Title",
-                label: "Label"
-            },
-            {
-                imgUrl: "https://source.unsplash.com/random",
-                title: "Title",
-                label: "Label"
-            },
-            {
-                imgUrl: "https://source.unsplash.com/random",
-                title: "Title",
-                label: "Label"
-            },
-            {
-                imgUrl: "https://source.unsplash.com/random",
-                title: "Title",
-                label: "Label"
-            },
-        ],
-        cta: {
-            title: "View More", 
-            url: "#"
-        }
-    }
-}
-
-export interface Skill {
+export interface SkillChipContent {
     title: string, 
-    description: string,
-    yanrdingsIcon: string,
+    outlineColorClassName: string,
     textColorClassName: string
 }
 
-export interface ExperienceContent {
+export interface ExploreWorkContent {
     title: string, 
-    listItems: ExperienceListItem[],
-    cta: CtaLink
+    workItems: WorkItemContent[]
 }
 
-export interface ExperienceListItem {
-    role: string, 
-    company: string,
-    timeRange: string,
-}
-
-export interface CtaLink {
-    title: string, 
-    url: string,
-}
-
-export interface InspirationContent {
-    title: string, 
-    blocks: InspirationBlock[],
-    cta: CtaLink
-}
-
-export interface InspirationBlock {
-    imgUrl: string,
+export interface WorkItemContent {
+    bgColorClassName: string, 
+    thumbnailImgPath: string,
     title: string,
-    label: string
+    description?: string,
+    label?: string,
+    href: string
 }
+
+export const homeContent: HomeContent = {
+    nayeliName: "Nayeli A. Pérez T.",
+    mainDescription: `is an end-to-end product designer with <a href="/about#experience">8 years of experience</a> across product design, user research, and visual design.\n\nCurrently designing the Manufacturing Execution System at <a href="https://gantri.com">Gantri</a>, previously designing for SaaS subscription management at <a href="https://www.maxio.com/chargify">Chargify</a>.\n\nShe is most fulfilled when understanding & simplifying complexity and when uncovering & solving for real, human needs.`,
+    skillChips: [
+        {
+            title: "Product Design",
+            outlineColorClassName: "outline-icon-green",
+            textColorClassName: "text-icon-green"
+        },
+        {
+            title: "User Research",
+            outlineColorClassName: "outline-icon-plum",
+            textColorClassName: "text-icon-plum"
+        },
+        {
+            title: "Design Strategy",
+            outlineColorClassName: "outline-icon-gold",
+            textColorClassName: "text-icon-gold"
+        },
+        {
+            title: "Visual Design",
+            outlineColorClassName: "outline-icon-primary-1",
+            textColorClassName: "text-icon-primary-1"
+        },
+        {
+            title: "Design Systems",
+            outlineColorClassName: "outline-icon-plum",
+            textColorClassName: "text-icon-plum"
+        },
+        {
+            title: "Design-thinking Facilitation",
+            outlineColorClassName: "outline-icon-green",
+            textColorClassName: "text-icon-green"
+        },
+    ],
+    exploreWorkContent: {
+        title: "Explore Work",
+        workItems: [
+            {
+                bgColorClassName: "bg-gold-4",
+                thumbnailImgPath: "https://placehold.co/500x500",
+                title: "Streamlining error identification in factory workflows through re-designed key record pages",
+                description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
+                label: "Gantri - 2023",
+                href: "#"
+            },
+            {
+                bgColorClassName: "bg-khaki-4",
+                thumbnailImgPath: "https://placehold.co/500x500",
+                title: "Unlocking complete customization of Gantri lights",
+                description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
+                label: "Gantri - 2024",
+                href: "#"
+            },
+            {
+                bgColorClassName: "bg-plum-4",
+                thumbnailImgPath: "https://placehold.co/500x500",
+                title: "Enabling flexilbe pricing for merchants",
+                description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
+                label: "Chargify - 2022",
+                href: "#"
+            },
+            {
+                bgColorClassName: "bg-plum-4",
+                thumbnailImgPath: "https://placehold.co/500x500",
+                title: "Other selected work",
+                href: "#"
+            },
+        ]
+    }
+}
+

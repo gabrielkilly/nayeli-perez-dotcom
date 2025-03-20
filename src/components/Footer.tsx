@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer>
             <div className="w-full flex-col">
-                <Section backgroundColorClassName="bg-gold-1">
+                <Section className="bg-gold-1">
                     <div className="flex w-full flex-col items-center justify-center">
                         <div className={`text-icon-gold text-4xl font-normal ${fontYarndings12.className}`}>q</div>
                         <p className={`self-stretch text-center justify-start text-type-1 text-2xl font-normal ${fontIbmPlexSerif.className} leading-loose`}>

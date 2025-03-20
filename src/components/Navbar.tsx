@@ -67,7 +67,7 @@ export default function Navbar(props: NavbarProps) {
                         <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} />
                     </div>
                     <Link href="/">
-                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl italic hidden md:inline`}>Nayeli A. Pérez T.</h2>
+                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl hidden md:inline`}><i>Nayeli A. Pérez T.</i></h2>
                     </Link>
                     <div>
                         <ul className="flex items-center justify-between py-4 space-x-2">
@@ -116,7 +116,7 @@ function Menu({closeMenu}: MenuProps) {
 
     return (
         <div className="h-full w-screen bg-black/20 absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
-            <Section backgroundColorClassName="bg-neutral-1">
+            <Section className="bg-neutral-1">
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
                         <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a>

@@ -30,6 +30,8 @@ export default {
         "gold-5": "var(--gold-5)",
         "khaki-0": "var(--khaki-0)",
         "khaki-1": "var(--khaki-1)",
+        "khaki-4": "var(--khaki-4)",
+        "olive-5": "var(--olive-5)",
         "type-1": "var(--type-1)",
         "type-2": "var(--type-2)",
         "type-3": "var(--type-3)",

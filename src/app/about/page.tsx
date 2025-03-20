@@ -16,7 +16,7 @@ export default function Home() {
             <main>
                 <Navbar currentPage={"About"}/>
                 <div className="flex flex-col items-center justify-center">
-                    <Section backgroundColorClassName="bg-neutral-2">
+                    <Section className="bg-neutral-2">
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">
                             <div className="flex flex-col items-center lg:items-start space-y-10 w-full md:w-1/2">
                                 <h1 className={`${fontFamiljenGrotesk.className} text-5xl lead ng-10`}>{content.welcomeSection.welcomeTitle}</h1>
@@ -52,7 +52,7 @@ function SkillsSection({content}: SkillsSectionProps) {
         throw Error("Skills content length is not equal to 4")
     }
     return (
-        <Section backgroundColorClassName="bg-neutral-1">
+        <Section className="bg-neutral-1">
             <div className="flex flex-col space-y-12"> 
                 <h2 className={`text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>
                     {title}
@@ -99,8 +99,8 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({content}: ExperienceSectionProps) {
     return (
-        <Section backgroundColorClassName="bg-gold-0">
-            <div className="flex flex-col space-y-10 w-full">
+        <Section className="bg-gold-0">
+            <div id="experience" className="flex flex-col space-y-10 w-full">
                 <h4 className={`${fontWorkSans.className} text-type-2 text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
                 <ul className="flex flex-col space-y-2">
                     {
