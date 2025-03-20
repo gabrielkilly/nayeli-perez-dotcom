@@ -34,7 +34,9 @@ export default function Navbar(props: NavbarProps) {
 
     function getMenuIcon() {
         if (isMenuOpen) {
-            return <SvgMenuOpen colorCssValue="var(--icon-primary)"/>
+            return <div className="flex items-center w-[24px] h-[24px]">
+                    <SvgMenuOpen colorCssValue="var(--icon-primary)" width="14" height="18"/>   
+                </div>
         } else {
             return <SvgMenu colorCssValue="var(--icon-primary)" width="24" height="24"/>
         }
@@ -199,7 +201,7 @@ function DarkLightModeSelector({selectorDisplayed, openSelector, closeSelector}:
         return (
             <div className="relative" >
                 <button 
-                    className={`hover:rounded-2xl hover:border p-2 border-border-medium invisible`}
+                    className={`rounded-2xl border p-2 invisible`}
                 >
                     { getIcon(resolvedTheme) }
                 </button>

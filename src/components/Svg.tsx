@@ -25,6 +25,16 @@ export function SvgMenu(svgProps: SvgProps) {
     )
 }
 
+export function SvgMenuOpen(svgProps: SvgProps) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={svgProps.width} height={svgProps.height} viewBox="0 0 14 18" fill="none">
+            <path d="M6.90002 0L6.9 14" stroke={svgProps.colorCssValue} strokeOpacity="0.9" stroke-width="1.8"/>
+            <line x1="12.9" y1="3.93402e-08" x2="12.9" y2="18" stroke={svgProps.colorCssValue} strokeOpacity="0.9" strokeWidth="1.8"/>
+            <line x1="0.9" y1="3.93402e-08" x2="0.899999" y2="18" stroke={svgProps.colorCssValue} strokeOpacity="0.9" strokeWidth="1.8"/>
+        </svg>
+    )
+}
+
 export function SvgIconPlaceholder(svgProps: SvgProps) {
     return (
         <svg width={svgProps.width} height={svgProps.height} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,16 +102,6 @@ export function SvgPin(svgProps: SvgProps) {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M5 5.13043C5 4.30019 5.32981 3.50395 5.91688 2.91688C6.50395 2.32981 7.30019 2 8.13043 2C8.96068 2 9.75692 2.32981 10.344 2.91688C10.9311 3.50395 11.2609 4.30019 11.2609 5.13043C11.2609 5.96068 10.9311 6.75692 10.344 7.34399C9.75692 7.93106 8.96068 8.26087 8.13043 8.26087C7.30019 8.26087 6.50395 7.93106 5.91688 7.34399C5.32981 6.75692 5 5.96068 5 5.13043ZM8.13043 3.73913C8.32174 3.73913 8.47826 3.58261 8.47826 3.3913C8.47826 3.2 8.32174 3.04348 8.13043 3.04348C6.97826 3.04348 6.04348 3.97826 6.04348 5.13043C6.04348 5.32174 6.2 5.47826 6.3913 5.47826C6.58261 5.47826 6.73913 5.32174 6.73913 5.13043C6.73913 4.36304 7.36304 3.73913 8.13043 3.73913ZM7.43478 13.3043V8.89348C7.89474 8.97754 8.36613 8.97754 8.82609 8.89348V13.3043C8.82609 13.6891 8.51522 14 8.13043 14C7.74565 14 7.43478 13.6891 7.43478 13.3043Z" 
                 fill={svgProps.colorCssValue} fillOpacity="0.9"/>
-        </svg>
-    )
-}
-
-export function SvgMenuOpen(svgProps: SvgProps) {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
-            <path d="M6.90002 0L6.9 14" stroke={svgProps.colorCssValue} strokeOpacity="0.9" stroke-width="1.8"/>
-            <line x1="12.9" y1="3.93402e-08" x2="12.9" y2="18" stroke={svgProps.colorCssValue} strokeOpacity="0.9" strokeWidth="1.8"/>
-            <line x1="0.9" y1="3.93402e-08" x2="0.899999" y2="18" stroke={svgProps.colorCssValue} strokeOpacity="0.9" strokeWidth="1.8"/>
         </svg>
     )
 }
