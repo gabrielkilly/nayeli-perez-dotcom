@@ -95,17 +95,25 @@ interface MenuProps {
 }
 
 function Menu({closeMenu}: MenuProps) {
-
-    const menuRef = useRef<HTMLDivElement>(null)
+    const menuRef = useRef<HTMLDivElement>(null);
+    const [notification, setNotification] = useState<string | null>(null);
 
     function closeMenuWhenWrapperClicked(target: EventTarget) {
-        if (target == menuRef.current) {
-            closeMenu()
+        if (target === menuRef.current) {
+            closeMenu();
         }
     }
 
+    function copyEmailToClipboard() {
+        const email = "nayeliaperezt@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            setNotification("Email copied");
+            setTimeout(() => setNotification(null), 2000);
+        });
+    }
+
     return (
-        <div className="h-full w-screen bg-black/20 absolute" ref={menuRef} onClick={mouseEvent => closeMenuWhenWrapperClicked(mouseEvent.target)}>
+        <div className="h-full w-screen bg-black/20 absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
             <Section backgroundColorClassName="bg-neutral-1">
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
@@ -117,16 +125,17 @@ function Menu({closeMenu}: MenuProps) {
                         <h2 className={`text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none mb-2`}>Contact</h2>
                         <a href="https://www.linkedin.com/in/nayelip" target="_blank">
                             <div className="flex space-x-1">
-                                <SvgLinkedIn colorCssValue="var(--icon-primary)"/>
+                                <SvgLinkedIn colorCssValue="var(--icon-primary)" />
                                 <p className={`text-type-1 text-base font-normal ${fontWorkSans.className} leading-normal`}>LinkedIn</p>
                             </div>
                         </a>
-                        <a href="mailto:nayeliaperezt@gmail.com">
-                            <div className="flex space-x-1">
-                                <SvgMail colorCssValue="var(--icon-primary)"/>
+                        <div className="flex flex-col md:flex-row md:items-center md:space-x-2">
+                            <button onClick={copyEmailToClipboard} className="flex space-x-1">
+                                <SvgMail colorCssValue="var(--icon-primary)" />
                                 <p className={`text-type-1 text-base font-normal ${fontWorkSans.className} leading-normal`}>nayeliaperezt@gmail.com</p>
-                            </div>
-                        </a>
+                            </button>
+                            {notification && <p className="text-type-2 text-sm text-green-500">{notification}</p>}
+                        </div>
                     </div>
                     <div className="w-full h-0 relative ring-1 ring-black/20"></div>
                     <div className="flex justify-between w-full px-2">
@@ -139,7 +148,7 @@ function Menu({closeMenu}: MenuProps) {
                 </div>
             </Section>
         </div>
-    )
+    );
 }
 
 interface DarkLightModeSelectorProps {
