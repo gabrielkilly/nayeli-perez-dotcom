@@ -15,12 +15,12 @@ export const aboutContent: AboutContent = {
         welcomeImagePath: "/about-main.png",
         cta1: {
             title: "Experience", 
-            url: "#",
+            url: "#experience",
             icon: ButtonIcon.Download
         },
         cta2: {
             title: "Resumé", 
-            url: "#",
+            url: "/resume.pdf",
         }
     },
     skillsSection: {
@@ -83,7 +83,7 @@ export const aboutContent: AboutContent = {
         ],
         cta: {
             title: "Download Resumé", 
-            url: "#"
+            url: "/resume.pdf"
         }
     },
     opportunitiesSection: {

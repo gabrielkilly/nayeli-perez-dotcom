@@ -1,11 +1,12 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { homeContent, SkillChipContent } from "./content";
+import { ExploreWorkContent, homeContent, SkillChipContent, WorkItemContent } from "./content";
 import Section from "@/components/Section";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from 'html-react-parser';
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Link from "next/link";
-import { SkillsSectionContent } from "./about/content";
+import Image from "next/image";
+import paperTextureImage from "@/assets/paper-texture.png";
 
 export default function Home() {
     const content = homeContent;
@@ -33,9 +34,7 @@ export default function Home() {
                             <SkillsChips skills={content.skillChips}/>
                         </div>
                     </Section>
-                    <Section className="bg-khaki-1">
-                        
-                    </Section>
+                    <ExploreWorkSection content={content.exploreWorkContent} />
                 </div>
                 <Footer />
             </main>
@@ -54,5 +53,57 @@ function SkillsChips({skills}: {skills: SkillChipContent[]}) {
                 </div>
             })}
         </div>
+    )
+}
+
+interface ExploreWorkContentProps {
+    content: ExploreWorkContent
+}
+function ExploreWorkSection({ content }: ExploreWorkContentProps) {
+    return (
+        <Section className="bg-khaki-1 space-y-2">
+            <h2 className={`justify-start text-type-2 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>Explore work</h2>
+
+            <div className="flex flex-col">
+                <div className="flex flex-col lg:flex-row">
+                    <WorkItem workItem={content.workItems[0]}/>
+                    <WorkItem workItem={content.workItems[1]}/>
+                </div>
+                <div className="flex flex-col lg:flex-row">
+                    <WorkItem workItem={content.workItems[2]}/>
+                    <WorkItem workItem={content.workItems[3]}/>
+                </div>
+            </div>  
+        </Section>
+    )
+}
+
+function WorkItem({workItem}: {workItem: WorkItemContent}) {
+    return (
+        <Link href={workItem.href} className="flex flex-col w-full space-y-4 p-4 mt-6 w-full lg:w-1/2 hover:bg-neutral-1-overlay rounded-xl h-auto">
+            <div className={`w-full flex justify-center rounded-[9.75px] overflow-hidden outline outline-border-subtle outline-opacity-30 aspect-[21/16] ${workItem.bgColorClassName} relative`}>
+                <Image
+                    className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply"
+                    src={paperTextureImage}
+                    alt="Paper texture background"
+                    width={800}
+                    height={800}
+                />
+                <Image
+                    className="w-4/5 object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-8"
+                    width={800}
+                    height={800}
+                    alt="Picture of project"
+                    src={workItem.thumbnailImgPath}
+                />
+            </div>
+            <h3 className={`text-type-1 text-xl font-semibold ${fontWorkSans.className} leading-relaxed`}>{workItem.title}</h3>
+            {workItem.description && (
+                <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>{workItem.description}</p>
+            )}
+            {workItem.label && (
+                <div className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-normal`}>{workItem.label}</div>
+            )}
+        </Link>
     )
 }

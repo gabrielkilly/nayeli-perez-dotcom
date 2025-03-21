@@ -66,7 +66,7 @@ export const homeContent: HomeContent = {
         workItems: [
             {
                 bgColorClassName: "bg-gold-4",
-                thumbnailImgPath: "https://placehold.co/500x500",
+                thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Streamlining error identification in factory workflows through re-designed key record pages",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2023",
@@ -74,7 +74,7 @@ export const homeContent: HomeContent = {
             },
             {
                 bgColorClassName: "bg-khaki-4",
-                thumbnailImgPath: "https://placehold.co/500x500",
+                thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Unlocking complete customization of Gantri lights",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2024",
@@ -82,15 +82,15 @@ export const homeContent: HomeContent = {
             },
             {
                 bgColorClassName: "bg-plum-4",
-                thumbnailImgPath: "https://placehold.co/500x500",
+                thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Enabling flexilbe pricing for merchants",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Chargify - 2022",
                 href: "#"
             },
             {
-                bgColorClassName: "bg-plum-4",
-                thumbnailImgPath: "https://placehold.co/500x500",
+                bgColorClassName: "bg-olive-5",
+                thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Other selected work",
                 href: "#"
             },

@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import Section from "./Section";
 import Link from "next/link";
+import Image from "next/image";
+import paperTextureImage from "@/assets/paper-texture-grainy.png";
 
 interface Page {
     name: string,
@@ -15,13 +17,14 @@ interface Page {
 
 const pages: Page[] = [
     {
+        name: "Work",
+        href:"/"
+    },
+    {
         name: "About",
         href: "/about"
     },
-    {
-        name: "Work",
-        href:"/"
-    }
+    
 ]
 
 interface NavbarProps {
@@ -34,7 +37,7 @@ export default function Navbar(props: NavbarProps) {
 
     function getMenuIcon() {
         if (isMenuOpen) {
-            return <div className="flex items-center w-[24px] h-[24px]">
+            return <div className="flex items-center justify-center w-[24px] h-[24px]">
                     <SvgMenuOpen colorCssValue="var(--icon-primary)" width="14" height="18"/>   
                 </div>
         } else {
@@ -59,7 +62,7 @@ export default function Navbar(props: NavbarProps) {
 
     return (
         <nav>
-            <div className="bg-neutral-1 w-full flex justify-center px-8">
+            <div className="bg-neutral-1 w-full flex justify-center px-8 border-b border-border-subtle">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
@@ -98,10 +101,11 @@ interface MenuProps {
 
 function Menu({closeMenu}: MenuProps) {
     const menuRef = useRef<HTMLDivElement>(null);
+    const imageWrapper = useRef<HTMLImageElement>(null);
     const [notification, setNotification] = useState<string | null>(null);
 
     function closeMenuWhenWrapperClicked(target: EventTarget) {
-        if (target === menuRef.current) {
+        if (target === menuRef.current || target === imageWrapper.current) {
             closeMenu();
         }
     }
@@ -115,14 +119,22 @@ function Menu({closeMenu}: MenuProps) {
     }
 
     return (
-        <div className="h-full w-screen bg-black/20 absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
-            <Section className="bg-neutral-1">
+        <div className="h-full w-screen bg-border-subtle absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
+           <Image
+                ref={imageWrapper}
+                className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply"
+                src={paperTextureImage}
+                alt="Paper texture background"
+                width={2000}
+                height={2000}
+                />
+           <Section className="absolute bg-neutral-1">
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
-                        <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a>
-                        <a href="" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
+                        {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
+                        <a href="/resume.pdf" target="_blank" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
                     </div>
-                    <div className="w-full h-0 relative ring-1 ring-black/20"></div>
+                    <div className="w-full h-0 relative ring-1 ring-border-subtle"></div>
                     <div className="flex flex-col px-2 space-y-2">
                         <h2 className={`text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none mb-2`}>Contact</h2>
                         <a href="https://www.linkedin.com/in/nayelip" target="_blank">
@@ -136,10 +148,10 @@ function Menu({closeMenu}: MenuProps) {
                                 <SvgMail colorCssValue="var(--icon-primary)" />
                                 <p className={`text-type-1 text-base font-normal ${fontWorkSans.className} leading-normal`}>nayeliaperezt@gmail.com</p>
                             </button>
-                            {notification && <p className="text-type-2 text-sm text-green-500">{notification}</p>}
+                            {notification && <p className="text-type-2 text-sm text-border-pine-medium">{notification}</p>}
                         </div>
                     </div>
-                    <div className="w-full h-0 relative ring-1 ring-black/20"></div>
+                    <div className="w-full h-0 relative ring-1 ring-border-subtle"></div>
                     <div className="flex justify-between w-full px-2">
                         <div className="flex">
                             <SvgPin colorCssValue="var(--icon-primary)" />

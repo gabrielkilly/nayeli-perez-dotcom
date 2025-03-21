@@ -6,6 +6,7 @@ import { SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/Button';
 import YarndingsIcon from "@/components/YarndingsIcon";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
                                     <ButtonLink {...content.welcomeSection.cta2} />
                                 </div>
                             </div>
-                            <img className="w-full md:w-1/2" src={content.welcomeSection.welcomeImagePath} alt="Nayeli" />
+                            <Image className="w-full md:w-1/2" width={1702} height={1152} src={content.welcomeSection.welcomeImagePath} alt="Pictures of Nayeli" priority />
                         </div>
                     </Section>
                     <SkillsSection content={content.skillsSection} />
@@ -86,7 +87,7 @@ function SkillItem({ skill } : SkillItemProps) {
         <div className="flex flex-col space-y-4 basis-1/2">
             <h3>
                 <YarndingsIcon icon={skill.yanrdingsIcon} textColorClassName={skill.textColorClassName} /> &nbsp; 
-                <span className={`${fontIbmPlexSerif.className} text-2xl italic text-black text-2xl font-normal text-type-1 leading-loose`}>{skill.title}</span>
+                <span className={`${fontIbmPlexSerif.className} text-2xl text-black text-2xl font-normal text-type-1 leading-loose`}><i>{skill.title}</i></span>
             </h3>
             <p className={`${fontWorkSans.className} whitespace-pre-line text-black text-sm font-normal text-type-1 leading-tight`}>{skill.description}</p>
         </div>

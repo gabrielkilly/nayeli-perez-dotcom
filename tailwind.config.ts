@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         "neutral-1": "var(--neutral-1)",
-        "neutral-1-overlay": "var(--neutral_1-overlay)",
+        "neutral-1-overlay": "var(--neutral-1-overlay)",
         "neutral-2": "var(--neutral-2)",
         "neutral-3": "var(--neutral-3)",
         "neutral-4": "var(--neutral-4)",
@@ -22,6 +22,7 @@ export default {
         "plum-1": "var(--plum-1)",
         "plum-2": "var(--plum-2)",
         "plum-3": "var(--plum-3)",
+        "plum-4": "var(--plum-4)",
         "gold-0": "var(--gold-0)",
         "gold-1": "var(--gold-1)",
         "gold-2": "var(--gold-2)",
