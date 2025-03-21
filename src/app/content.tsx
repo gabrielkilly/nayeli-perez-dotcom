@@ -83,7 +83,7 @@ export const homeContent: HomeContent = {
             {
                 bgColorClassName: "bg-plum-4",
                 thumbnailImgPath: "/key-record-page-redesign.png",
-                title: "Enabling flexilbe pricing for merchants",
+                title: "Enabling flexible pricing for merchants",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Chargify - 2022",
                 href: "#"

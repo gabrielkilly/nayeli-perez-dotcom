@@ -132,12 +132,12 @@ function Menu({closeMenu}: MenuProps) {
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
                         {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
-                        <a href="/resume.pdf" target="_blank" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
+                        <a href="/resume.pdf" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
                     </div>
                     <div className="w-full h-0 relative ring-1 ring-border-subtle"></div>
                     <div className="flex flex-col px-2 space-y-2">
                         <h2 className={`text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none mb-2`}>Contact</h2>
-                        <a href="https://www.linkedin.com/in/nayelip" target="_blank">
+                        <a href="https://www.linkedin.com/in/nayelip">
                             <div className="flex space-x-1">
                                 <SvgLinkedIn colorCssValue="var(--icon-primary)" />
                                 <p className={`text-type-1 text-base font-normal ${fontWorkSans.className} leading-normal`}>LinkedIn</p>
@@ -157,7 +157,7 @@ function Menu({closeMenu}: MenuProps) {
                             <SvgPin colorCssValue="var(--icon-primary)" />
                             <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>Based in <b>San Antonio, TX</b></p>
                         </div>
-                        <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>Find me on <a href="https://www.are.na/nayeli-perez/channels" className="text-type-link text-sm underline" target="_blank">Are.na</a></p>
+                        <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-tight`}>Find me on <a href="https://www.are.na/nayeli-perez/channels" className="text-type-link text-sm underline">Are.na</a></p>
                     </div>
                 </div>
             </Section>
