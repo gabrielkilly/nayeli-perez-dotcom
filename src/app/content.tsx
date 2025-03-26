@@ -70,7 +70,7 @@ export const homeContent: HomeContent = {
                 title: "Streamlining error identification in factory workflows through re-designed key record pages",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2023",
-                href: "#"
+                href: "/project/BuildingBlocksRedesign"
             },
             {
                 bgColorClassName: "bg-khaki-4",
