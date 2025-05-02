@@ -7,7 +7,7 @@ export interface ProjectProps {
 }
 
 /**
- * Basically would be an api call to get the project content, but handling it in the UI for now.
+ * Basically replacing an api call to get the project content, just handling it in the UI for now.
  */
 function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {

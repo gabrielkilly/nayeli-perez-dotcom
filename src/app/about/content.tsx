@@ -1,4 +1,4 @@
-import { ButtonIcon, ButtonLinkProps } from "@/components/Button"
+import { ButtonIcon, ButtonLinkProps } from "@/components/ButtonLink"
 
 export interface AboutContent {
     welcomeSection: WelcomeSectionContent,
