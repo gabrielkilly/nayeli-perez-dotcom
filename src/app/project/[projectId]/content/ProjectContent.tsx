@@ -70,3 +70,5 @@ export interface ResultItem {
 export interface ItemGrid {
     items: BasicCard[]
 }
+
+export const PROJECT_ID_BUILDING_BLOCKS_REDESIGN = "building-blocks-redesign";

@@ -1,3 +1,4 @@
+import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN } from "./project/[projectId]/content/ProjectContent"
 
 export interface HomeContent {
     nayeliName: string,
@@ -23,7 +24,7 @@ export interface WorkItemContent {
     title: string,
     description?: string,
     label?: string,
-    href: string
+    projectId: string
 }
 
 export const homeContent: HomeContent = {
@@ -70,7 +71,7 @@ export const homeContent: HomeContent = {
                 title: "Streamlining error identification in factory workflows through re-designed key record pages",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2023",
-                href: "/project/BuildingBlocksRedesign"
+                projectId: PROJECT_ID_BUILDING_BLOCKS_REDESIGN
             },
             {
                 bgColorClassName: "bg-khaki-4",
@@ -78,7 +79,7 @@ export const homeContent: HomeContent = {
                 title: "Unlocking complete customization of Gantri lights",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2024",
-                href: "#"
+                projectId: "#"
             },
             {
                 bgColorClassName: "bg-plum-4",
@@ -86,13 +87,13 @@ export const homeContent: HomeContent = {
                 title: "Enabling flexible pricing for merchants",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Chargify - 2022",
-                href: "#"
+                projectId: "#"
             },
             {
                 bgColorClassName: "bg-olive-5",
                 thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Other selected work",
-                href: "#"
+                projectId: "#"
             },
         ]
     }

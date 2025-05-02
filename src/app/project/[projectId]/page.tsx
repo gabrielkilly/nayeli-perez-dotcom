@@ -1,14 +1,17 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { ProjectContent } from "./content/ProjectContent";
+import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 
 export interface ProjectProps {
-    projectId: "BuildingBlocksRedesign" 
+    projectId: string
 }
 
+/**
+ * Basically would be an api call to get the project content, but handling it in the UI for now.
+ */
 function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {
-        case "BuildingBlocksRedesign": return buildingBlocksRedesignContent;
+        case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
         default: return null;
     }
 
