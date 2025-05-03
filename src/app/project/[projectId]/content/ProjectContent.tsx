@@ -7,10 +7,10 @@ export interface IntroContent {
     imageSources: string[],
     title: string,
     description: string, 
-    details: HeaderLabelCard
+    details: HeaderLabelCardContent
 }
 
-export interface HeaderLabelCard {
+export interface HeaderLabelCardContent {
     headersAndLabels: HeaderLabel[]
 }
 

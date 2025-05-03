@@ -105,3 +105,11 @@ export function SvgPin(svgProps: SvgProps) {
         </svg>
     )
 }
+
+export function SvgBack(svgProps: SvgProps) {
+    return (
+        <svg className={svgProps.className} xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path d="M12.6667 8.50195L3.33341 8.50195M3.33341 8.50195L7.33342 4.50195M3.33341 8.50195L7.33341 12.502" stroke={svgProps.colorCssValue} stroke-opacity="0.9" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    )
+}
