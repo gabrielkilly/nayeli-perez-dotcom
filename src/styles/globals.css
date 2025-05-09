@@ -90,6 +90,7 @@ body {
 }
 
 .stop-scrolling {
-  height: 100%;
-  overflow: hidden;
+  position:fixed;
+  overflow-y: scroll;
+  width: 100%;
 }
