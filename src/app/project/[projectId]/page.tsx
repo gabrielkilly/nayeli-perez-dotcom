@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
@@ -11,6 +11,11 @@ import { fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
 import BasicCard from "@/components/project/BasicCard/BasicCard";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
+import Footer from "@/components/Footer";
+import { placeholderProject1 } from "./content/Temp1";
+import { placeholderProject2 } from "./content/Temp2";
+import Link from "next/link";
+import { E } from "vitest/dist/chunks/reporters.d.CqBhtcTq.js";
 
 export interface ProjectProps {
     projectId: string
@@ -22,6 +27,8 @@ export interface ProjectProps {
 function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {
         case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
+        case PROJECT_ID_TEMP_1: return placeholderProject1;
+        case PROJECT_ID_TEMP_2: return placeholderProject2;
         default: return null;
     }
 
@@ -30,6 +37,28 @@ function getProjectContent(projectId: string): ProjectContent | null {
 export default async function Page({params}: { params: Promise<{ projectId: string }>}) {
     const { projectId } = await params
     const projectContent = getProjectContent(projectId);
+
+    const getPreviouseProjectId = (projectId: string): string => {
+        const projectIndex = projectIndexMap.get(projectId);
+        if (projectIndex === undefined) {
+            return "#";
+        } else if (projectIndex === 0) {
+            return indexProjectMap.get(indexProjectMap.size - 1) ?? "#";
+        } else {
+            return indexProjectMap.get(projectIndex - 1) ?? "#";
+        }
+    }
+
+    const getNextProject = (projectId: string): string => {
+        const projectIndex = projectIndexMap.get(projectId);
+        if (projectIndex === undefined) {
+            return "#";
+        } else if (projectIndex === indexProjectMap.size - 1) {
+            return indexProjectMap.get(0) ?? "#";
+        } else {
+            return indexProjectMap.get(projectIndex - 1) ?? "#";
+        }
+    }
 
     if (projectContent === null) {
         return notFound()
@@ -48,6 +77,21 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
                             <ProjectSection key={index} sectionContent={section} />
                         ))
                     }
+                    <Section className="bg-khaki-1">
+                        <div className="w-full flex flex-wrap gap-4">
+                            <Link 
+                                className="basis-1/2-gap-4 self-stretch p-4 outline outline-1 outline-offset-[-1px] outline-border-standard inline-flex flex-col justify-center items-center gap-2"
+                                href={`/project/${getPreviouseProjectId(projectId)}`}>
+                                <div className={`self-stretch text-center justify-start text-type-1 text-xl font-normal ${fontWorkSans.className} leading-7`}>&lt; Previous</div>
+                            </Link>
+                            <Link 
+                                className="basis-1/2-gap-4 self-stretch p-4 outline outline-1 outline-offset-[-1px] outline-border-standard inline-flex flex-col justify-center items-center gap-2"
+                                href={`/project/${getNextProject(projectId)}`}>
+                                <div className={`self-stretch text-center justify-start text-type-1 text-xl font-normal ${fontWorkSans.className} leading-7`}>Next &gt;</div>
+                            </Link>
+                        </div>
+                    </Section>
+                    <Footer />
                 </main>
             </>
         )

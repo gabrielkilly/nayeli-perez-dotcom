@@ -1,4 +1,4 @@
-import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN } from "./project/[projectId]/content/ProjectContent"
+import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2 } from "./project/[projectId]/content/ProjectContent"
 
 export interface HomeContent {
     nayeliName: string,
@@ -66,20 +66,12 @@ export const homeContent: HomeContent = {
         title: "Explore Work",
         workItems: [
             {
-                bgColorClassName: "bg-gold-4",
-                thumbnailImgPath: "/key-record-page-redesign.png",
-                title: "Streamlining error identification in factory workflows through re-designed key record pages",
-                description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
-                label: "Gantri - 2023",
-                projectId: PROJECT_ID_BUILDING_BLOCKS_REDESIGN
-            },
-            {
                 bgColorClassName: "bg-khaki-4",
                 thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Unlocking complete customization of Gantri lights",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Gantri - 2024",
-                projectId: "#"
+                projectId: PROJECT_ID_TEMP_1
             },
             {
                 bgColorClassName: "bg-plum-4",
@@ -87,13 +79,21 @@ export const homeContent: HomeContent = {
                 title: "Enabling flexible pricing for merchants",
                 description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
                 label: "Chargify - 2022",
-                projectId: "#"
+                projectId: PROJECT_ID_TEMP_2
             },
             {
                 bgColorClassName: "bg-olive-5",
                 thumbnailImgPath: "/key-record-page-redesign.png",
                 title: "Other selected work",
                 projectId: "#"
+            },
+            {
+                bgColorClassName: "bg-gold-4",
+                thumbnailImgPath: "/key-record-page-redesign.png",
+                title: "Streamlining error identification in factory workflows through re-designed key record pages",
+                description: "Over time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute.",
+                label: "Gantri - 2023",
+                projectId: PROJECT_ID_BUILDING_BLOCKS_REDESIGN
             },
         ]
     }

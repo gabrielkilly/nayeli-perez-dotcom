@@ -7,6 +7,7 @@ import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } 
 import Link from "next/link";
 import Image from "next/image";
 import paperTextureImage from "@/assets/paper-texture.png";
+import { projectIndexMap } from "./project/[projectId]/content/ProjectContent";
 
 export default function Home() {
     const content = homeContent;
@@ -60,20 +61,21 @@ interface ExploreWorkContentProps {
     content: ExploreWorkContent
 }
 function ExploreWorkSection({ content }: ExploreWorkContentProps) {
+    content.workItems.sort((a, b) => {
+        return (projectIndexMap.get(a.projectId) ?? 99) - (projectIndexMap.get(b.projectId) ?? 99); //projectIndexMap is a map of projectId to its correct ordering, 99 is the default value if not found
+    })
     return (
         <Section className="bg-khaki-1 space-y-2">
             <h2 className={`justify-start text-type-2 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>Explore work</h2>
 
-            <div className="flex flex-col">
-                <div className="flex flex-col lg:flex-row">
-                    <WorkItem workItem={content.workItems[0]}/>
-                    <WorkItem workItem={content.workItems[1]}/>
-                </div>
-                <div className="flex flex-col lg:flex-row">
-                    <WorkItem workItem={content.workItems[2]}/>
-                    <WorkItem workItem={content.workItems[3]}/>
-                </div>
-            </div>  
+            <div className="flex flex-wrap">
+                    {content.workItems.map((workItem, index) => {
+                        return (
+                            <WorkItem key={index} workItem={workItem} />
+                        )
+                    })}
+            </div>
+        
         </Section>
     )
 }
