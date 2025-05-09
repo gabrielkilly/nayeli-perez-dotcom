@@ -94,3 +94,15 @@ body {
   overflow-y: scroll;
   width: 100%;
 }
+
+.container--2-in-row {
+  --number-of-items: 2;
+  --number-of-gaps: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-2);
+}
+
+.container--2-in-row > .item {
+  width: calc(100% / var(--number-of-items) - (var(--gap) * var(--number-of-gaps) / var(--number-of-items)));
+}

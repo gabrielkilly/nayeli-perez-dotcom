@@ -104,22 +104,22 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                             {
                                 title: "New Details Page Templates Introduced",
                                 description: "The new details page layout was integrated as a template for our Design System for all details pages.",
-                                imageSrc: "/images/key-feature-1.png"
+                                imageSrc: "https://placehold.co/500x500/gray/white"
                             },
                             {
                                 title: "New Actions to Account for Failure Outcomes",
                                 description: "Lower system debt via new, contextualized adjustable UX, UI & statuses (e.g., 'Mark as Discarded').",
-                                imageSrc: "/images/key-feature-2.png"
+                                imageSrc: "https://placehold.co/500x500/gray/white"
                             },
                             {
                                 title: "New Tabular Format That Overviews All Parts",
                                 description: "Team members can now view statuses, attributes, and current tasks for all parts in stock. Any failure outcomes are easily visible.",
-                                imageSrc: "/images/key-feature-3.png"
+                                imageSrc: "https://placehold.co/500x500/gray/white"
                             },
                             {
                                 title: "Re-focused Attention Alerts & Information",
                                 description: "Improved attention alerts to reduce time to identify issues. Critical alerts are now displayed at the top of the page for better visibility.",
-                                imageSrc: "/images/key-feature-4.png"
+                                imageSrc: "https://placehold.co/500x500/gray/white"
                             }
                         ]
                     }

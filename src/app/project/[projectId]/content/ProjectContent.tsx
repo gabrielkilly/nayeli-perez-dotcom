@@ -25,7 +25,7 @@ export interface ProjectSectionContent {
 
 export interface ContentItem {
     type: "title" | "description" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "basicCard",
-    content: Title | Description | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | BasicCard
+    content: Title | Description | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | BasicCardContent
 }
 
 export interface Title {
@@ -51,7 +51,7 @@ export interface BeforeAfterCardContent {
     afterImageSrc: string
 }
 
-export interface BasicCard {
+export interface BasicCardContent {
     title: string, 
     description: string, 
     imageSrc: string
@@ -68,7 +68,7 @@ export interface ResultItem {
 }
 
 export interface ItemGrid {
-    items: BasicCard[]
+    items: BasicCardContent[]
 }
 
 export const PROJECT_ID_BUILDING_BLOCKS_REDESIGN = "building-blocks-redesign";

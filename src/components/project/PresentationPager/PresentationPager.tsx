@@ -21,7 +21,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
     <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="w-full flex-col">
             {items.map((item, index) => (
-                <div key={index} className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] inline-flex flex-col justify-start items-center gap-2 ${selectedItemIndex === index ? "bg-neutral-1-overlay" : "bg-neutral-2"}`} onClick={() => handleItemClick(index)}>
+                <div key={index} className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] outline outline-1 outline-border-subtle inline-flex flex-col justify-start items-center gap-2 ${selectedItemIndex === index ? "bg-neutral-1-overlay" : "bg-neutral-2"}`} onClick={() => handleItemClick(index)}>
                     <p className={`self-stretch justify-start text-type-1 pl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>{item.description}</p>
                     {
                         selectedItemIndex === index ? (

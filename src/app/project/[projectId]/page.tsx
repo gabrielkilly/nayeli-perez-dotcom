@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
@@ -9,6 +9,7 @@ import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
 import { fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
+import BasicCard from "@/components/project/BasicCard/BasicCard";
 
 export interface ProjectProps {
     projectId: string
@@ -86,6 +87,17 @@ function ProjectSection({sectionContent, backgroundColorCssName}: ProjectSection
                             <BeforeAfterCard
                                 key={itemIndex}
                                 cardContent={item.content as BeforeAfterCardContent} />
+                        )
+                    case "itemGrid":
+                        return (
+                        <div key={itemIndex} className="flex flex-wrap gap-4">
+                            {(item.content as ItemGrid).items.map((cardContent, cardIndex) => (
+                                <BasicCard
+                                    key={cardIndex}
+                                    cssName="md:basis-1/2-gap-4"
+                                    cardContent={cardContent} />
+                            ))}
+                        </div>
                         )
                     default:
                         return null;

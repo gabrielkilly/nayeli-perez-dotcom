@@ -48,6 +48,9 @@ export default {
         "icon-green": "var(--icon-green)",
         "icon-neutral": "var(--icon-neutral)",
       },
+      flexBasis: {
+        "1/2-gap-4": "calc(50% - (1/2 * 1rem))"
+      }
     },
   },
   plugins: [],
