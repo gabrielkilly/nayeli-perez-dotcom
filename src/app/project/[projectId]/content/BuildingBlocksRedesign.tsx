@@ -79,16 +79,16 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     type: "beforeAfterCard",
                     content: {
                         title: "Stock Details Page",
-                        beforeImageSrc: "/images/stock-details-before.png",
-                        afterImageSrc: "/images/stock-details-after.png"
+                        beforeImageSrc: "https://placehold.co/500x750/maroon/white",
+                        afterImageSrc: "https://placehold.co/500x750/maroon/white"
                     }
                 },
                  {
                     type: "beforeAfterCard",
                     content: {
                         title: "Part Details Page",
-                        beforeImageSrc: "/images/part-details-before.png",
-                        afterImageSrc: "/images/part-details-after.png"
+                        beforeImageSrc: "https://placehold.co/500x750/maroon/white",
+                        afterImageSrc: "https://placehold.co/500x750/maroon/white"
                     }
                 },
                 {
