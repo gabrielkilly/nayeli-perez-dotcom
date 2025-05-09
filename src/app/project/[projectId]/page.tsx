@@ -1,6 +1,9 @@
+import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
 import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
+import { globalClassNames } from "@/components/StyleConstants";
+import IntroSection from "@/components/project/IntroSection/IntroSection";
 
 export interface ProjectProps {
     projectId: string
@@ -25,9 +28,16 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
         return notFound()
     } else {
         return (
-            <div>
-                <h1>{projectContent.introContent.description}</h1>
-            </div>
+            <>
+                <main>
+                    <Navbar />
+                    <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} bg-neutral-1 py-16`}>
+                        <div className={`w-full ${globalClassNames.maxWidth}`}>
+                            <IntroSection introContent={projectContent.introContent} />
+                        </div>
+                    </div>
+                </main>
+            </>
         )
     }
 }

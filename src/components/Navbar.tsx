@@ -28,7 +28,7 @@ const pages: Page[] = [
 ]
 
 interface NavbarProps {
-    currentPage: "About" | "Work" | null
+    currentPage?: "About" | "Work"
 }
 
 export default function Navbar(props: NavbarProps) {

@@ -17,7 +17,7 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
                 </a>
             </div>
             <IntroImageBanner imageSources={introContent.imageSources} />
-            <h1 className={`${fontFamiljenGrotesk} text-type-1 text-3xl font-normal leading-10`}>
+            <h1 className={`${fontFamiljenGrotesk} text-type-1 text-3xl font-normal leading-10 py-6`}>
                 {introContent.title}
             </h1>
             <div className="flex flex-col md:flex-row justify-between gap-8">
