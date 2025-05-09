@@ -20,7 +20,8 @@ export interface HeaderLabel {
 }
 
 export interface ProjectSectionContent {
-    contentItems: ContentItem[]
+    contentItems: ContentItem[],
+    backgroundColorCssName: string
 }
 
 export interface ContentItem {
@@ -62,7 +63,7 @@ export interface ResultContent {
 }
 
 export interface ResultItem {
-    iconSrc: string, 
+    iconIdentifier: "up" | "down", 
     title: string, 
     description: string
 }

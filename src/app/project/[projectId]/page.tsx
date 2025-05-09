@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
@@ -10,6 +10,7 @@ import PresentationPager from "@/components/project/PresentationPager/Presentati
 import { fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
 import BasicCard from "@/components/project/BasicCard/BasicCard";
+import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
 
 export interface ProjectProps {
     projectId: string
@@ -44,7 +45,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
                     </div>
                     {
                         projectContent.sections.map((section, index) => (
-                            <ProjectSection key={index} sectionContent={section} backgroundColorCssName={(index % 2 == 0) ? "bg-neutral-2" : "bg-neutral-1"} />
+                            <ProjectSection key={index} sectionContent={section} />
                         ))
                     }
                 </main>
@@ -55,12 +56,11 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
 
 interface ProjectSectionProps {
     sectionContent: ProjectSectionContent,
-    backgroundColorCssName: string
 }
 
-function ProjectSection({sectionContent, backgroundColorCssName}: ProjectSectionProps) {
+function ProjectSection({sectionContent}: ProjectSectionProps) {
     return (
-        <Section className={`${backgroundColorCssName}`}>
+        <Section className={`${sectionContent.backgroundColorCssName}`}>
             <div className="flex flex-col space-y-6 w-full">
             {sectionContent.contentItems.map((item, itemIndex) => {
                 switch (item.type) {
@@ -98,6 +98,12 @@ function ProjectSection({sectionContent, backgroundColorCssName}: ProjectSection
                                     cardContent={cardContent} />
                             ))}
                         </div>
+                        )
+                    case "resultContent":
+                        return (
+                            <ResultListItems
+                                key={itemIndex}
+                                resultContent={item.content as ResultContent} />
                         )
                     default:
                         return null;
