@@ -1,6 +1,6 @@
 export interface ProjectContent {
     introContent: IntroContent,
-    sections: ProjectSection[]
+    sections: ProjectSectionContent[]
 }
 
 export interface IntroContent {
@@ -19,7 +19,7 @@ export interface HeaderLabel {
     description: string
 }
 
-export interface ProjectSection {
+export interface ProjectSectionContent {
     contentItems: ContentItem[]
 }
 
