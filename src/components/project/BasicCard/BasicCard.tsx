@@ -1,7 +1,6 @@
 import { BasicCardContent } from "@/app/project/[projectId]/content/ProjectContent";
 import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
-import css from "styled-jsx/css";
 
 interface BasicCardProps {
     cardContent: BasicCardContent,

@@ -11,6 +11,7 @@ const meta: Meta<typeof IntroSection> = {
 export default meta;
 type Story = StoryObj<typeof IntroSection>;
 
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 export const Default: Story = {
   args: {
     introContent: {

@@ -3,6 +3,7 @@ import { fontFamiljenGrotesk, fontWorkSans } from "@/components/Fonts"
 import { SvgBack } from "@/components/Svg"
 import IntroImageBanner from "../IntroImageBanner/IntroImageBanner"
 import HeaderLabelCard from "../HeaderLabelCard/HeaderLabelCard"
+import Link from "next/link"
 
 interface IntroSectionProps {
     introContent: IntroContent
@@ -12,9 +13,9 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
     return (
         <div className="flex flex-col gap-6 w-full">
             <div className="flex">
-                <a className={`${fontWorkSans.className} inline text-base font-semibold text-type-2 uppercase`} href="/">
+                <Link className={`${fontWorkSans.className} inline text-base font-semibold text-type-2 uppercase`} href="/">
                     <SvgBack className="inline" colorCssValue="var(--type-2)"/> Back to home
-                </a>
+                </Link>
             </div>
             <IntroImageBanner imageSources={introContent.imageSources} />
             <h1 className={`${fontFamiljenGrotesk.className} text-type-1 text-3xl font-normal leading-10 py-6`}>

@@ -15,7 +15,6 @@ import Footer from "@/components/Footer";
 import { placeholderProject1 } from "./content/Temp1";
 import { placeholderProject2 } from "./content/Temp2";
 import Link from "next/link";
-import { E } from "vitest/dist/chunks/reporters.d.CqBhtcTq.js";
 
 export interface ProjectProps {
     projectId: string

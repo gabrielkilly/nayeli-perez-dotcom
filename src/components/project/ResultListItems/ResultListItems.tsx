@@ -1,7 +1,6 @@
 import { ResultContent } from "@/app/project/[projectId]/content/ProjectContent";
 import { fontWorkSans } from "@/components/Fonts";
 import { SvgUp, SvgDown } from "@/components/Svg";
-import Image from "next/image";
 
 interface ResultListItemsProps {
     resultContent: ResultContent
