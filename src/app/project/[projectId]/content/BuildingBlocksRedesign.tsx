@@ -37,13 +37,42 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                 {
                     type: "description",
                     content: {
-                        value: "With Gantri’s MES, Parts and Stocks details pages are viewed and used throughout to accomplish daily tasks. Over time, these pages became increasingly information-heavy, increasing time needed for workers and supervisors to complete daily tasks."
+                        value: "With Gantri’s MES, Parts and Stocks details pages are viewed and used throughout to accomplish daily tasks.\n\nOver time, these pages became increasingly information-heavy, increasing time needed for workers and supervisors to complete daily tasks."
                     }
                 },
+                {
+                    type: "presentationPager",
+                    content: {
+                        items: [
+                            {
+                                description: "Workers must scroll through dense lists of tasks to verify that they are taking the right action on the right item.",
+                                imageSrc: "/images/stock-details-before.png"
+                            },
+                            {
+                                description: "Supervisors struggle to find discrepancy or delay reasons when reviewing pages.",
+                                imageSrc: "/images/stock-details-before.png"
+                            },
+                            {
+                                description: "Supervisors must scroll through an abundance of detailed information to uncover which parts or stocks actually require attention or special action.",
+                                imageSrc: "/images/stock-details-before.png"
+                            }
+                        ],
+                    }
+                },
+            ]
+        },
+        {
+            contentItems: [
                 {
                     type: "title",
                     content: {
                         value: "Redesigned Pages"
+                    }
+                },
+                {
+                    type: "description",
+                    content: {
+                        value: "I redesigned the Stocks and Parts details pages from the ground up.\n\nIn addition to a new layout and information architecture, I introduced new statuses, actions, attributes, and object relationships (i.e. ‘many-to-1’) that better reflected real world workflows."
                     }
                 },
                 {
@@ -54,7 +83,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                         afterImageSrc: "/images/stock-details-after.png"
                     }
                 },
-                {
+                 {
                     type: "beforeAfterCard",
                     content: {
                         title: "Part Details Page",
@@ -95,6 +124,10 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                         ]
                     }
                 },
+            ]
+        },
+        {
+            contentItems: [
                 {
                     type: "title",
                     content: {
@@ -123,19 +156,8 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                         ]
                     }
                 },
-                {
-                    type: "title",
-                    content: {
-                        value: "Process"
-                    }
-                },
-                {
-                    type: "description",
-                    content: {
-                        value: "Conducted user research to identify pain points, created wireframes and prototypes for new designs, and collaborated with engineers to implement changes."
-                    }
-                }
             ]
-        }
+        },     
+                  
     ]
 };

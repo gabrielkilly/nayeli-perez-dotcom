@@ -1,6 +1,6 @@
 export interface ProjectContent {
     introContent: IntroContent,
-    sections: [ProjectSection]
+    sections: ProjectSection[]
 }
 
 export interface IntroContent {
