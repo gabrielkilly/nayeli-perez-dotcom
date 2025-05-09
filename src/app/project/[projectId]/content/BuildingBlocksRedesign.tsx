@@ -46,15 +46,15 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                         items: [
                             {
                                 description: "Workers must scroll through dense lists of tasks to verify that they are taking the right action on the right item.",
-                                imageSrc: "/images/stock-details-before.png"
+                                imageSrc: "https://placehold.co/400x300"
                             },
                             {
                                 description: "Supervisors struggle to find discrepancy or delay reasons when reviewing pages.",
-                                imageSrc: "/images/stock-details-before.png"
+                                imageSrc: "https://placehold.co/400x400"
                             },
                             {
                                 description: "Supervisors must scroll through an abundance of detailed information to uncover which parts or stocks actually require attention or special action.",
-                                imageSrc: "/images/stock-details-before.png"
+                                imageSrc: "https://placehold.co/600x400"
                             }
                         ],
                     }

@@ -25,7 +25,7 @@ export interface ProjectSection {
 
 export interface ContentItem {
     type: "title" | "description" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "basicCard",
-    content: Title | Description | PresentationPager | BeforeAfterCard | ResultContent | ItemGrid | BasicCard
+    content: Title | Description | PresentationPagerContent | BeforeAfterCard | ResultContent | ItemGrid | BasicCard
 }
 
 export interface Title {
@@ -36,7 +36,7 @@ export interface Description {
     value: string
 }
 
-export interface PresentationPager {
+export interface PresentationPagerContent {
     items: PresentationPagerItem[]
 }
 
