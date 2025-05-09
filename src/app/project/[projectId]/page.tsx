@@ -1,13 +1,14 @@
 
 import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { Description, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, ProjectContent, ProjectSectionContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
 import { fontWorkSans } from "@/components/Fonts";
+import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
 
 export interface ProjectProps {
     projectId: string
@@ -79,6 +80,12 @@ function ProjectSection({sectionContent, backgroundColorCssName}: ProjectSection
                             <PresentationPager
                                 key={itemIndex}
                                 pagerContent={item.content as PresentationPagerContent}/>
+                        )
+                    case "beforeAfterCard":
+                        return (
+                            <BeforeAfterCard
+                                key={itemIndex}
+                                cardContent={item.content as BeforeAfterCardContent} />
                         )
                     default:
                         return null;

@@ -11,7 +11,7 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
     return (
         <div className="flex flex-col px-6 py-8 bg-neutral-2 rounded-lg inline-flex justify-center items-center gap-6">
             <h3 className={`self-stretch opacity-60 justify-start text-type-2 text-sm font-semibold ${fontWorkSans.className} uppercase leading-tight`}>{title}</h3>
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4 justify-around items-between w-full">
                 <div className="flex flex-col items-center gap-4">
                     <h4 className={`justify-start text-type-3 text-sm font-medium ${fontWorkSans.className} uppercase leading-none`}>Before</h4>
                     <Image
