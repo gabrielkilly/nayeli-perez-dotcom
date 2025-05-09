@@ -55,7 +55,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
         } else if (projectIndex === indexProjectMap.size - 1) {
             return indexProjectMap.get(0) ?? "#";
         } else {
-            return indexProjectMap.get(projectIndex - 1) ?? "#";
+            return indexProjectMap.get(projectIndex + 1) ?? "#";
         }
     }
 
