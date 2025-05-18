@@ -5,6 +5,6 @@ interface GlobalClassNames {
 }
 
 export const globalClassNames: GlobalClassNames = {
-    maxWidth: "max-w-screen-xl",
+    maxWidth: "max-w-screen-lg",
     defaultXPadding: "px-8"
 }

@@ -9,7 +9,7 @@ export default function HeaderLabelCard(
     { cardContent }: HeaderLabelCardProps
 ) {
     return (
-        <div className="flex flex-col rounded-lg bg-neutral-2 gap-6 p-4">
+        <div className="flex flex-col rounded-lg outline outline-1 outline-offset-[-1px] outline-border-medium gap-6 p-4">
             {
                 cardContent.headersAndLabels.map((headerLabel) => {
                     return (

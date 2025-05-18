@@ -7,7 +7,7 @@ interface SectionProps {
 
 export default function Section({className: backgroundColorClassName, children}: SectionProps) {
     return (
-        <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} ${backgroundColorClassName} py-16`}>
+        <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} ${backgroundColorClassName} py-20`}>
             <div className={`w-full ${globalClassNames.maxWidth}`}>
                 {children}
             </div>

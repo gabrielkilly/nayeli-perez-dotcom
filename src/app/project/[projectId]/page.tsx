@@ -66,11 +66,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
             <>
                 <main>
                     <Navbar />
-                    <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} bg-neutral-1 py-16`}>
-                        <div className={`w-full ${globalClassNames.maxWidth}`}>
-                            <IntroSection introContent={projectContent.introContent} />
-                        </div>
-                    </div>
+                    <IntroSection introContent={projectContent.introContent} />
                     {
                         projectContent.sections.map((section, index) => (
                             <ProjectSection key={index} sectionContent={section} />
@@ -109,7 +105,7 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                 switch (item.type) {
                     case "title":
                         return (
-                            <h2 key={itemIndex} className={`justify-start text-type-1 text-xl font-semibold ${fontWorkSans.className} leading-relaxed uppercase`}>
+                            <h2 key={itemIndex} className={`justify-start text-type-1 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none`}>
                                 {(item.content as Title).value}
                             </h2>
                         )
