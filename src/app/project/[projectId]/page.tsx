@@ -7,7 +7,7 @@ import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
-import { fontWorkSans } from "@/components/Fonts";
+import { fontFamiljenGrotesk, fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
 import BasicCard from "@/components/project/BasicCard/BasicCard";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
@@ -111,7 +111,7 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                         )
                     case "description":
                         return (
-                            <p key={itemIndex} className={`self-stretch justify-start text-type-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>
+                            <p key={itemIndex} className={`justify-start text-type-1 text-3xl font-normal ${fontFamiljenGrotesk.className} leading-10 whitespace-break-spaces`}>
                                 {(item.content as Description).value}
                             </p>
                         )

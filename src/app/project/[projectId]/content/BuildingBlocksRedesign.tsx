@@ -38,7 +38,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                 {
                     type: "description",
                     content: {
-                        value: "With Gantri’s MES, Parts and Stocks details pages are viewed and used throughout to accomplish daily tasks.\n\nOver time, these pages became increasingly information-heavy, increasing time needed for workers and supervisors to complete daily tasks."
+                        value: "Over time, Parts and stocks details pages had become exceedingly information-heavy, increasing time needed for workers and supervisors to complete daily tasks."
                     }
                 },
                 {
@@ -74,15 +74,15 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                 {
                     type: "description",
                     content: {
-                        value: "I redesigned the Stocks and Parts details pages from the ground up.\n\nIn addition to a new layout and information architecture, I introduced new statuses, actions, attributes, and object relationships (i.e. ‘many-to-1’) that better reflected real world workflows."
+                        value: "In addition to a new layout and information architecture, I introduced new statuses, actions, attributes, and object relationships (i.e. ‘many-to-1’) that better reflected real world workflows."
                     }
                 },
                 {
                     type: "beforeAfterCard",
                     content: {
                         title: "Stock Details Page",
-                        beforeImageSrc: "https://placehold.co/500x750/maroon/white",
-                        afterImageSrc: "https://placehold.co/500x750/maroon/white"
+                        beforeImageSrc: "/key-record-page-redesign.png",
+                        afterImageSrc: "/projects/building-blocks-redesign/pagerImages/pager-3.png"
                     }
                 },
                  {
@@ -90,7 +90,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     content: {
                         title: "Part Details Page",
                         beforeImageSrc: "https://placehold.co/500x750/maroon/white",
-                        afterImageSrc: "https://placehold.co/500x750/maroon/white"
+                        afterImageSrc: "https://placehold.co/500x750/gray/white"
                     }
                 },
                 {
