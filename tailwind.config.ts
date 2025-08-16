@@ -29,10 +29,16 @@ export default {
         "gold-3": "var(--gold-3)",
         "gold-4": "var(--gold-4)",
         "gold-5": "var(--gold-5)",
+        "gold-700": "var(--gold-700)",
+        "gold-800": "var(--gold-800)",
         "khaki-0": "var(--khaki-0)",
         "khaki-1": "var(--khaki-1)",
         "khaki-4": "var(--khaki-4)",
+        "khaki-800": "var(--khaki-800)",
         "olive-5": "var(--olive-5)",
+        "olive-700": "var(--olive-700)",
+        "olive-800": "var(--olive-800)",
+        "stone-700": "var(--stone-700)",
         "type-1": "var(--type-1)",
         "type-2": "var(--type-2)",
         "type-3": "var(--type-3)",
@@ -46,11 +52,11 @@ export default {
         "icon-plum": "var(--icon-plum)",
         "icon-gold": "var(--icon-gold)",
         "icon-green": "var(--icon-green)",
-        "icon-neutral": "var(--icon-neutral)",
+        "icon-neutral": "var(--icon-neutral)"
       },
       flexBasis: {
         "1/2-gap-4": "calc(50% - (1/2 * 1rem))"
-      }
+      },
     },
   },
   plugins: [],

@@ -23,16 +23,22 @@
   --gold-3: #CEA83F;
   --gold-4: #B18C24;
   --gold-5: #82620B;
+  --gold-700: rgba(177, 140, 36, 1);
+  --gold-800: rgba(130, 98, 11, 1);
   --khaki-0: #F2F0E9;
   --khaki-1: #EBE8E0;
   --khaki-4: rgba(210, 204, 183, 1);
+  --khaki-800: rgba(92, 82, 46, 1);
   --olive-5: rgba(175, 190, 117, 1);
+  --olive-700: rgba(105, 118, 50, 1);
+  --olive-800: rgba(69, 79, 25, 1);
+  --stone-700: rgba(132, 135, 111, 1);
   --type-1: #000000;
   --type-2: #323A3A;
   --type-3: #707070;
   --type-link: #487B40;
   --type-alt: #FFFFFF;
-  --border-pine-medium: rgba(72, 123, 64, 1);
+  --border-pine-medium: rgba(144, 188, 137, 1);
   --border-pine: rgba(144, 188, 137, 1);
   --border-medium: rgba(38, 35, 21, 0.4);
   --border-subtle: rgba(0, 0, 0, 0.2);
@@ -43,7 +49,9 @@
   --icon-neutral: rgba(51, 51, 48, 1);
 }
 
-:root.dark {
+
+/* Dark mode disabled for MVP */
+/* :root.dark {
   --neutral-1: #232320; 
   --neutral-1-overlay: rgba(51, 51, 48, 1);
   --neutral-2: rgba(50, 51, 47, 1);
@@ -82,7 +90,7 @@
   --icon-gold: rgba(206, 168, 63, 1);
   --icon-green: rgba(110, 164, 101, 1);
   --icon-neutral: rgba(226, 227, 220, 1);
-}
+} */
 
 body {
   color: var(--type-1);

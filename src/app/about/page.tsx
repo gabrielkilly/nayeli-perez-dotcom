@@ -1,12 +1,15 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
-import { ExperienceContent, aboutContent, Skill, SkillsSectionContent } from "./content";
+import { ExperienceContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem } from "./content";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
-import { SvgPlusSign } from '@/components/Svg';
+import { SvgMinusSign, SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/ButtonLink';
 import YarndingsIcon from "@/components/YarndingsIcon";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { useState } from "react";
+import { E } from "vitest/dist/chunks/reporters.d.CqBhtcTq.js";
 
 
 export default function Home() {
@@ -17,15 +20,15 @@ export default function Home() {
             <main>
                 <Navbar currentPage={"About"}/>
                 <div className="flex flex-col items-center justify-center">
-                    <Section className="bg-neutral-2">
+                    <Section className="bg-neutral-1">
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">
                             <div className="flex flex-col items-center lg:items-start space-y-10 w-full md:w-1/2">
                                 <h1 className={`${fontFamiljenGrotesk.className} text-5xl lead ng-10`}>{content.welcomeSection.welcomeTitle}</h1>
-                                <p className={`${fontIbmPlexSerif.className} italic text-2xl text-center`}>{content.welcomeSection.welcomeText}
+                                <p className={`${fontIbmPlexSerif.className} italic text-2xl text-center`}><i>{content.welcomeSection.welcomeText}</i>
                                     <YarndingsIcon textColorClassName="text-icon-plum" icon={content.welcomeSection.welcomeIcon} className="px-2" /></p>
                                 <div className="flex flex-row space-x-10">
-                                    <ButtonLink {...content.welcomeSection.cta1} />
-                                    <ButtonLink {...content.welcomeSection.cta2} />
+                                    <ButtonLink {...content.welcomeSection.cta1} textColorClassName="text-type-2" />
+                                    <ButtonLink {...content.welcomeSection.cta2} textColorClassName="text-type-2" />
                                 </div>
                             </div>
                             <Image className="w-full md:w-1/2" width={1702} height={1152} src={content.welcomeSection.welcomeImagePath} alt="Pictures of Nayeli" priority />
@@ -53,9 +56,9 @@ function SkillsSection({content}: SkillsSectionProps) {
         throw Error("Skills content length is not equal to 4")
     }
     return (
-        <Section className="bg-neutral-1">
+        <Section className="bg-neutral-1 pb-36 pt-8">
             <div className="flex flex-col space-y-12"> 
-                <h2 className={`text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>
+                <h2 className={`text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed lg:w-1/2`}>
                     {title}
                 </h2>
                 <div className="flex flex-col w-full space-y-8">
@@ -100,29 +103,66 @@ interface ExperienceSectionProps {
 
 function ExperienceSection({content}: ExperienceSectionProps) {
     return (
-        <Section className="bg-gold-0">
+        <Section className="bg-olive-700">
             <div id="experience" className="flex flex-col space-y-10 w-full">
-                <h4 className={`${fontWorkSans.className} text-type-2 text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
+                <h4 className={`${fontWorkSans.className} text-type-alt text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
                 <ul className="flex flex-col space-y-2">
                     {
                         content.listItems.map((item) => {
                             return (
-                                <li key={item.company + item.role + item.timeRange} className="flex flex-col lg:flex-row w-full justify-between">
-                                    <div className="flex flex-row space-x-4 items-center">
-                                        <SvgPlusSign colorCssValue="var(--type-2)" width="16" height="16" />
-                                        <h5 className={`${fontWorkSans.className} text-base text-type-2`}>{item.role} at <span className="font-bold">{item.company}</span></h5>
-                                    </div>
-                                    <div className={`border-b-2 border-dashed border-border-medium flex-grow h-4 mx-4 hidden lg:block`} />
-                                    <p className={`${fontWorkSans.className} text-sm text-type-2 font-normal lg:font-medium ml-8 lg:ml-0`}>{item.timeRange}</p>
-                                    <div className={`border-b-2 border-dashed border-border-medium flex-grow h-3 my-2 lg:hidden`} />
-
-                                </li>
+                                <ExperienceItem item={item} key={item.company + item.role + item.timeRange} />
                             )
                         })
                     }
                 </ul>
-                <ButtonLink title={content.cta.title} url={content.cta.url} />
+                <ButtonLink title={content.cta.title} url={content.cta.url} textColorClassName="text-type-alt" />
             </div>
         </Section>
     )
 }   
+
+function ExperienceItem({item}: {item: ExperienceListItem}) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const svgIcon = (isExpanded) ? 
+        <SvgMinusSign colorCssValue="var(--type-alt)" width="16" height="4" className="py-4" /> 
+        : <SvgPlusSign colorCssValue="var(--type-alt)" width="16" height="16" />;
+
+    const bgColorClassName = (isExpanded) ? "bg-white/10" : "";
+    
+    return (
+        <li className={`flex flex-col cursor-pointer rounded p-3 gap-8 ${bgColorClassName}`} onClick={() => setIsExpanded(!isExpanded)}>
+            <div className="flex flex-col lg:flex-row w-full justify-between">
+                <div className="flex flex-row space-x-4 items-center">
+                    {svgIcon}
+                    <h5 className={`${fontWorkSans.className} text-base text-type-alt`}>{item.role} at <span className="font-bold">{item.company}</span></h5>
+                </div>
+                <div className={`border-b-2 border-dashed border-type-alt border-border-medium flex-grow h-4 mx-4 hidden lg:block`} />
+                <p className={`${fontWorkSans.className} text-sm text-type-alt font-normal lg:font-medium ml-8 lg:ml-0`}>{item.timeRange}</p>
+
+                {!isExpanded && (
+                    <div className={`border-b-2 border-dashed border-type-alt opacity-50 flex-grow h-3 my-2 lg:hidden`} />
+                )}
+            </div>
+            
+            {isExpanded && (
+                <div className="flex flex-col space-y-2 pb-4 px-8 gap-4">
+                    {item.additionalDetails.map((detail, index) => {
+                        const useBullets = detail.descriptions.length > 1;
+                        return (
+                            <div key={index} className="flex flex-col gap-2">
+                                <h6 className={`${fontWorkSans.className} text-type-alt text-xs font-semibold uppercase leading-none`}>{detail.label}</h6>
+                                <ul className={(useBullets) ? `list-disc pl-5` : `list-none pl-0`}>
+                                    {detail.descriptions.map((description, descIndex) => (
+                                        <li key={descIndex} className={`${fontWorkSans.className} text-type-alt text-base font-normal leading-normal`}>{description}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )
+                    })}
+                </div>
+            
+            )}
+        </li>
+    )
+}

@@ -33,7 +33,8 @@ interface NavbarProps {
 
 export default function Navbar(props: NavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isDarkModeSelectorDisplayed, updateDarkModeSelectorDisplayed] = useState(false)
+    //Dark mode disabled for mvp
+    // const [isDarkModeSelectorDisplayed, updateDarkModeSelectorDisplayed] = useState(false)
 
     function getMenuIcon() {
         if (isMenuOpen) {
@@ -45,12 +46,12 @@ export default function Navbar(props: NavbarProps) {
         }
     }
 
-    function openDarkModeSelector() {
-        if (isMenuOpen) {
-            setIsMenuOpen(false)
-        }
-        updateDarkModeSelectorDisplayed(true)
-    }
+    // function openDarkModeSelector() {
+    //     if (isMenuOpen) {
+    //         setIsMenuOpen(false)
+    //     }
+    //     updateDarkModeSelectorDisplayed(true)
+    // }
 
     useEffect(() => {
         if (isMenuOpen) {
@@ -66,11 +67,11 @@ export default function Navbar(props: NavbarProps) {
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
-                        <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" />
-                        <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} />
+                        {/* <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" /> */}
+                        {/* <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} /> */}
                     </div>
                     <Link href="/">
-                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl hidden md:inline`}><i>Nayeli A. Pérez T.</i></h2>
+                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl hidden sm:inline`}><i>Nayeli A. Pérez T.</i></h2>
                     </Link>
                     <div>
                         <ul className="flex items-center justify-between py-4 space-x-2">
