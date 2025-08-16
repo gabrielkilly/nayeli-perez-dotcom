@@ -3,8 +3,8 @@ import { ProjectContent } from "./ProjectContent";
 export const buildingBlocksRedesignContent: ProjectContent = {
     introContent: {
         imageSources: [
-            "/key-record-page-redesign.png",
-            "/key-record-page-redesign.png"
+            "/projects/building-blocks-redesign/part-details-after.png",
+            "/projects/building-blocks-redesign/stock-details-after-narrow.png"
         ],
         title: "Project: Re-designing Gantri’s core building blocks, Parts and Stocks, for improved efficiency",
         description: "At Gantri, I lead design for our Manufacturing Execution System. Our MES is home-grown and built for 3D printing (additive) manufacturing. Jobs, parts and stocks (i) are the building blocks of Gantri's MES system.\n\nOver time, Part and Stock details pages had become exceedingly dense. In early 2023, I led a redesign of the Stocks and Parts details pages.",
@@ -47,15 +47,15 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                         items: [
                             {
                                 description: "Workers must scroll through dense lists of tasks to verify that they are taking the right action on the right item.",
-                                imageSrc: "https://placehold.co/400x300/maroon/white"
+                                imageSrc: "/projects/building-blocks-redesign/case-study-1-problem-1.png"
                             },
                             {
                                 description: "Supervisors struggle to find discrepancy or delay reasons when reviewing pages.",
-                                imageSrc: "https://placehold.co/400x300/gray/white"
+                                imageSrc: "/projects/building-blocks-redesign/case-study-1-problem-2.png"
                             },
                             {
                                 description: "Supervisors must scroll through an abundance of detailed information to uncover which parts or stocks actually require attention or special action.",
-                                imageSrc: "https://placehold.co/400x300/green/white"
+                                imageSrc: "/projects/building-blocks-redesign/case-study-1-problem-3.png"
                             }
                         ],
                     }
@@ -81,16 +81,16 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     type: "beforeAfterCard",
                     content: {
                         title: "Stock Details Page",
-                        beforeImageSrc: "/key-record-page-redesign.png",
-                        afterImageSrc: "/projects/building-blocks-redesign/pagerImages/pager-3.png"
+                        beforeImageSrc: "/projects/building-blocks-redesign/stock-details-before.png",
+                        afterImageSrc: "/projects/building-blocks-redesign/stock-details-after-narrow.png"
                     }
                 },
                  {
                     type: "beforeAfterCard",
                     content: {
                         title: "Part Details Page",
-                        beforeImageSrc: "https://placehold.co/500x750/maroon/white",
-                        afterImageSrc: "https://placehold.co/500x750/gray/white"
+                        beforeImageSrc: "/projects/building-blocks-redesign/part-details-before.png",
+                        afterImageSrc: "/projects/building-blocks-redesign/part-details-after.png"
                     }
                 },
                 {
@@ -106,22 +106,22 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                             {
                                 title: "New Details Page Templates Introduced",
                                 description: "The new details page layout was integrated as a template for our Design System for all details pages.",
-                                imageSrc: "https://placehold.co/500x500/gray/white"
+                                imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-1.png"
                             },
                             {
                                 title: "New Actions to Account for Failure Outcomes",
                                 description: "Lower system debt via new, contextualized adjustable UX, UI & statuses (e.g., 'Mark as Discarded').",
-                                imageSrc: "https://placehold.co/500x500/gray/white"
+                                videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-2.mov"
                             },
                             {
                                 title: "New Tabular Format That Overviews All Parts",
                                 description: "Team members can now view statuses, attributes, and current tasks for all parts in stock. Any failure outcomes are easily visible.",
-                                imageSrc: "https://placehold.co/500x500/gray/white"
+                                videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-3.mov"
                             },
                             {
                                 title: "Re-focused Attention Alerts & Information",
                                 description: "Improved attention alerts to reduce time to identify issues. Critical alerts are now displayed at the top of the page for better visibility.",
-                                imageSrc: "https://placehold.co/500x500/gray/white"
+                                imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-4.png"
                             }
                         ]
                     }

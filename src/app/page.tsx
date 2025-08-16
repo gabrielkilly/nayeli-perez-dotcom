@@ -28,7 +28,7 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-center">
                     <Section className="bg-neutral-1">
                         <div className="flex flex-col space-y-20 w-full justify-between items-center py-14">
-                            <p className={`text-type-1 text-type-2 text-xl sm:text-3xl font-normal whitespace-pre-line ${fontFamiljenGrotesk.className} leading-9`}>
+                            <p className={`text-type-1 text-type-2 text-xl leading-9 sm:text-3xl font-normal whitespace-pre-line ${fontFamiljenGrotesk.className}`}>
                                 <span className={`text-4xl sm:text-5xl font-normal leading-10 ${fontIbmPlexSerif.className}`}><i>{content.nayeliName}</i></span>
                                 &nbsp;{ parse(content.mainDescription, options) } 
                                 <span className={`text-3xl sm:text-4xl text-icon-gold font-normal ml- ${fontYarndings12.className}`}> e</span>

@@ -55,7 +55,8 @@ export interface BeforeAfterCardContent {
 export interface BasicCardContent {
     title: string, 
     description: string, 
-    imageSrc: string
+    imageSrc?: string,
+    videoSrc?: string
 }
 
 export interface ResultContent {
