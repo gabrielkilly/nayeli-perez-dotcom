@@ -101,6 +101,7 @@ interface ExperienceSectionProps {
 }
 
 function ExperienceSection({content}: ExperienceSectionProps) {
+    const [expandedItem, setExpandedItem] = useState<ExperienceListItem | null>(null);
     return (
         <Section className="bg-olive-700">
             <div id="experience" className="flex flex-col space-y-10 w-full">
@@ -109,7 +110,7 @@ function ExperienceSection({content}: ExperienceSectionProps) {
                     {
                         content.listItems.map((item) => {
                             return (
-                                <ExperienceItem item={item} key={item.company + item.role + item.timeRange} />
+                                <ExperienceItem item={item} isExpanded={expandedItem == item} setIsExpanded={setExpandedItem} key={item.company + item.role + item.timeRange} />
                             )
                         })
                     }
@@ -120,8 +121,7 @@ function ExperienceSection({content}: ExperienceSectionProps) {
     )
 }   
 
-function ExperienceItem({item}: {item: ExperienceListItem}) {
-    const [isExpanded, setIsExpanded] = useState(false);
+function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceListItem, isExpanded: boolean, setIsExpanded: (value: ExperienceListItem | null) => void}) {
 
     const svgIcon = (isExpanded) ? 
         <SvgMinusSign colorCssValue="var(--type-alt)" width="16" height="4" className="py-4" /> 
@@ -130,7 +130,7 @@ function ExperienceItem({item}: {item: ExperienceListItem}) {
     const bgColorClassName = (isExpanded) ? "bg-white/10" : "";
     
     return (
-        <li className={`flex flex-col cursor-pointer rounded p-3 gap-8 ${bgColorClassName}`} onClick={() => setIsExpanded(!isExpanded)}>
+        <li className={`flex flex-col cursor-pointer rounded p-3 gap-8 ${bgColorClassName}`} onClick={() => setIsExpanded(isExpanded ? null : item)}>
             <div className="flex flex-col lg:flex-row w-full justify-between">
                 <div className="flex flex-row space-x-4 items-center">
                     {svgIcon}
