@@ -2,9 +2,8 @@
 
 import { fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
 import { globalClassNames } from "./StyleConstants";
-import { SvgDisplayModeIcon, SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgMoonIcon, SvgPin, SvgVerticalLine } from "./Svg";
+import { SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgPin } from "./Svg";
 import { useEffect, useRef, useState } from "react";
-import { useTheme } from "next-themes";
 import Section from "./Section";
 import Link from "next/link";
 import Image from "next/image";
@@ -166,95 +165,95 @@ function Menu({closeMenu}: MenuProps) {
     );
 }
 
-interface DarkLightModeSelectorProps {
-    selectorDisplayed: boolean,
-    openSelector: () => void, 
-    closeSelector: () => void
-}
+// interface DarkLightModeSelectorProps {
+//     selectorDisplayed: boolean,
+//     openSelector: () => void, 
+//     closeSelector: () => void
+// }
 
-function DarkLightModeSelector({selectorDisplayed, openSelector, closeSelector}: DarkLightModeSelectorProps) {
-    const {resolvedTheme, setTheme} = useTheme()
-    const [isLoading, setIsLoading] = useState(true)
+// function DarkLightModeSelector({selectorDisplayed, openSelector, closeSelector}: DarkLightModeSelectorProps) {
+//     const {resolvedTheme, setTheme} = useTheme()
+//     const [isLoading, setIsLoading] = useState(true)
 
-    const selectorRef = useRef<HTMLDivElement>(null)
+//     const selectorRef = useRef<HTMLDivElement>(null)
 
-    function getIcon(theme: string | undefined) {
-        if (theme == "light" || undefined) {
-            return <SvgDisplayModeIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
-        } else {
-            return <SvgMoonIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
-        }
-    }
+//     function getIcon(theme: string | undefined) {
+//         if (theme == "light" || undefined) {
+//             return <SvgDisplayModeIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
+//         } else {
+//             return <SvgMoonIcon colorCssValue="var(--icon-primary)" width="24" height="24"/> 
+//         }
+//     }
 
-    function getSelectedClassName(theme: string): string {
-        if (resolvedTheme == theme) {
-            return "bg-neutral-4"
-        } else {
-            return ""
-        }
-    }
+//     function getSelectedClassName(theme: string): string {
+//         if (resolvedTheme == theme) {
+//             return "bg-neutral-4"
+//         } else {
+//             return ""
+//         }
+//     }
 
-    function hideSelectorIfNotFocused(elementReceivingFocus: (EventTarget & Element) | null) {
-        if (!selectorRef.current?.contains(elementReceivingFocus)) {
-            closeSelector()
-        }
-    }
+//     function hideSelectorIfNotFocused(elementReceivingFocus: (EventTarget & Element) | null) {
+//         if (!selectorRef.current?.contains(elementReceivingFocus)) {
+//             closeSelector()
+//         }
+//     }
 
-    useEffect(() => {
-        if (selectorRef.current && selectorDisplayed) {
-            selectorRef.current.querySelector("button")?.focus()
-        }
-    }, [selectorDisplayed])
+//     useEffect(() => {
+//         if (selectorRef.current && selectorDisplayed) {
+//             selectorRef.current.querySelector("button")?.focus()
+//         }
+//     }, [selectorDisplayed])
 
-    useEffect(() => {
-        setIsLoading(false)
-    }, [])
+//     useEffect(() => {
+//         setIsLoading(false)
+//     }, [])
 
-    if (selectorDisplayed) {
-        return (
-            <div className="relative" >
-                <button 
-                    className={`rounded-2xl border p-2 invisible`}
-                >
-                    { getIcon(resolvedTheme) }
-                </button>
-                <div 
-                    className={`flex flex-col border rounded-2xl px-1 py-2 absolute -top-1 bg-neutral-1 border-border-medium space-y-1 shadow`} 
-                    ref={selectorRef} 
-                    >
+//     if (selectorDisplayed) {
+//         return (
+//             <div className="relative" >
+//                 <button 
+//                     className={`rounded-2xl border p-2 invisible`}
+//                 >
+//                     { getIcon(resolvedTheme) }
+//                 </button>
+//                 <div 
+//                     className={`flex flex-col border rounded-2xl px-1 py-2 absolute -top-1 bg-neutral-1 border-border-medium space-y-1 shadow`} 
+//                     ref={selectorRef} 
+//                     >
 
-                    {
-                        ["light", "dark"].map(
-                            theme =>
-                                <button 
-                                    key={theme}
-                                    onClick={
-                                        () => {
-                                            setTheme(theme)
-                                            closeSelector()
-                                        }
-                                    }
-                                    onBlur={(focusEvent) => hideSelectorIfNotFocused(focusEvent.relatedTarget)}
-                                    className={`rounded-2xl p-2 border border-neutral-1 hover:border-border-medium hover:shadow ${getSelectedClassName(theme)}`}>
-                                    { getIcon(theme) }
-                                </button>
+//                     {
+//                         ["light", "dark"].map(
+//                             theme =>
+//                                 <button 
+//                                     key={theme}
+//                                     onClick={
+//                                         () => {
+//                                             setTheme(theme)
+//                                             closeSelector()
+//                                         }
+//                                     }
+//                                     onBlur={(focusEvent) => hideSelectorIfNotFocused(focusEvent.relatedTarget)}
+//                                     className={`rounded-2xl p-2 border border-neutral-1 hover:border-border-medium hover:shadow ${getSelectedClassName(theme)}`}>
+//                                     { getIcon(theme) }
+//                                 </button>
                             
-                        )
-                    }
-                </div>
-            </div>
-        )
+//                         )
+//                     }
+//                 </div>
+//             </div>
+//         )
         
-    } else {
+//     } else {
 
-        return (
-            <button 
-                className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow ${isLoading ? "invisible" : ""}`}
-                onClick={() => openSelector()}
-                >
-                { getIcon(resolvedTheme) }
-            </button>
-        )
-    }
+//         return (
+//             <button 
+//                 className={`rounded-2xl border p-2 border-neutral-1 hover:border-border-medium hover:shadow ${isLoading ? "invisible" : ""}`}
+//                 onClick={() => openSelector()}
+//                 >
+//                 { getIcon(resolvedTheme) }
+//             </button>
+//         )
+//     }
     
-}
+// }

@@ -9,7 +9,6 @@ import YarndingsIcon from "@/components/YarndingsIcon";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useState } from "react";
-import { E } from "vitest/dist/chunks/reporters.d.CqBhtcTq.js";
 
 
 export default function Home() {

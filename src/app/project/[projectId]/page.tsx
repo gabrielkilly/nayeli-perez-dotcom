@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
 import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
-import { globalClassNames } from "@/components/StyleConstants";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
