@@ -130,7 +130,7 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
     const bgColorClassName = (isExpanded) ? "bg-white/10" : "";
     
     return (
-        <li className={`flex flex-col cursor-pointer rounded p-3 gap-8 ${bgColorClassName}`} onClick={() => setIsExpanded(isExpanded ? null : item)}>
+        <li className={`flex flex-col cursor-pointer rounded p-3 ${bgColorClassName}`} onClick={() => setIsExpanded(isExpanded ? null : item)}>
             <div className="flex flex-col lg:flex-row w-full justify-between">
                 <div className="flex flex-row space-x-4 items-center">
                     {svgIcon}
@@ -144,7 +144,7 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
                 )}
             </div>
             
-            {isExpanded && (
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="flex flex-col space-y-2 pb-4 px-8 gap-4">
                     {item.additionalDetails.map((detail, index) => {
                         const useBullets = detail.descriptions.length > 1;
@@ -160,8 +160,10 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
                         )
                     })}
                 </div>
-            
-            )}
+            </div>
+
+                        {/* <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}> */}
+
         </li>
     )
 }
