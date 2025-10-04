@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem } from "./content";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
@@ -12,12 +11,11 @@ import { useState } from "react";
 
 
 export default function Home() {
-    const content = aboutContent;    
+    const content = aboutContent;
 
     return (
         <>
             <main>
-                <Navbar currentPage={"About"}/>
                 <div className="flex flex-col items-center justify-center">
                     <Section className="bg-neutral-1">
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">

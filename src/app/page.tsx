@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { ExploreWorkContent, homeContent, SkillChipContent, WorkItemContent } from "./content";
 import Section from "@/components/Section";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from 'html-react-parser';
@@ -24,7 +23,6 @@ export default function Home() {
     return (
         <>
             <main>
-                <Navbar currentPage={"Work"}/>
                 <div className="flex flex-col items-center justify-center">
                     <Section className="bg-neutral-1">
                         <div className="flex flex-col space-y-20 w-full justify-between items-center py-14">

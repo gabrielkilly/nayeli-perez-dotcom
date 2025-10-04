@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import * as React from "react"
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
+import ClientLayout from "@/components/ClientLayout";
 
 export default function RootLayout({
   children,
@@ -19,7 +20,9 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
         >
-          {children}
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </ThemeProvider>
       </body>
     </html>
