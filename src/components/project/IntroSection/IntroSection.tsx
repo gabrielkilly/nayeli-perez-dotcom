@@ -17,8 +17,8 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
                 <div className={`w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex flex-col w-full">
                         <div className="flex">
-                            <Link className={`${fontWorkSans.className} inline text-base font-semibold text-type-2 uppercase`} href="/">
-                                <SvgBack className="inline" colorCssValue="var(--type-2)"/> Back to home
+                            <Link className={`${fontWorkSans.className} inline text-base font-semibold text-white uppercase`} href="/">
+                                <SvgBack className="inline" colorCssValue="white"/> Back to home
                             </Link>
                         </div>
                         <IntroImageBanner imageSources={introContent.imageSources} />

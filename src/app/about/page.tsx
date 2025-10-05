@@ -147,7 +147,7 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
                     {item.additionalDetails.map((detail, index) => {
                         const useBullets = detail.descriptions.length > 1;
                         return (
-                            <div key={index} className="flex flex-col gap-2">
+                            <div key={index} className="flex flex-col gap-2 mt-4">
                                 <h6 className={`${fontWorkSans.className} text-type-alt text-xs font-semibold uppercase leading-none`}>{detail.label}</h6>
                                 <ul className={(useBullets) ? `list-disc pl-5` : `list-none pl-0`}>
                                     {detail.descriptions.map((description, descIndex) => (

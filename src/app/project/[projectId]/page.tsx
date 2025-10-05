@@ -1,5 +1,4 @@
 
-import Navbar from "@/components/Navbar";
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
 import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
@@ -64,7 +63,6 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
         return (
             <>
                 <main>
-                    <Navbar />
                     <IntroSection introContent={projectContent.introContent} />
                     {
                         projectContent.sections.map((section, index) => (

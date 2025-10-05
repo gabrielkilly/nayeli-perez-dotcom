@@ -129,13 +129,13 @@ function Menu({closeMenu, isVisible}: MenuProps) {
         <div className="h-full w-screen bg-border-subtle absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
            <Image
                 ref={imageWrapper}
-                className={`absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply transition-opacity duration-300 ease-in-out ${isVisible ? 'opacity-90' : 'opacity-0'}`}
+                className={`absolute inset-0 w-full h-full object-cover opacity-90 mix- blend-multiply transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-90' : 'opacity-0'}`}
                 src={paperTextureImage}
                 alt="Paper texture background"
                 width={2000}
                 height={2000}
                 />
-           <Section className={`absolute bg-neutral-1 transition-all duration-300 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+           <Section className={`absolute bg-neutral-1 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
                         {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
