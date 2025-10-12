@@ -1,13 +1,13 @@
 
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
 import { fontFamiljenGrotesk, fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
-import BasicCard from "@/components/project/BasicCard/BasicCard";
+import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
 import Footer from "@/components/Footer";
 import { placeholderProject1 } from "./content/Temp1";
@@ -132,14 +132,9 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                         )
                     case "itemGrid":
                         return (
-                        <div key={itemIndex} className="flex flex-wrap gap-4">
-                            {(item.content as ItemGrid).items.map((cardContent, cardIndex) => (
-                                <BasicCard
-                                    key={cardIndex}
-                                    cssName="md:basis-1/2-gap-4"
-                                    cardContent={cardContent} />
-                            ))}
-                        </div>
+                            <ItemGrid
+                                key={itemIndex}
+                                gridContent={item.content as ItemGridContent} />
                         )
                     case "resultContent":
                         return (
