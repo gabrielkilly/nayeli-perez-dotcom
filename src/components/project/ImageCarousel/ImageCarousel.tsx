@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -17,6 +17,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
         startIndex: initialIndex,
         loop: true
     })
+    const [currentIndex, setCurrentIndex] = useState(initialIndex)
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -25,6 +26,30 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
     const scrollNext = useCallback(() => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
+
+    // Track current slide index
+    useEffect(() => {
+        if (!emblaApi) return
+
+        const onSelect = () => {
+            setCurrentIndex(emblaApi.selectedScrollSnap())
+        }
+
+        emblaApi.on('select', onSelect)
+        onSelect() // Set initial index
+
+        return () => {
+            emblaApi.off('select', onSelect)
+        }
+    }, [emblaApi])
+
+    // Update carousel position when initialIndex changes
+    useEffect(() => {
+        if (emblaApi && isOpen) {
+            emblaApi.scrollTo(initialIndex)
+            setCurrentIndex(initialIndex)
+        }
+    }, [emblaApi, initialIndex, isOpen])
 
     // Keyboard navigation
     useEffect(() => {
@@ -152,7 +177,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
                     {/* Image counter */}
                     {images.length > 1 && (
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
-                            {initialIndex + 1} / {images.length}
+                            {currentIndex + 1} / {images.length}
                         </div>
                     )}
                 </motion.div>

@@ -4,6 +4,7 @@ import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
 interface PresentationPagerProps {
     pagerContent: PresentationPagerContent
@@ -20,9 +21,14 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
  } = pagerContent;
 
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
   const handleItemClick = (index: number) => {
     setSelectedItemIndex(index);
+  };
+
+  const handleImageClick = () => {
+    setIsCarouselOpen(true);
   };
 
   
@@ -74,11 +80,19 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                         alt={`Image ${selectedItemIndex + 1}`}
                         width={500}
                         height={500}
-                        className="object-contain w-full h-full max-h-[400px]"
+                        className="object-contain w-full h-full max-h-[400px] cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={handleImageClick}
                     />
                 </motion.div>
             </AnimatePresence>
         </div>
+
+        <ImageCarousel
+            images={items.map(item => item.imageSrc)}
+            isOpen={isCarouselOpen}
+            onClose={() => setIsCarouselOpen(false)}
+            initialIndex={selectedItemIndex}
+        />
     </div>
   );
 }
