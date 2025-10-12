@@ -11,9 +11,11 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
     const { title, description, imageSrc, videoSrc } = cardContent;
 
     return (
-        <div className={`self-stretch px-6 py-8 bg-neutral-2 rounded-lg inline-flex flex-col justify-start gap-2 ${cssName}`}>
-            <h4 className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-normal`}>{title}</h4>
-            <p className={`text-type-1 text-sm font-normal ${fontWorkSans.className} leading-tight`}>{description}</p>
+        <div className={`self-stretch px-6 py-8 bg-neutral-2 rounded-lg inline-flex flex-col justify-between gap-2 ${cssName}`}>
+            <div className="flex flex-col gap-2 mb-4">
+                <h4 className={`text-type-2 text-base font-bold ${fontWorkSans.className} leading-normal`}>{title}</h4>
+                <p className={`text-type-1 text-sm font-normal ${fontWorkSans.className} leading-tight`}>{description}</p>
+            </div>
 
             {imageSrc && (
                 <Image

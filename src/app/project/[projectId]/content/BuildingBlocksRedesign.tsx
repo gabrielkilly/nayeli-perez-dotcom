@@ -110,23 +110,23 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     content: {
                         items: [
                             {
-                                title: "New Details Page Templates Introduced",
+                                title: "New Details Page template introduced",
                                 description: "The new details page layout was integrated as a template for our Design System for all details pages.",
                                 imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-1.png"
                             },
                             {
-                                title: "New Actions to Account for Failure Outcomes",
-                                description: "Lower system debt via new, contextualized adjustable UX, UI & statuses (e.g., 'Mark as Discarded').",
+                                title: "New actions to account for failure outcomes",
+                                description: "In the discovery research, we identified that parts had outcomes that could not be properly tracked in the system. We introduced actions to re-start parts (and log as failed or lost) and to cancel parts and also introduced statuses accordingly.",
                                 videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-2.mov"
                             },
                             {
-                                title: "New Tabular Format That Overviews All Parts",
+                                title: "New tabular format that overviews all parts",
                                 description: "Team members can now view statuses, attributes, and current tasks for all parts in stock. Any failure outcomes are easily visible.",
                                 videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-3.mov"
                             },
                             {
-                                title: "Re-focused Attention Alerts & Information",
-                                description: "Improved attention alerts to reduce time to identify issues. Critical alerts are now displayed at the top of the page for better visibility.",
+                                title: "Re-factored Attention alerts & information",
+                                description: "Through discovery research, I identified the best indicators of delays (both actively delayed or at risk to become delayed). The re-defined attention items are visible near the top of the fold for visibility.",
                                 imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-4.png"
                             }
                         ]
