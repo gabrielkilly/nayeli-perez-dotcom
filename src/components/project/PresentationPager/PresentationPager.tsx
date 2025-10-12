@@ -3,6 +3,7 @@ import { PresentationPagerContent } from "@/app/project/[projectId]/content/Proj
 import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface PresentationPagerProps {
     pagerContent: PresentationPagerContent
@@ -33,26 +34,50 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                 const buttonTextColorClassName = selectedItemIndex === index ? buttonTextColorSelectedCssClassName : buttonTextColorCssClassName
                 const bgClassName = selectedItemIndex === index ? buttonBgSelectedColorCssClassName : backgroundColorCssClassName
                 return (
-                    <div key={index} className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] outline outline-1 outline-border-subtle inline-flex flex-col justify-start items-center gap-2 ${buttonTextColorClassName} ${bgClassName}`} onClick={() => handleItemClick(index)}>
+                    <motion.div
+                        key={index}
+                        className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] outline outline-1 outline-border-subtle inline-flex flex-col justify-start items-center gap-2 ${buttonTextColorClassName} ${bgClassName}`}
+                        onClick={() => handleItemClick(index)}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.2 }}
+                    >
                         <p className={`self-stretch justify-startpl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>{item.description}</p>
-                        {
-                            selectedItemIndex === index ? (
-                                <div className={`w-24 h-4 left-0 top-[4px] absolute origin-top-left rotate-90 opacity-100 outline outline-[10px] outline-offset-[-5px] ${buttonSelectedOutlineColorCssClassName}`} />
-                            ) : null
-                        }
-                    </div>
+                        <AnimatePresence>
+                            {selectedItemIndex === index && (
+                                <motion.div
+                                    className={`w-24 h-4 left-0 top-[4px] absolute origin-top-left rotate-90 opacity-100 outline outline-[10px] outline-offset-[-5px] ${buttonSelectedOutlineColorCssClassName}`}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                />
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
                 )
             })}
         </div>
-        <div className="w-full flex-auto">
-            <Image  
-                unoptimized //TODO remove this when using real images
-                src={items[selectedItemIndex].imageSrc}
-                alt={`Image ${selectedItemIndex + 1}`}
-                width={500}
-                height={500}
-                className="object-cover w-full h-auto"
-                />
+        <div className="w-full flex-auto relative min-h-[400px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={selectedItemIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                >
+                    <Image
+                        unoptimized //TODO remove this when using real images
+                        src={items[selectedItemIndex].imageSrc}
+                        alt={`Image ${selectedItemIndex + 1}`}
+                        width={500}
+                        height={500}
+                        className="object-contain w-full h-full max-h-[400px]"
+                    />
+                </motion.div>
+            </AnimatePresence>
         </div>
     </div>
   );
