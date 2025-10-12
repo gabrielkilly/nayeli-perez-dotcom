@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,6 +19,11 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
         loop: true
     })
     const [currentIndex, setCurrentIndex] = useState(initialIndex)
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -82,7 +88,9 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
         }
     }, [isOpen])
 
-    return (
+    if (!mounted) return null
+
+    const modalContent = (
         <AnimatePresence>
             {isOpen && (
                 <motion.div
@@ -90,7 +98,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+                    className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
                     onClick={onClose}
                 >
                     {/* Close button */}
@@ -189,4 +197,6 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
             )}
         </AnimatePresence>
     )
+
+    return createPortal(modalContent, document.body)
 }
