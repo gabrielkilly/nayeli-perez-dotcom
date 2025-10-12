@@ -68,12 +68,17 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
     // Prevent body scroll when modal is open
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'unset'
-        }
-        return () => {
-            document.body.style.overflow = 'unset'
+            const scrollY = window.scrollY
+            document.body.style.position = 'fixed'
+            document.body.style.top = `-${scrollY}px`
+            document.body.style.width = '100%'
+
+            return () => {
+                document.body.style.position = ''
+                document.body.style.top = ''
+                document.body.style.width = ''
+                window.scrollTo(0, scrollY)
+            }
         }
     }, [isOpen])
 
@@ -81,7 +86,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    initial={{ opacity: 0 }}
+                    initial={false}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
