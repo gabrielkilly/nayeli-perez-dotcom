@@ -4,6 +4,7 @@ import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import { SvgUp, SvgDown } from "@/components/Svg";
 
 interface BasicCardProps {
     cardContent: BasicCardContent,
@@ -11,7 +12,7 @@ interface BasicCardProps {
 }
 
 export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
-    const { title, description, imageSrc, videoSrc } = cardContent;
+    const { title, description, imageSrc, videoSrc, textClassName, bgClassName, iconIdentifier } = cardContent;
     const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
     const handleImageClick = () => {
@@ -20,11 +21,29 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
         }
     };
 
+    const getIcon = (iconIdentifier?: string) => {
+        switch (iconIdentifier) {
+            case "up":
+                return <SvgUp colorCssValue={`var(--type-alt`} />;
+            case "down":
+                return <SvgDown colorCssValue="var(--type-alt)" />;
+            default:
+                return null;
+        }
+    };
+
     return (
-        <div className={`self-stretch px-6 py-8 bg-neutral-2 rounded-lg inline-flex flex-col justify-between gap-2 ${cssName}`}>
+        <div className={`${textClassName} self-stretch px-6 py-8 ${bgClassName} rounded-lg inline-flex flex-col justify-between gap-2 ${cssName}`}>
             <div className="flex flex-col gap-2 mb-4">
-                <h4 className={`text-type-2 text-base font-bold ${fontWorkSans.className} leading-normal`}>{title}</h4>
-                <p className={`text-type-1 text-sm font-normal ${fontWorkSans.className} leading-tight`}>{description}</p>
+                <div className="flex items-start gap-2.5">
+                    {iconIdentifier && (
+                        <div className="px-px pt-[5px] pb-px flex justify-start items-center gap-2">
+                            {getIcon(iconIdentifier)}
+                        </div>
+                    )}
+                    <h4 className={`flex-1 text-base font-bold ${fontWorkSans.className} leading-normal`}>{title}</h4>
+                </div>
+                <p className={`text-sm font-normal ${fontWorkSans.className} leading-tight whitespace-break-spaces ${iconIdentifier ? 'pl-7' : ''}`}>{description}</p>
             </div>
 
             {imageSrc && (

@@ -26,8 +26,13 @@ export interface ProjectSectionContent {
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "basicCard",
-    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | BasicCardContent
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid",
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid
+}
+
+export interface ItemGridContentItem {
+    type: "basicCard" | "itemGridImage",
+    content: BasicCardContent | ItemGridImage
 }
 
 export interface Title {
@@ -56,6 +61,10 @@ export interface PresentationPagerItem {
     imageSrc: string
 }
 
+export interface ItemGridImage {
+    src: string
+}
+
 export interface BeforeAfterCardContent {
     title: string, 
     beforeImageSrc: string, 
@@ -64,7 +73,10 @@ export interface BeforeAfterCardContent {
 
 export interface BasicCardContent {
     title: string, 
-    description: string, 
+    description: string,
+    bgClassName: string,
+    textClassName: string, 
+    iconIdentifier?: "up" | "down",
     imageSrc?: string,
     videoSrc?: string
 }
@@ -80,7 +92,7 @@ export interface ResultItem {
 }
 
 export interface ItemGrid {
-    items: BasicCardContent[]
+    items: ItemGridContentItem[]
 }
 
 export const PROJECT_ID_BUILDING_BLOCKS_REDESIGN = "building-blocks-redesign";

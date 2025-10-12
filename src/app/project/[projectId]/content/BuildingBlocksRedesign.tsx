@@ -110,30 +110,113 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     content: {
                         items: [
                             {
-                                title: "New Details Page template introduced",
-                                description: "The new details page layout was integrated as a template for our Design System for all details pages.",
-                                imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-1.png"
+                                type: "basicCard", 
+                                content: {
+                                    title: "New Details Page template introduced",
+                                    description: "The new details page layout was integrated as a template for our Design System for all details pages.",
+                                    imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-1.png",
+                                    bgClassName: "bg-neutral-2",
+                                    textClassName: "text-type-2"
+                                }
+                                
                             },
                             {
-                                title: "New actions to account for failure outcomes",
-                                description: "In the discovery research, we identified that parts had outcomes that could not be properly tracked in the system. We introduced actions to re-start parts (and log as failed or lost) and to cancel parts and also introduced statuses accordingly.",
-                                videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-2.mov"
+                                type: "basicCard", 
+                                content: {
+                                    title: "New actions to account for failure outcomes",
+                                    description: "In the discovery research, we identified that parts had outcomes that could not be properly tracked in the system. We introduced actions to re-start parts (and log as failed or lost) and to cancel parts and also introduced statuses accordingly.",
+                                    videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-2.mov",
+                                    bgClassName: "bg-neutral-2",
+                                    textClassName: "text-type-2"
+                                }
+                                
                             },
                             {
-                                title: "New tabular format that overviews all parts",
-                                description: "Team members can now view statuses, attributes, and current tasks for all parts in stock. Any failure outcomes are easily visible.",
-                                videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-3.mov"
+                                type: "basicCard", 
+                                content: {
+                                    title: "New tabular format that overviews all parts",
+                                    description: "Team members can now view statuses, attributes, and current tasks for all parts in stock. Any failure outcomes are easily visible.",
+                                    videoSrc: "/projects/building-blocks-redesign/case-study-1-key-features-3.mov",
+                                    bgClassName: "bg-neutral-2",
+                                    textClassName: "text-type-2"
+                                }
+                                
                             },
                             {
-                                title: "Re-factored Attention alerts & information",
-                                description: "Through discovery research, I identified the best indicators of delays (both actively delayed or at risk to become delayed). The re-defined attention items are visible near the top of the fold for visibility.",
-                                imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-4.png"
+                                type: "basicCard", 
+                                content: {
+                                    title: "Re-factored Attention alerts & information",
+                                    description: "Through discovery research, I identified the best indicators of delays (both actively delayed or at risk to become delayed). The re-defined attention items are visible near the top of the fold for visibility.",
+                                    imageSrc: "/projects/building-blocks-redesign/case-study-1-key-features-4.png",
+                                    bgClassName: "bg-neutral-2",
+                                    textClassName: "text-type-2"
+                                }
+                                
                             }
                         ]
                     }
                 },
             ]
         },
+        {
+            backgroundColorCssName: "bg-[#315B2B]",
+            textColorCssName: "text-type-alt",
+            contentItems: [
+                {
+                    type: "title",
+                    content: {
+                        value: "Outcome"
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "basicCard", 
+                                content: {
+                                    iconIdentifier: "down",
+                                    title: "Contributed to 58% stock cycle time reduction (Based off of items with 2 failures)",
+                                    description: "The new statuses and logic enabled the system to accurately reflect real factory outcomes (Discarded, Canceled, Failed items), which enabled team to mitigate delays more efficiently. This contributed to a reduction in cycle time for stocks that passed through failure workflows.\n\nMetrics: 2 Failure Stock Cycle time decreased from 49.6 in Q1 2023 to 16-21 days throughout the rest of 2023.",
+                                    bgClassName: "bg-[#487B40]",
+                                    textClassName: "text-type-alt"
+                                }
+                                
+                            },
+                            {
+                                type: "basicCard", 
+                                content: {
+                                    iconIdentifier: "down",
+                                    title: "Reduced ‘Time to Identify Issues’",
+                                    description: "Supervisors were able to identify issues or reasons for delayed parts or parts more quickly. A few months after the release of the feature, supervisors described being able to identify issues 3x faster than the previous version.",
+                                    bgClassName: "bg-[#487B40]",
+                                    textClassName: "text-type-alt"
+                                }
+                                
+                            },
+                            {
+                                type: "basicCard", 
+                                content: {
+                                    iconIdentifier: "up",
+                                    title: "Increased ease of use",
+                                    description: "Redesigned pages enabled team members to easily understand history and next required action for parts and stocks, enabling increased production efficiency. Team members described increased trust in system accuracy after the redesign.\n\nSince this re-design, these core system pages have stayed relatively unchanged.",
+                                    bgClassName: "bg-[#487B40]",
+                                    textClassName: "text-type-alt"
+                                }
+                                
+                            },
+                            {
+                                type: "itemGridImage", 
+                                content: {
+                                    src: "/projects/building-blocks-redesign/case-study-1-key-features-1.png"
+                                }
+                                
+                            }
+                        ]
+                    }
+                },
+            ]
+        },  
         {
             backgroundColorCssName: "bg-neutral-3",
             contentItems: [
