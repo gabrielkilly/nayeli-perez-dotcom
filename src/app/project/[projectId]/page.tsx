@@ -112,6 +112,12 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                                 {(item.content as Description).value}
                             </p>
                         )
+                    case "infoDescription":
+                        return (
+                            <p key={itemIndex} className={`justify-start text-xl font-normal ${fontWorkSans.className} leading-7 whitespace-break-spaces`}>
+                                {(item.content as Description).value}
+                            </p>
+                        )
                     case "presentationPager":
                         return (
                             <PresentationPager

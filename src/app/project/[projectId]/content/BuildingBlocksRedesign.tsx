@@ -78,9 +78,9 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     }
                 },
                 {
-                    type: "description",
+                    type: "infoDescription",
                     content: {
-                        value: "In addition to a new layout and information architecture, I introduced new statuses, actions, attributes, and object relationships (i.e. ‘many-to-1’) that better reflected real world workflows."
+                        value: "I redesigned the Stocks and Parts details pages from the ground up.\n\nIn addition to a new layout and information architecture, I introduced new statuses, actions, attributes, and object relationships (i.e. ‘many-to-1’) that better reflected real world workflows."
                     }
                 },
                 {

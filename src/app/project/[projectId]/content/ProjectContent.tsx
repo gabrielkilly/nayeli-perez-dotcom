@@ -26,8 +26,8 @@ export interface ProjectSectionContent {
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "basicCard",
-    content: Title | Description | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | BasicCardContent
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "basicCard",
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | BasicCardContent
 }
 
 export interface Title {
@@ -35,6 +35,10 @@ export interface Title {
 }
 
 export interface Description {
+    value: string
+}
+
+export interface InfoDescription {
     value: string
 }
 
