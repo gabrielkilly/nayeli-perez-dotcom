@@ -21,7 +21,8 @@ export interface HeaderLabel {
 
 export interface ProjectSectionContent {
     contentItems: ContentItem[],
-    backgroundColorCssName: string
+    backgroundColorCssName?: string,
+    textColorCssName?: string
 }
 
 export interface ContentItem {
@@ -38,7 +39,12 @@ export interface Description {
 }
 
 export interface PresentationPagerContent {
-    items: PresentationPagerItem[]
+    items: PresentationPagerItem[],
+    buttonBgColorCssClassName: string,
+    buttonBgSelectedColorCssClassName: string,
+    buttonSelectedOutlineColorCssClassName: string,
+    buttonTextColorCssClassName: string,
+    buttonTextColorSelectedCssClassName: string
 }
 
 export interface PresentationPagerItem {

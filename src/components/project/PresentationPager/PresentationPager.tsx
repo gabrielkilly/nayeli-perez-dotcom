@@ -9,27 +9,40 @@ interface PresentationPagerProps {
 }
 
 export default function PresentationPager({ pagerContent }: PresentationPagerProps) {
-  const { items } = pagerContent;
+  const { 
+    items, 
+    buttonBgColorCssClassName: backgroundColorCssClassName,
+    buttonBgSelectedColorCssClassName,
+    buttonSelectedOutlineColorCssClassName,
+    buttonTextColorCssClassName,
+    buttonTextColorSelectedCssClassName
+ } = pagerContent;
 
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
   const handleItemClick = (index: number) => {
     setSelectedItemIndex(index);
   };
+
+  
   
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-8 my-4">
+    <div className={`flex flex-col md:flex-row justify-between items-center gap-8 my-4`}>
         <div className="w-full flex-col">
-            {items.map((item, index) => (
-                <div key={index} className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] outline outline-1 outline-border-subtle inline-flex flex-col justify-start items-center gap-2 ${selectedItemIndex === index ? "bg-neutral-1-overlay" : "bg-neutral-2"}`} onClick={() => handleItemClick(index)}>
-                    <p className={`self-stretch justify-start text-type-1 pl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>{item.description}</p>
-                    {
-                        selectedItemIndex === index ? (
-                            <div className="w-24 h-4 left-0 top-[4px] absolute origin-top-left rotate-90 opacity-100 outline outline-[10px] outline-offset-[-5px] outline-khaki-4" />
-                        ) : null
-                    }
-                </div>
-            ))}
+            {items.map((item, index) => {
+                const buttonTextColorClassName = selectedItemIndex === index ? buttonTextColorSelectedCssClassName : buttonTextColorCssClassName
+                const bgClassName = selectedItemIndex === index ? buttonBgSelectedColorCssClassName : backgroundColorCssClassName
+                return (
+                    <div key={index} className={`pr-4 pl-3 py-3 my-1.5 relative overflow-hidden rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.15)] outline outline-1 outline-border-subtle inline-flex flex-col justify-start items-center gap-2 ${buttonTextColorClassName} ${bgClassName}`} onClick={() => handleItemClick(index)}>
+                        <p className={`self-stretch justify-startpl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>{item.description}</p>
+                        {
+                            selectedItemIndex === index ? (
+                                <div className={`w-24 h-4 left-0 top-[4px] absolute origin-top-left rotate-90 opacity-100 outline outline-[10px] outline-offset-[-5px] ${buttonSelectedOutlineColorCssClassName}`} />
+                            ) : null
+                        }
+                    </div>
+                )
+            })}
         </div>
         <div className="w-full flex-auto">
             <Image  

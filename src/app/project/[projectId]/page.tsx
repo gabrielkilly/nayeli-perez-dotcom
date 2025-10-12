@@ -96,19 +96,19 @@ interface ProjectSectionProps {
 
 function ProjectSection({sectionContent}: ProjectSectionProps) {
     return (
-        <Section className={`${sectionContent.backgroundColorCssName}`}>
+        <Section className={`${sectionContent.backgroundColorCssName} ${sectionContent.textColorCssName}`}>
             <div className="flex flex-col space-y-6 w-full">
             {sectionContent.contentItems.map((item, itemIndex) => {
                 switch (item.type) {
                     case "title":
                         return (
-                            <h2 key={itemIndex} className={`justify-start text-type-1 text-xs font-semibold ${fontWorkSans.className} uppercase leading-none`}>
+                            <h2 key={itemIndex} className={`justify-start text-xs font-semibold ${fontWorkSans.className} uppercase leading-none`}>
                                 {(item.content as Title).value}
                             </h2>
                         )
                     case "description":
                         return (
-                            <p key={itemIndex} className={`justify-start text-type-1 text-3xl font-normal ${fontFamiljenGrotesk.className} leading-10 whitespace-break-spaces`}>
+                            <p key={itemIndex} className={`justify-start text-3xl font-normal ${fontFamiljenGrotesk.className} leading-10 whitespace-break-spaces`}>
                                 {(item.content as Description).value}
                             </p>
                         )

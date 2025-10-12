@@ -27,7 +27,8 @@ export const buildingBlocksRedesignContent: ProjectContent = {
     },
     sections: [
         {
-            backgroundColorCssName: "bg-neutral-2",
+            backgroundColorCssName: "bg-[#8A3867]",
+            textColorCssName: "text-type-alt",
             contentItems: [
                 {
                     type: "title",
@@ -58,6 +59,11 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                                 imageSrc: "/projects/building-blocks-redesign/case-study-1-problem-3.png"
                             }
                         ],
+                        buttonBgColorCssClassName: "bg-[#AC5C8A]",
+                        buttonBgSelectedColorCssClassName: "bg-[#F3EFF1]",
+                        buttonTextColorCssClassName: "text-type-alt",
+                        buttonTextColorSelectedCssClassName: "text-type-1",
+                        buttonSelectedOutlineColorCssClassName: "outline-[#AC5C8A]"
                     }
                 },
             ],
