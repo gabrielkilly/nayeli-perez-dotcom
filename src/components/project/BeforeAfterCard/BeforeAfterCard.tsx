@@ -3,6 +3,7 @@ import { BeforeAfterCardContent } from "@/app/project/[projectId]/content/Projec
 import { fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BeforeAfterCardProps {
     cardContent: BeforeAfterCardContent
@@ -10,7 +11,7 @@ interface BeforeAfterCardProps {
 
 export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
     const { title, beforeImageSrc, afterImageSrc } = cardContent;
-    const [activeButton, setActiveButton] = useState<"before" | "after">("before");
+    const [activeButton, setActiveButton] = useState<"before" | "after">("after");
 
     const handleButtonClick = (button: "before" | "after") => {
         setActiveButton(button);
@@ -24,15 +25,25 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
         }
     }
 
-    const image = 
-        <Image
-            unoptimized
-            className="w-full object-contain object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-2"
-            width={800}
-            height={800}
-            alt={`Picture of ${activeButton}`}
-            src={activeButton === "before" ? beforeImageSrc : afterImageSrc}
-        />
+    const image =
+        <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+                key={activeButton}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1 }}
+            >
+                <Image
+                    unoptimized
+                    className="w-full object-contain object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-2"
+                    width={800}
+                    height={800}
+                    alt={`Picture of ${activeButton}`}
+                    src={activeButton === "before" ? beforeImageSrc : afterImageSrc}
+                />
+            </motion.div>
+        </AnimatePresence>
 
     return (
         <div className="flex flex-col gap-4 py-4 justify-center">
@@ -40,14 +51,14 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
             <div className="w-full px-4 pt-4 bg-neutral-4 rounded-lg flex flex-col justify-center items-center gap-8">
                 <div className="w-full flex flex-wrap gap-4">
                     <button 
-                    onClick={() => handleButtonClick("before")}
-                    className={`basis-1/2-gap-4 self-stretch p-4 ${getButtonClassName("before")} border border-1 border-offset-[-1px] border-border-standard inline-flex flex-col justify-center items-center gap-2`}>
-                        <p className={`text-center text-base font-bold ${fontWorkSans.className} leading-normal`}>Before</p>
-                    </button>
-                    <button 
                     onClick={() => handleButtonClick("after")}
                     className={`basis-1/2-gap-4 self-stretch p-4  ${getButtonClassName("after")} border border-1 border-offset-[-1px] border-border-standard inline-flex flex-col justify-center items-center gap-2`}>
                         <p className={`text-center text-base font-bold ${fontWorkSans.className} leading-normal`}>After</p>
+                    </button>
+                    <button 
+                    onClick={() => handleButtonClick("before")}
+                    className={`basis-1/2-gap-4 self-stretch p-4 ${getButtonClassName("before")} border border-1 border-offset-[-1px] border-border-standard inline-flex flex-col justify-center items-center gap-2`}>
+                        <p className={`text-center text-base font-bold ${fontWorkSans.className} leading-normal`}>Before</p>
                     </button>
                 </div>
 
