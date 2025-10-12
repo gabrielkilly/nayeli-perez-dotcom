@@ -1,6 +1,9 @@
+"use client"
 import { BasicCardContent } from "@/app/project/[projectId]/content/ProjectContent";
 import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
+import { useState } from "react";
+import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
 interface BasicCardProps {
     cardContent: BasicCardContent,
@@ -9,6 +12,13 @@ interface BasicCardProps {
 
 export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
     const { title, description, imageSrc, videoSrc } = cardContent;
+    const [isCarouselOpen, setIsCarouselOpen] = useState(false);
+
+    const handleImageClick = () => {
+        if (imageSrc) {
+            setIsCarouselOpen(true);
+        }
+    };
 
     return (
         <div className={`self-stretch px-6 py-8 bg-neutral-2 rounded-lg inline-flex flex-col justify-between gap-2 ${cssName}`}>
@@ -23,7 +33,8 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
                     alt="Image"
                     width={500}
                     height={500}
-                    className="object-cover w-full h-auto mt-3"
+                    className="object-cover w-full h-auto mt-3 cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={handleImageClick}
                 />
             )}
 
@@ -32,6 +43,16 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
                     <source src={videoSrc}/>
                     Your browser does not support the video tag.
                 </video>
+            )}
+
+            {imageSrc && (
+                <ImageCarousel
+                    images={[imageSrc]}
+                    isOpen={isCarouselOpen}
+                    onClose={() => setIsCarouselOpen(false)}
+                    initialIndex={0}
+                    hideControls={true}
+                />
             )}
         </div>
     )

@@ -92,6 +92,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
             isOpen={isCarouselOpen}
             onClose={() => setIsCarouselOpen(false)}
             initialIndex={selectedItemIndex}
+            hideControls={true}
         />
     </div>
   );

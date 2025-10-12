@@ -63,6 +63,7 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
                 isOpen={isCarouselOpen}
                 onClose={() => setIsCarouselOpen(false)}
                 initialIndex={selectedImageIndex}
+                hideControls
             />
         </div>
     )

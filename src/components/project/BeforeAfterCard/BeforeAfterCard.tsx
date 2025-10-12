@@ -81,6 +81,7 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
                 isOpen={isCarouselOpen}
                 onClose={() => setIsCarouselOpen(false)}
                 initialIndex={activeButton === "after" ? 0 : 1}
+                hideControls
             />
         </>
     )

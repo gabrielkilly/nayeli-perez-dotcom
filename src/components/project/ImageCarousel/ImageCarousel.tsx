@@ -11,9 +11,10 @@ interface ImageCarouselProps {
     isOpen: boolean
     onClose: () => void
     initialIndex?: number
+    hideControls?: boolean
 }
 
-export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }: ImageCarouselProps) {
+export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 0, hideControls = false }: ImageCarouselProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         startIndex: initialIndex,
         loop: true
@@ -123,7 +124,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
                     <div className="w-full h-full flex items-center justify-center px-4 md:px-16" onClick={(e) => e.stopPropagation()}>
                         <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center">
                             {/* Previous button */}
-                            {images.length > 1 && (
+                            {!hideControls && images.length > 1 && (
                                 <button
                                     onClick={scrollPrev}
                                     className="absolute left-0 z-10 text-white hover:text-gray-300 transition-colors p-2 bg-black/50 rounded-full"
@@ -166,7 +167,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
                             </div>
 
                             {/* Next button */}
-                            {images.length > 1 && (
+                            {!hideControls && images.length > 1 && (
                                 <button
                                     onClick={scrollNext}
                                     className="absolute right-0 z-10 text-white hover:text-gray-300 transition-colors p-2 bg-black/50 rounded-full"
@@ -188,7 +189,7 @@ export default function ImageCarousel({ images, isOpen, onClose, initialIndex = 
                     </div>
 
                     {/* Image counter */}
-                    {images.length > 1 && (
+                    {!hideControls && images.length > 1 && (
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
                             {currentIndex + 1} / {images.length}
                         </div>
