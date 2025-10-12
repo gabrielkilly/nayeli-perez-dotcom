@@ -92,6 +92,11 @@
   --icon-neutral: rgba(226, 227, 220, 1);
 } */
 
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
   color: var(--type-1);
   background: var(--neutral-1);

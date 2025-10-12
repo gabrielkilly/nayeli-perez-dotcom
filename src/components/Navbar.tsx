@@ -6,8 +6,6 @@ import { SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgPin } from "./Svg";
 import { useEffect, useRef, useState } from "react";
 import Section from "./Section";
 import Link from "next/link";
-import Image from "next/image";
-import paperTextureImage from "@/assets/paper-texture-grainy.png";
 
 interface Page {
     name: string,
@@ -33,6 +31,8 @@ interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isMenuVisible, setIsMenuVisible] = useState(false)
+    const [navbarHeight, setNavbarHeight] = useState(0)
+    const navRef = useRef<HTMLDivElement>(null)
     //Dark mode disabled for mvp
     // const [isDarkModeSelectorDisplayed, updateDarkModeSelectorDisplayed] = useState(false)
 
@@ -54,6 +54,12 @@ export default function Navbar(props: NavbarProps) {
     // }
 
     useEffect(() => {
+        if (navRef.current) {
+            setNavbarHeight(navRef.current.offsetHeight);
+        }
+    }, []);
+
+    useEffect(() => {
         if (isMenuOpen) {
             document.body.classList.add("stop-scrolling");
             // Slight delay to trigger transition
@@ -67,8 +73,8 @@ export default function Navbar(props: NavbarProps) {
     }, [isMenuOpen])
 
     return (
-        <nav>
-            <div className="bg-neutral-1 w-full flex justify-center px-8 border-b border-border-subtle">
+        <nav className="sticky top-0 z-40" ref={navRef}>
+            <div className="bg-neutral-1 w-full flex justify-center px-8 border-b border-border-subtle backdrop-blur-sm">
                 <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
@@ -95,7 +101,7 @@ export default function Navbar(props: NavbarProps) {
                 </div>
             </div>
             {
-                (isMenuOpen) ? <Menu closeMenu={() => setIsMenuOpen(false)} isVisible={isMenuVisible} /> : <></>
+                (isMenuOpen) ? <Menu closeMenu={() => setIsMenuOpen(false)} isVisible={isMenuVisible} navbarHeight={navbarHeight} /> : <></>
             }
         </nav>
     )
@@ -104,9 +110,10 @@ export default function Navbar(props: NavbarProps) {
 interface MenuProps {
     closeMenu: () => void
     isVisible: boolean
+    navbarHeight: number
 }
 
-function Menu({closeMenu, isVisible}: MenuProps) {
+function Menu({closeMenu, isVisible, navbarHeight}: MenuProps) {
     const menuRef = useRef<HTMLDivElement>(null);
     const imageWrapper = useRef<HTMLImageElement>(null);
     const [notification, setNotification] = useState<string | null>(null);
@@ -126,16 +133,8 @@ function Menu({closeMenu, isVisible}: MenuProps) {
     }
 
     return (
-        <div className="h-full w-screen bg-border-subtle absolute" ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
-           <Image
-                ref={imageWrapper}
-                className={`absolute inset-0 w-full h-full object-cover opacity-90 mix- blend-multiply transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-90' : 'opacity-0'}`}
-                src={paperTextureImage}
-                alt="Paper texture background"
-                width={2000}
-                height={2000}
-                />
-           <Section className={`absolute bg-neutral-1 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+        <div className={`h-full w-screen fixed left-0 transition-all duration-200 ease-in-out ${isVisible ? 'bg-black/50' : 'bg-transparent pointer-events-none'} z-30`} style={{top: `${navbarHeight}px`, height: `calc(100vh - ${navbarHeight}px)`}} ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
+           <Section className={`absolute top-0 bg-neutral-1 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
                         {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
