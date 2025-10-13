@@ -94,11 +94,10 @@ function WorkItem({workItem}: {workItem: WorkItemContent}) {
                     src={paperTextureImage}
                     alt="Paper texture background"
                     width={800}
-
                     height={800}
                 />
                 <Image
-                    className="w-4/5 object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-8"
+                    className="object-cover object-cemter rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border-opacity-60"
                     width={800}
                     height={800}
                     alt="Picture of project"
