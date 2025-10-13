@@ -13,6 +13,8 @@ import Footer from "@/components/Footer";
 import { placeholderProject1 } from "./content/Temp1";
 import { placeholderProject2 } from "./content/Temp2";
 import Link from "next/link";
+import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
+import { globalClassNames } from "@/components/StyleConstants";
 
 export interface ProjectProps {
     projectId: string
@@ -69,20 +71,26 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
                             <ProjectSection key={index} sectionContent={section} />
                         ))
                     }
-                    <Section className="bg-khaki-1">
-                        <div className="w-full flex flex-wrap gap-4">
-                            <Link 
-                                className="basis-1/2-gap-4 self-stretch p-4 outline outline-1 outline-offset-[-1px] outline-border-standard inline-flex flex-col justify-center items-center gap-2"
-                                href={`/project/${getPreviouseProjectId(projectId)}`}>
-                                <div className={`self-stretch text-center justify-start text-type-1 text-xl font-normal ${fontWorkSans.className} leading-7`}>&lt; Previous</div>
+                    <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} bg-neutral-1`}>
+                        <div className={`w-full py-10 ${globalClassNames.maxWidth} ${projectContent.navButtonsBorder && "border-t border-border-subtle"}`}>
+                            <div className="w-full flex justify-between items-center py-8">
+                            <Link
+                                className="inline-flex items-center gap-3 text-type-2 hover:text-[#9EA18A]"
+                                href={`/project/${getPreviouseProjectId(projectId)}`}
+                                aria-label="Previous project">
+                                <SvgArrowLeft colorCssValue="currentColor" width="24" height="24" />
+                                <div className={`text-xl font-semibold ${fontWorkSans.className} uppercase tracking-wide`}>PREVIOUS</div>
                             </Link>
-                            <Link 
-                                className="basis-1/2-gap-4 self-stretch p-4 outline outline-1 outline-offset-[-1px] outline-border-standard inline-flex flex-col justify-center items-center gap-2"
-                                href={`/project/${getNextProject(projectId)}`}>
-                                <div className={`self-stretch text-center justify-start text-type-1 text-xl font-normal ${fontWorkSans.className} leading-7`}>Next &gt;</div>
+                            <Link
+                                className="inline-flex items-center gap-3 hover:text-[#9EA18A]"
+                                href={`/project/${getNextProject(projectId)}`}
+                                aria-label="Next project">
+                                <div className={`text-xl font-semibold ${fontWorkSans.className} uppercase tracking-wide `}>NEXT</div>
+                                <SvgArrowRight colorCssValue="currentColor" width="24" height="24" />
                             </Link>
                         </div>
-                    </Section>
+                        </div>
+                    </div>
                     <Footer />
                 </main>
             </>

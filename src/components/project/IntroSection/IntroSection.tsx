@@ -84,10 +84,10 @@ function IntroImageBanner({ imageSources, onImageClick }: IntroImmageBannerProps
     const image2 = imageSources[1];
 
     return (
-        <div className={`w-full gap-2 flex justify-center overflow-hidden aspect-[300/125] md:aspect-[220/109] relative`}>
+        <div className={`w-full gap-2 flex justify-center overflow-hidden aspect-[4/3] md:aspect-[220/109] relative`}>
                 <Image
                     key={1}
-                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-8 cursor-pointer hover:opacity-90 transition-opacity"
+                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-6 md:top-8 cursor-pointer hover:opacity-90 transition-opacity"
                     width={800}
                     height={800}
                     alt="Picture of project"
@@ -96,7 +96,7 @@ function IntroImageBanner({ imageSources, onImageClick }: IntroImmageBannerProps
                 />
                 <Image
                     key={2}
-                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-8 md:block hidden cursor-pointer hover:opacity-90 transition-opacity"
+                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-6 md:top-8 md:block hidden cursor-pointer hover:opacity-90 transition-opacity"
                     width={800}
                     height={800}
                     alt="Picture of project"

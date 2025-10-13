@@ -1,6 +1,7 @@
 import { ProjectContent } from "./ProjectContent";
 
 export const buildingBlocksRedesignContent: ProjectContent = {
+    navButtonsBorder: true,
     introContent: {
         imageSources: [
             "/projects/building-blocks-redesign/part-details-after.png",
@@ -208,7 +209,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                             {
                                 type: "itemGridImage", 
                                 content: {
-                                    src: "/projects/building-blocks-redesign/case-study-1-key-features-1.png"
+                                    src: "/projects/building-blocks-redesign/outcome-image.png"
                                 }
                                 
                             }
@@ -218,12 +219,12 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             ]
         },  
         {
-            backgroundColorCssName: "bg-neutral-3",
+            backgroundColorCssName: "bg-neutral-1",
             contentItems: [
                 {
                     type: "title",
                     content: {
-                        value: "Outcome"
+                        value: "Process"
                     }
                 },
                 {
@@ -231,19 +232,73 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                     content: {
                         items: [
                             {
-                                iconIdentifier: "up",
-                                title: "Increased ease of use",
-                                description: "Improved pages enabled team members to easily understand history and next required action for parts and stocks, which increased production efficiency."
+                                title: "Understanding the problem and current system",
+                                description: [
+                                    {
+                                        listItemText: "Working session with Product Owner and Decision Maker (CEO) to align on known issues"
+                                    },
+                                    {
+                                        listItemText: "Created a thorough object map of FactoryOS objects, given there was no previous documentation on these items and their relationships"
+                                    }
+                                ]
                             },
                             {
-                                iconIdentifier: "down",
-                                title: "Reduced time to identify issues by 50%",
-                                description: "Supervisors were able to identify issues or reasons for delayed parts or stocks 50% faster."
+                                title: "Understanding Persona Pain Points and Needs",
+                                description: [
+                                    {
+                                        listItemText: "Interviews with Supervisors and team members",
+                                        nestedListItems: [
+                                            {
+                                                listItemText: "We had recently completed a Persona Project, and I used these findings to understand supervisor and worker needs"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        listItemText: "Used personas to build out full list of need statements"
+                                    },
+                                    {
+                                        listItemText: "Collaborated with Product Owner to define most impactful need statements"
+                                    },
+                                    {
+                                        listItemText: "Defined final set of needs and action on each object"
+                                    }
+                                ]
                             },
                             {
-                                iconIdentifier: "down",
-                                title: "Reduced production cycle time by 15%",
-                                description: "The new statuses and logic enabled the system to accurately reflect real-world failure outcomes (Discarded, Canceled, Failed tasks), which enabled teams to mitigate delays more efficiently."
+                                title: "Prototyping and Validation",
+                                description: [
+                                    {
+                                        listItemText: "Low-fidelity to high-fidelity explorations"
+                                    },
+                                    {
+                                        listItemText: "Usability testing with Production Supervisors and Management"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "Hand-off",
+                                description: [
+                                    {
+                                        listItemText: "Finalize High-Fi's & Create necessary documentation to hand-off"
+                                    },
+                                    {
+                                        listItemText: "Support Software throughout implementation"
+                                    },
+                                    {
+                                        listItemText: "Production team training"
+                                    }
+                                ]
+                            },
+                            {
+                                title: "Measuring Impact",
+                                description: [
+                                    {
+                                        listItemText: "Review Item Cycle Time data reports to understand impacts to Cycle time post-release."
+                                    },
+                                    {
+                                        listItemText: "Follow up conversations / time study with Production supervisors after feature release."
+                                    }
+                                ]
                             }
                         ]
                     }

@@ -11,11 +11,10 @@ interface PresentationPagerProps {
 }
 
 export default function PresentationPager({ pagerContent }: PresentationPagerProps) {
-  const { 
-    items, 
+  const {
+    items,
     buttonBgColorCssClassName: backgroundColorCssClassName,
     buttonBgSelectedColorCssClassName,
-    buttonSelectedOutlineColorCssClassName,
     buttonTextColorCssClassName,
     buttonTextColorSelectedCssClassName
  } = pagerContent;
@@ -52,7 +51,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                         <AnimatePresence>
                             {selectedItemIndex === index && (
                                 <motion.div
-                                    className={`w-24 h-4 left-0 top-[4px] absolute origin-top-left rotate-90 opacity-100 outline outline-[10px] outline-offset-[-5px] ${buttonSelectedOutlineColorCssClassName}`}
+                                    className="w-1.5 h-full left-0 top-0 absolute bg-[#AC5C8A]"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
@@ -64,7 +63,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                 )
             })}
         </div>
-        <div className="w-full flex-auto relative min-h-[400px] flex items-center justify-center">
+        <div className="w-full flex-auto relative min-h-[250px] md:min-h-[400px] flex items-center justify-center">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={selectedItemIndex}
@@ -80,7 +79,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                         alt={`Image ${selectedItemIndex + 1}`}
                         width={500}
                         height={500}
-                        className="object-contain w-full h-full max-h-[400px] cursor-pointer hover:opacity-90 transition-opacity"
+                        className="object-contain w-full h-full max-h-[250px] md:max-h-[400px] cursor-pointer hover:opacity-90 transition-opacity"
                         onClick={handleImageClick}
                     />
                 </motion.div>

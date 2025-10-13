@@ -145,3 +145,22 @@ export function SvgSkillChipIcon(svgProps: SvgProps) {
         </svg>
     )
 }
+
+export function SvgArrowLeft(svgProps: SvgProps) {
+    return (
+        <svg className={svgProps.className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z" fill={svgProps.colorCssValue}/>
+            <path d="M7.8252 11L13.4248 5.40039L12 4L4 12L12 20L13.4248 18.5996L7.8252 13H20V11H7.8252ZM20.2002 13.2002H8.30859L13.709 18.6016L13.5654 18.7422L12.1406 20.1426L11.999 20.2812L11.8584 20.1416L3.7168 12L11.8584 3.8584L11.999 3.71875L12.1406 3.85742L13.5654 5.25781L13.709 5.39844L8.30859 10.7998H20.2002V13.2002Z" fill={svgProps.colorCssValue}/>
+        </svg>
+    )
+}
+
+export function SvgArrowRight(svgProps: SvgProps) {
+    return (
+        <svg className={svgProps.className} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.175 13H4V11H16.175L10.575 5.4L12 4L20 12L12 20L10.575 18.6L16.175 13Z" fill={svgProps.colorCssValue}/>
+            <path d="M12.1426 3.8584L20.2842 12L12.1426 20.1416L12.002 20.2812L11.8604 20.1426L10.4355 18.7422L10.292 18.6016L15.6924 13.2002H3.80078V10.7998H15.6924L10.292 5.39844L10.4355 5.25781L11.8604 3.85742L12.002 3.71875L12.1426 3.8584ZM4.00098 13H16.1758L10.5762 18.5996L12.001 20L20.001 12L12.001 4L10.5762 5.40039L16.1758 11H4.00098V13Z" fill={svgProps.colorCssValue}/>
+        </svg>
+    )
+}
+

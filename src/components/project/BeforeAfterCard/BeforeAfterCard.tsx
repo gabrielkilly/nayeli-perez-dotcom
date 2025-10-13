@@ -55,22 +55,22 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
     return (
         <>
             <div className="flex flex-col gap-4 py-4 justify-center">
-                <h3 className={`text-type-2 text-2xl font-normal ${fontIbmPlexSerif.className} leading-loose`}><i>{title}</i></h3>
-                <div className="w-full px-4 pt-4 bg-neutral-4 rounded-lg flex flex-col justify-center items-center gap-8">
-                    <div className="w-full flex flex-wrap gap-4">
+                <h3 className={`text-type-2 text-xl md:text-2xl font-normal ${fontIbmPlexSerif.className} leading-loose`}><i>{title}</i></h3>
+                <div className="w-full px-3 md:px-4 pt-3 md:pt-4 pb-4 md:pb-6 bg-neutral-4 rounded-lg flex flex-col justify-center items-center gap-4 md:gap-8">
+                    <div className="w-full flex gap-3 md:gap-4">
                         <button
                         onClick={() => handleButtonClick("after")}
-                        className={`basis-1/2-gap-4 self-stretch p-4  ${getButtonClassName("after")} border border-1 border-offset-[-1px] border-border-standard inline-flex flex-col justify-center items-center gap-2`}>
-                            <p className={`text-center text-base font-bold ${fontWorkSans.className} leading-normal`}>After</p>
+                        className={`flex-1 p-3 md:p-4 rounded ${getButtonClassName("after")} border border-border-standard inline-flex flex-col justify-center items-center gap-2 transition-colors`}>
+                            <p className={`text-center text-sm md:text-base font-bold ${fontWorkSans.className} leading-normal`}>After</p>
                         </button>
                         <button
                         onClick={() => handleButtonClick("before")}
-                        className={`basis-1/2-gap-4 self-stretch p-4 ${getButtonClassName("before")} border border-1 border-offset-[-1px] border-border-standard inline-flex flex-col justify-center items-center gap-2`}>
-                            <p className={`text-center text-base font-bold ${fontWorkSans.className} leading-normal`}>Before</p>
+                        className={`flex-1 p-3 md:p-4 rounded ${getButtonClassName("before")} border border-border-standard inline-flex flex-col justify-center items-center gap-2 transition-colors`}>
+                            <p className={`text-center text-sm md:text-base font-bold ${fontWorkSans.className} leading-normal`}>Before</p>
                         </button>
                     </div>
 
-                    <div className={`w-4/5 gap-2 overflow-hidden aspect-[200/125] md:aspect-[80/109] relative`}>
+                    <div className={`w-full md:w-4/5 gap-2 overflow-hidden aspect-[4/3] md:aspect-[80/109] relative`}>
                         {image}
                     </div>
                 </div>

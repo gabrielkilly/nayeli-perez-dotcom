@@ -21,13 +21,13 @@ export default function ItemGrid({ gridContent }: ItemGridProps) {
                         )
                     case "itemGridImage":
                         return (
-                            <div key={itemIndex} className="md:basis-1/2-gap-4">
+                            <div key={itemIndex} className="md:basis-1/2-gap-4 h-full">
                                 <Image
                                     src={(item.content as ItemGridImage).src}
                                     alt="Image"
                                     width={500}
                                     height={500}
-                                    className="object-cover w-full h-auto rounded-lg"
+                                    className="object-cover w-full h-full rounded-lg"
                                 />
                             </div>
                         )

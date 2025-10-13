@@ -1,6 +1,7 @@
 export interface ProjectContent {
     introContent: IntroContent,
-    sections: ProjectSectionContent[]
+    sections: ProjectSectionContent[],
+    navButtonsBorder?: boolean
 }
 
 export interface IntroContent {
@@ -86,9 +87,13 @@ export interface ResultContent {
 }
 
 export interface ResultItem {
-    iconIdentifier: "up" | "down", 
-    title: string, 
-    description: string
+    title: string,
+    description: ListItem[] | string
+}
+
+export interface ListItem {
+    listItemText?: string
+    nestedListItems?: ListItem[]
 }
 
 export interface ItemGrid {
