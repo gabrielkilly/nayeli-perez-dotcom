@@ -1,6 +1,6 @@
 
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
@@ -149,6 +149,10 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                             <ResultListItems
                                 key={itemIndex}
                                 resultContent={item.content as ResultContent} />
+                        )
+                    case "spacer":
+                        return (
+                            <div className={(item.content as Spacer).marginClassName} />
                         )
                     default:
                         return null;

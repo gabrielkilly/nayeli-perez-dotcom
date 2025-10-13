@@ -28,8 +28,12 @@ export interface ProjectSectionContent {
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid",
-    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer"
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer
+}
+
+export interface Spacer {
+    marginClassName: string
 }
 
 export interface ItemGridContentItem {

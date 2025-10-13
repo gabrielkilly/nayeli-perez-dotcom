@@ -25,5 +25,78 @@ export const gantriMadeProject: ProjectContent = {
             ]
         }
     },
-    sections: []
+    sections: [
+        {
+            backgroundColorCssName: "bg-[#697632]",
+            textColorCssName: "text-type-alt",
+            contentItems: [
+                {
+                    type: "title",
+                    content: {
+                        value: "Problem" 
+                    }
+                },
+                {
+                    type: "description",
+                    content: {
+                        value: "Gantri’s vision is to empower brands of all sizes to efficiently bring their lighting products to market using sustainable 3D-printing based manufacturing.  However, previously, Gantri had no structured, repeatable way to manufacture custom designs for B2B designers and brands."
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        marginClassName: "mt-6"
+                    }
+                },
+                {
+                    type: "title",
+                    content: {
+                        value: "opportunity & objective" 
+                    }
+                },
+                {
+                    type: "description",
+                    content: {
+                        value: "In 2025, Gantri’s primary strategic initiative has been defining a Manufacturing-as-a-Service platform MVP, and then building and launching this initial offering. The purpose of the platform is to increase the scalability of our previously manual, resource-intensive light development model."
+                    }
+                },
+            ]
+        },
+        {
+            backgroundColorCssName: "#FFFFFF",
+            textColorCssName: "text-type-1",
+            contentItems: [
+                {
+                    type: "title",
+                    content: {
+                        value: "My Role" 
+                    }
+                },
+                {
+                    type: "infoDescription",
+                    content: {
+                        value: "This year, I led the 0 → 1 design and feature definition for Gantri Made, a new platform built to connect external designers with our digital factory. The work included designing the platform experience and implementing key integrations with our internal MES." 
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        marginClassName: "mt-6"
+                    }
+                },
+                {
+                    type: "title",
+                    content: {
+                        value: "The solution - Made Platform" 
+                    }
+                },
+                {
+                    type: "infoDescription",
+                    content: {
+                        value: "A manufacturing platform where brands can onboard and learn our manufacturing processes and system, get high-level costing estimates, and manage their products, once in development. Brands can view past orders, invoices, and manage their payment method." 
+                    }
+                },
+            ]
+        }
+    ]
 }
