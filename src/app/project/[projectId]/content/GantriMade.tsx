@@ -137,6 +137,57 @@ export const gantriMadeProject: ProjectContent = {
                 }
 
             ]
-        }
+        },
+        {
+            backgroundColorCssName: "bg-neutral-1",
+            textColorCssName: "text-type-2",
+            contentItems: [
+                {
+                    type: "title",
+                    content: {
+                        value: "Key Contributions" 
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "basicCard",
+                                content: {
+                                    bgClassName: "bg-neutral-3",
+                                    textClassName: "text-type-1",
+                                    title: "User Journey Mapping Sessions",
+                                    description: "I led User Journey mapping sessions earlier in the project planning that enabled all stakeholders and SMEs to bring together knowledge around our Personas.\n\nThese mapping session were key in arriving at an early feature set.",
+                                    imageSrc: "/projects/gantri-made/case-study-2-contributions-1.png"
+                                }
+                            },
+                            {
+                                type: "basicCard",
+                                content: {
+                                    bgClassName: "bg-neutral-3",
+                                    textClassName: "text-type-1",
+                                    title: "Service Design Prototype: Early low-fi prototype of full flow to surface feedback from key decision makers",
+                                    description: "I proposed and executed an early prototype in the form of a full user flow of the MVP solution in order to surface possible complexity and gather stakeholder feedback as early as possible. ",
+                                    imageSrc: "/projects/gantri-made/case-study-2-contributions-2.png"
+                                }
+                            },
+                            {
+                                type: "basicCard",
+                                content: {
+                                    bgClassName: "bg-neutral-3",
+                                    textClassName: "text-type-1",
+                                    title: "Defining a subtle but impactful evolution to our Design System",
+                                    description: "When launching Gantri Made, we wanted to execute a look and feel that was aligned with the latest brand direction. However, there was not enough time for a complete design system update.\n\nI created a custom set of components and usage guidelines for the Made Portal that successfully aligned with the updated brand vision, but did not represent excessive dev work.",
+                                    imageSrc: "/projects/gantri-made/case-study-2-contributions-3.png",
+                                },
+                                fullWidth: true
+                            }
+                        ]
+                    }
+                }
+
+            ]
+        },
     ]
 }

@@ -38,7 +38,8 @@ export interface Spacer {
 
 export interface ItemGridContentItem {
     type: "basicCard" | "itemGridImage",
-    content: BasicCardContent | ItemGridImage
+    content: BasicCardContent | ItemGridImage,
+    fullWidth?: boolean
 }
 
 export interface Title {
