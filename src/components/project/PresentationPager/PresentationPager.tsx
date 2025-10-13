@@ -79,7 +79,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                         alt={`Image ${selectedItemIndex + 1}`}
                         width={500}
                         height={500}
-                        className="object-contain w-full h-full max-h-[250px] md:max-h-[400px] cursor-pointer hover:opacity-90 transition-opacity"
+                        className="object-contain w-full h-full max-h-[250px] md:max-h-[400px] cursor-pointer"
                         onClick={handleImageClick}
                     />
                 </motion.div>

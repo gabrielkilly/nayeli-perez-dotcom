@@ -114,8 +114,8 @@ function WorkItem({workItem}: {workItem: WorkItemContent}) {
                     className="w-16 h-4"
                     src={workItem.logoImgPath}
                     alt={`${workItem.title} logo`}
-                    width={64}
-                    height={64} />
+                    width={500}
+                    height={500} />
             )}
         </Link>
     )

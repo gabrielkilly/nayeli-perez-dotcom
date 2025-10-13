@@ -10,7 +10,7 @@ import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCar
 import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
 import Footer from "@/components/Footer";
-import { placeholderProject1 } from "./content/GantriMade";
+import { gantriMadeProject } from "./content/GantriMade";
 import { placeholderProject2 } from "./content/Temp2";
 import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
@@ -26,7 +26,7 @@ export interface ProjectProps {
 function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {
         case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
-        case PROJECT_GANTRI_MADE: return placeholderProject1;
+        case PROJECT_GANTRI_MADE: return gantriMadeProject;
         case PROJECT_FACTORY_OS: return placeholderProject2;
         default: return null;
     }

@@ -25,7 +25,7 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
 
     return (
         <div className="w-full flex flex-col">
-            <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} pt-16 bg-[#B18C24]`}>
+            <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} pt-16 ${introContent.bgClassName}`}>
                 <div className={`w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex flex-col w-full">
                         <div className="flex">
@@ -76,33 +76,32 @@ interface IntroImmageBannerProps {
 
 function IntroImageBanner({ imageSources, onImageClick }: IntroImmageBannerProps) {
 
-    if (imageSources.length != 2) {
-        return null;
-    }
-
     const image1 = imageSources[0];
     const image2 = imageSources[1];
 
     return (
         <div className={`w-full gap-2 flex justify-center overflow-hidden aspect-[4/3] md:aspect-[220/109] relative`}>
-                <Image
+                {image1 &&  <Image
                     key={1}
-                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-6 md:top-8 cursor-pointer hover:opacity-90 transition-opacity"
-                    width={800}
-                    height={800}
+                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] relative top-6 md:top-8 cursor-pointer"
+                    width={1600}
+                    height={1600}
                     alt="Picture of project"
                     src={image1}
                     onClick={() => onImageClick(0)}
                 />
-                <Image
+}
+                { image2 && 
+                    <Image
                     key={2}
-                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-6 md:top-8 md:block hidden cursor-pointer hover:opacity-90 transition-opacity"
-                    width={800}
-                    height={800}
+                    className="w-full object-cover object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] relative top-6 md:top-8 md:block hidden cursor-pointery"
+                    width={1600}
+                    height={1600}
                     alt="Picture of project"
                     src={image2}
                     onClick={() => onImageClick(1)}
                 />
+            }
         </div>
     )
 }

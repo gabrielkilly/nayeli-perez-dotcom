@@ -42,7 +42,7 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
             >
                 <Image
                     unoptimized
-                    className="w-full object-contain object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-2 cursor-pointer hover:opacity-90 transition-opacity"
+                    className="w-full object-contain object-top rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border border-border-medium border-opacity-60 relative top-4 md:top-2 cursor-pointer"
                     width={800}
                     height={800}
                     alt={`Picture of ${activeButton}`}

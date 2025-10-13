@@ -8,7 +8,8 @@ export interface IntroContent {
     imageSources: string[],
     title: string,
     description: string, 
-    details: HeaderLabelCardContent
+    details: HeaderLabelCardContent,
+    bgClassName: string
 }
 
 export interface HeaderLabelCardContent {
