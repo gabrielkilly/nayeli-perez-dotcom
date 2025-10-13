@@ -97,6 +97,46 @@ export const gantriMadeProject: ProjectContent = {
                     }
                 },
             ]
+        },
+        {
+            backgroundColorCssName: "bg-[#32332F]",
+            textColorCssName: "text-type-alt",
+            contentItems: [
+                {
+                    type: "title",
+                    content: {
+                        value: "Key Features" 
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "basicCard",
+                                content: {
+                                    bgClassName: "bg-[#41433D]",
+                                    textClassName: "text-type-alt",
+                                    title: "Self Quoting Tool",
+                                    description: "One of the biggest barriers we identified in research was cost uncertainty. Designers told us they wanted to know upfront whether their idea was financially viable, but internally, quotes required manual input from engineers.\n\nTo address this, we built a calculator that translated real production data into instant estimates. This calculation incorporates historical manufacturing costs, identified key drivers like category, part weight, painted surfaces, and sanding labor, and codified them into a formula.",
+                                    videoSrc: "/projects/gantri-made/case-study-2-key-features-1.mov"
+                                }
+                            },
+                            {
+                                type: "basicCard",
+                                content: {
+                                    bgClassName: "bg-[#41433D]",
+                                    textClassName: "text-type-alt",
+                                    title: "New ‘Quick Start Guide’",
+                                    description: "Prior to the development of the Made portal, the Design Engineering team at Gantri had limited resources for designer onboarding. \n\nWe invested in creating a more effective and approachable Quick Start Guide, knowing how crucial it was to properly convey our manufacturing process and constraints to designers working with us, in order to streamline their path to creating feasible designs.",
+                                    videoSrc: "/projects/gantri-made/case-study-2-key-features-2.mov"
+                                }
+                            }
+                        ]
+                    }
+                }
+
+            ]
         }
     ]
 }
