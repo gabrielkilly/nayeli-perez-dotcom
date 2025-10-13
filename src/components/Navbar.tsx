@@ -86,16 +86,16 @@ export default function Navbar(props: NavbarProps) {
                     </Link>
                     <div>
                         <ul className="flex items-center justify-between py-4 space-x-2">
-                            {   
+                            {
                                 pages.map(page => {
                                     const isCurrentPage = page.name == props.currentPage
                                     const activeCssStyle = (isCurrentPage) ? `bg-neutral-3 rounded` : ""
                                     return (
-                                        <li key={page.name}><a href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</a></li>
+                                        <li key={page.name}><Link href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</Link></li>
                                     )
                                 })
                             }
-                            
+
                         </ul>
                     </div>
                 </div>

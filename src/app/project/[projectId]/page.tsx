@@ -1,4 +1,3 @@
-
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
 import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
