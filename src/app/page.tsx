@@ -90,7 +90,7 @@ function WorkItem({workItem}: {workItem: WorkItemContent}) {
         <Link href={`/project/${workItem.projectId}`} className="flex flex-col w-full space-y-4 p-4 mt-6 w-full lg:w-1/2 hover:bg-olive-800 rounded-xl h-auto transition-colors duration-300 ease-in-out">
             <div className={`w-full flex justify-center rounded-[9.75px] overflow-hidden outline outline-border-subtle outline-opacity-30 aspect-[21/16] ${workItem.bgColorClassName} relative`}>
                 <Image
-                    className="absolute inset-0 w-full h-full object-cover opacity-96 mix-blend-multiply"
+                    className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply"
                     src={paperTextureImage}
                     alt="Paper texture background"
                     width={800}
@@ -107,7 +107,7 @@ function WorkItem({workItem}: {workItem: WorkItemContent}) {
             </div>
             <h3 className={`text-type-alt text-xl font-semibold ${fontWorkSans.className} leading-relaxed`}>{workItem.title}</h3>
             {workItem.description && (
-                <p className={`text-type-alt text-sm font-normal ${fontWorkSans.className} leading-tight`}>{workItem.description}</p>
+                <p className={`text-type-alt text-sm font-normal ${fontWorkSans.className} leading-tight whitespace-break-spaces`}>{workItem.description}</p>
             )}
             {workItem.logoImgPath && (
                 <Image

@@ -1,6 +1,6 @@
 
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_ID_TEMP_1, PROJECT_ID_TEMP_2, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
@@ -10,7 +10,7 @@ import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCar
 import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
 import Footer from "@/components/Footer";
-import { placeholderProject1 } from "./content/Temp1";
+import { placeholderProject1 } from "./content/GantriMade";
 import { placeholderProject2 } from "./content/Temp2";
 import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
@@ -26,8 +26,8 @@ export interface ProjectProps {
 function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {
         case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
-        case PROJECT_ID_TEMP_1: return placeholderProject1;
-        case PROJECT_ID_TEMP_2: return placeholderProject2;
+        case PROJECT_GANTRI_MADE: return placeholderProject1;
+        case PROJECT_FACTORY_OS: return placeholderProject2;
         default: return null;
     }
 

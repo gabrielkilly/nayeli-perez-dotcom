@@ -101,17 +101,18 @@ export interface ItemGrid {
 }
 
 export const PROJECT_ID_BUILDING_BLOCKS_REDESIGN = "building-blocks-redesign";
-export const PROJECT_ID_TEMP_1 = "temp1";
-export const PROJECT_ID_TEMP_2 = "temp2";
+export const PROJECT_GANTRI_MADE = "gantri-made";
+export const PROJECT_FACTORY_OS = "factory-os";
+export const PROJECT_CHARGIFY = "chargify"
 
 export const projectIndexMap = new Map<string, number>([
     [PROJECT_ID_BUILDING_BLOCKS_REDESIGN, 0],
-    [PROJECT_ID_TEMP_1, 1],
-    [PROJECT_ID_TEMP_2, 2]
+    [PROJECT_GANTRI_MADE, 1],
+    [PROJECT_FACTORY_OS, 2]
 ])
 
 export const indexProjectMap = new Map<number, string>([
     [0, PROJECT_ID_BUILDING_BLOCKS_REDESIGN],
-    [1, PROJECT_ID_TEMP_1],
-    [2, PROJECT_ID_TEMP_2]
+    [1, PROJECT_GANTRI_MADE],
+    [2, PROJECT_FACTORY_OS]
 ])
