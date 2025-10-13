@@ -47,14 +47,16 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
             </div>
 
             {imageSrc && (
-                <Image
-                    src={imageSrc}
-                    alt="Image"
-                    width={500}
-                    height={500}
-                    className="object-cover w-full h-auto mt-3 cursor-pointer hover:opacity-90 transition-opacity"
-                    onClick={handleImageClick}
-                />
+                <div className="w-full flex justify-center">
+                    <Image
+                        src={imageSrc}
+                        alt="Image"
+                        width={500}
+                        height={500}
+                        className="object-cover obect-center w-full h-auto mt-3 cursor-pointer hover:opacity-90 transition-opacity max-w-xl"
+                        onClick={handleImageClick}
+                    />
+                </div>
             )}
 
             {videoSrc && (

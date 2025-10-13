@@ -83,7 +83,8 @@ export interface BasicCardContent {
     description: string,
     bgClassName: string,
     textClassName: string, 
-    iconIdentifier?: "up" | "down",
+    footerNote?: string,
+    iconIdentifier?: "up" | "down" | "naycon",
     imageSrc?: string,
     videoSrc?: string
 }
