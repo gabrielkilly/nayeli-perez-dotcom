@@ -12,16 +12,16 @@ export default function ItemGrid({ gridContent }: ItemGridProps) {
             {gridContent.items.map((item, itemIndex) => {
 
                 switch (item.type) {
-                    case "basicCard": 
+                    case "basicCard":
                         return (
                             <BasicCard
                                 key={itemIndex}
-                                cssName="md:basis-1/2-gap-4"
+                                cssName="w-full md:basis-1/2-gap-4"
                                 cardContent={item.content as BasicCardContent} />
                         )
                     case "itemGridImage":
                         return (
-                            <div key={itemIndex} className="md:basis-1/2-gap-4 h-full">
+                            <div key={itemIndex} className="w-full md:basis-1/2-gap-4 self-stretch flex">
                                 <Image
                                     src={(item.content as ItemGridImage).src}
                                     alt="Image"
@@ -33,7 +33,7 @@ export default function ItemGrid({ gridContent }: ItemGridProps) {
                         )
 
                 }
-                
+
             })}
         </div>
     )
