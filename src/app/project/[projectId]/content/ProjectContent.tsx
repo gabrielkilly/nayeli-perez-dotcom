@@ -33,7 +33,7 @@ export interface ContentItem {
 }
 
 export interface Spacer {
-    marginClassName: string
+    paddingClassName: string
 }
 
 export interface ItemGridContentItem {

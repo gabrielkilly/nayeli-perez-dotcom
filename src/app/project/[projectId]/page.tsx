@@ -151,7 +151,7 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                         )
                     case "spacer":
                         return (
-                            <div className={(item.content as Spacer).marginClassName} />
+                            <div key={itemIndex} className={(item.content as Spacer).paddingClassName} />
                         )
                     default:
                         return null;

@@ -45,7 +45,7 @@ export const gantriMadeProject: ProjectContent = {
                 {
                     type: "spacer",
                     content: {
-                        marginClassName: "mt-6"
+                        paddingClassName: "pt-4"
                     }
                 },
                 {
@@ -81,7 +81,7 @@ export const gantriMadeProject: ProjectContent = {
                 {
                     type: "spacer",
                     content: {
-                        marginClassName: "mt-6"
+                        paddingClassName: "pt-8"
                     }
                 },
                 {
