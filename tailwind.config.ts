@@ -39,6 +39,7 @@ export default {
         "olive-700": "var(--olive-700)",
         "olive-800": "var(--olive-800)",
         "stone-700": "var(--stone-700)",
+        "stone-850": "var(--stone-850)",
         "type-1": "var(--type-1)",
         "type-2": "var(--type-2)",
         "type-3": "var(--type-3)",
