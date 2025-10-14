@@ -91,7 +91,7 @@ export default function Navbar(props: NavbarProps) {
                                     const isCurrentPage = page.name == props.currentPage
                                     const activeCssStyle = (isCurrentPage) ? `bg-neutral-3 rounded` : ""
                                     return (
-                                        <li key={page.name}><Link href={page.href} className={`text-type-2 ${fontWorkSans.className} px-4 py-2 ${activeCssStyle}`}>{page.name}</Link></li>
+                                        <li key={page.name}><Link href={page.href} className={`text-type-2 ${fontWorkSans.className} font-medium px-4 py-2 ${activeCssStyle}`}>{page.name}</Link></li>
                                     )
                                 })
                             }
