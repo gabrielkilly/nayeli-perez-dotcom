@@ -2,7 +2,7 @@ import { PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTO
 
 export interface HomeContent {
     nayeliName: string,
-    mainDescription: string,
+    introDescriptions: string[],
     skillTitle: string,
     skillChips: SkillChipContent[],
     exploreWorkContent: ExploreWorkContent
@@ -29,7 +29,11 @@ export interface WorkItemContent {
 
 export const homeContent: HomeContent = {
     nayeliName: "Nayeli A. Pérez T.",
-    mainDescription: `is an end-to-end product designer with <a href="/about#experience">8 years of experience</a> across product design, user research, and visual design.\n\nCurrently designing the Manufacturing Execution System at <a href="https://gantri.com">Gantri</a>, previously designing for SaaS subscription management at <a href="https://www.maxio.com/chargify">Chargify</a>.\n\nShe is most fulfilled when understanding & simplifying complexity and when uncovering & solving for real, human needs.`,
+    introDescriptions: [
+        "is an end-to-end product designer with <a href='/about#experience'>8 years of experience</a> across product design, user research, and visual design.",
+        "Currently designing the Manufacturing Execution System at <a href='https://gantri.com'>Gantri</a>, previously designing for SaaS subscription management at <a href='https://www.maxio.com/chargify'>Chargify</a>.",
+        //"She is most fulfilled when understanding & simplifying complexity and when uncovering & solving for real, human needs.",
+    ],
     skillTitle: "Expertise In",
     skillChips: [
         {

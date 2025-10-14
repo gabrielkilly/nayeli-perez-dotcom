@@ -1,4 +1,4 @@
-import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12 } from "next/font/google";
+import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12, Lora } from "next/font/google";
 
 
 export const fontIbmPlexSerif = IBM_Plex_Serif({
@@ -21,4 +21,11 @@ export const fontYarndings12 = Yarndings_12({
   variable: "--font-yarndings",
   weight: "400",
   subsets: ["symbols"],
-})
+});
+
+export const fontLora = Lora({
+  variable: "--font-lora",
+  subsets: ['latin'],
+  style: "italic",
+
+});
