@@ -4,7 +4,7 @@ import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
-import { SvgUp, SvgDown } from "@/components/Svg";
+import { SvgUp, SvgDown, SvgNaycon } from "@/components/Svg";
 
 interface BasicCardProps {
     cardContent: BasicCardContent,
@@ -12,7 +12,7 @@ interface BasicCardProps {
 }
 
 export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
-    const { title, description, imageSrc, videoSrc, textClassName, bgClassName, iconIdentifier } = cardContent;
+    const { title, description, imageSrc, videoSrc, textClassName, bgClassName, iconIdentifier, footerNote } = cardContent;
     const [isCarouselOpen, setIsCarouselOpen] = useState(false);
 
     const handleImageClick = () => {
@@ -27,6 +27,8 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
                 return <SvgUp colorCssValue={`var(--type-alt`} />;
             case "down":
                 return <SvgDown colorCssValue="var(--type-alt)" />;
+            case "naycon":
+                return <SvgNaycon colorCssValue="var(--type-alt)" />
             default:
                 return null;
         }
@@ -64,6 +66,17 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
                     <source src={videoSrc}/>
                     Your browser does not support the video tag.
                 </video>
+            )}
+
+            {footerNote && (
+                <div className="flex items-start gap-2.5">
+                    {iconIdentifier && (
+                        <div className="px-px pt-[5px] pb-px flex justify-start items-center gap-2">
+                            {getIcon(iconIdentifier)}
+                        </div>
+                    )}
+                    <h4 className={`flex-1 text-base font-bold ${fontWorkSans.className} leading-normal`}>{footerNote}</h4>
+                </div>
             )}
 
             {imageSrc && (

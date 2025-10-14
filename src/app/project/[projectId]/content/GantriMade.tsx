@@ -207,21 +207,18 @@ export const gantriMadeProject: ProjectContent = {
                             {
                                 type: "basicCard",
                                 content: {
-                                    bgClassName: "bg-[#41433D]",
+                                    iconIdentifier: "naycon",
+                                    bgClassName: "bg-[#697632]",
                                     textClassName: "text-type-alt",
-                                    title: "Self Quoting Tool",
-                                    description: "One of the biggest barriers we identified in research was cost uncertainty. Designers told us they wanted to know upfront whether their idea was financially viable, but internally, quotes required manual input from engineers.\n\nTo address this, we built a calculator that translated real production data into instant estimates. This calculation incorporates historical manufacturing costs, identified key drivers like category, part weight, painted surfaces, and sanding labor, and codified them into a formula.",
-                                    videoSrc: "/projects/gantri-made/case-study-2-key-features-1.mov"
+                                    title: "The project successfully launched our entry into the B2B manufacturing vertical. ",
+                                    description: "The launch of Gantri Made entailed a big effort across Sales, Product, and Design engineers, but the Made portal was the front door for brands. This is where they could view all resources, manage their products, see invoices, and make payments towards their development fees.\n\nCompleting the design and implementing at a high quality by launch day was crucial. I’m proud of the work done to ensure we met this deadline.",
+                                    footerNote: "The platform empowered designers to self-serve through critical decision points, reducing touchpoints  with Gantri engineers significantly."
                                 }
                             },
                             {
-                                type: "basicCard",
+                                type: "itemGridImage",
                                 content: {
-                                    bgClassName: "bg-[#41433D]",
-                                    textClassName: "text-type-alt",
-                                    title: "New ‘Quick Start Guide’",
-                                    description: "Prior to the development of the Made portal, the Design Engineering team at Gantri had limited resources for designer onboarding. \n\nWe invested in creating a more effective and approachable Quick Start Guide, knowing how crucial it was to properly convey our manufacturing process and constraints to designers working with us, in order to streamline their path to creating feasible designs.",
-                                    videoSrc: "/projects/gantri-made/case-study-2-key-features-2.mov"
+                                    src: "/projects/gantri-made/case-study-2-outcome.png"
                                 }
                             }
                         ]
