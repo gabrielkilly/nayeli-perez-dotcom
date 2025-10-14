@@ -28,8 +28,8 @@ export interface ProjectSectionContent {
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer"
-    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer" | "infoGalleryCard" | "simpleCarousel"
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer | InfoGalleryCard | SimpleCarouselContent
 }
 
 export interface Spacer {
@@ -69,7 +69,8 @@ export interface PresentationPagerItem {
 }
 
 export interface ItemGridImage {
-    src: string
+    src: string,
+    linkedString?: string
 }
 
 export interface BeforeAfterCardContent {
@@ -103,8 +104,26 @@ export interface ListItem {
     nestedListItems?: ListItem[]
 }
 
+export interface SimpleCarouselContent {
+    items: CarouselItem[]
+}   
+
+export interface CarouselItem {
+    imageSrc: string, 
+    description: string
+}
+
 export interface ItemGrid {
     items: ItemGridContentItem[]
+}
+
+export interface InfoGalleryCard {
+    items: InfoGalleryItem[]
+}
+
+export interface InfoGalleryItem {
+    title: string, 
+    imageSrc: string
 }
 
 export const PROJECT_ID_BUILDING_BLOCKS_REDESIGN = "building-blocks-redesign";

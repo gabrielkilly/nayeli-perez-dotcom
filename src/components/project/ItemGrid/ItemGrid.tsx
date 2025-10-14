@@ -1,7 +1,8 @@
 import { BasicCardContent, ItemGrid as ItemGridContent, ItemGridImage } from "@/app/project/[projectId]/content/ProjectContent";
 import BasicCard from "../BasicCard/BasicCard";
 import Image from "next/image";
-import { it } from "node:test";
+import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from "html-react-parser"
+import Link from "next/link";
 
 interface ItemGridProps {
     gridContent: ItemGridContent
@@ -20,18 +21,33 @@ export default function ItemGrid({ gridContent }: ItemGridProps) {
                                 cssName={`w-full ${sizeClassName}`}
                                 cardContent={item.content as BasicCardContent} />
                         )
-                    case "itemGridImage":
+                    case "itemGridImage": {
+                        const { src, linkedString} = item.content as ItemGridImage
+                        const options: HTMLReactParserOptions = {
+                            replace(domNode) {
+                                if (domNode instanceof Element && domNode.attribs && domNode.name === 'a') {
+                                    return <Link className="underline" href={domNode.attribs.href}>
+                                    {domToReact(domNode.children as DOMNode[], options)}
+                                    </Link>
+                                }
+                            },
+                        };
                         return (
-                            <div key={itemIndex} className={`w-full ${sizeClassName} self-stretch flex aspect-[21/16]`}>
+                            <div key={itemIndex} className={`w-full ${sizeClassName} self-stretch relative aspect-[21/16]`}>
                                 <Image
                                     width={600}
                                     height={600}
-                                    src={(item.content as ItemGridImage).src}
+                                    src={src}
                                     alt="Image"
                                     className="object-cover object-center w-full h-full aspect-[21/16] rounded-lg"
                                 />
+
+                                {linkedString &&
+                                    <p className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#B4CFB0] text-sm italic font-medium whitespace-nowrap">{parse(linkedString, options)}</p>
+                                }
                             </div>
                         )
+                    }
 
                 }
 

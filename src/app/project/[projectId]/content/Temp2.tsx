@@ -23,7 +23,8 @@ export const placeholderProject2: ProjectContent = {
                     description: "Head of Product, Production team, 7 Software engineers"
                 }
             ]
-        }
+        },
+        bgClassName: "bg-neutral-1"
     },
     sections: []
 }

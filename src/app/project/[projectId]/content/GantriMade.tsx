@@ -96,6 +96,74 @@ export const gantriMadeProject: ProjectContent = {
                         value: "A manufacturing platform where brands can onboard and learn our manufacturing processes and system, get high-level costing estimates, and manage their products, once in development. Brands can view past orders, invoices, and manage their payment method." 
                     }
                 },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "pt-6"
+                    }
+                },
+                {
+                    type: "simpleCarousel",
+                    content: {
+                        items: [
+                            {
+                                imageSrc: "/projects/gantri-made/case-study-2-carousel-1.png",
+                                description: "1/3 - Onboarding flows: MSA Acknowledgement, Invite Team, Quick Start Guide"
+                            },
+                            {
+                                imageSrc: "/projects/gantri-made/case-study-2-carousel-2.png",
+                                description: "2/3 - While in concept development, designers can generate ballpark costing estimates."
+                            },
+                            {
+                                imageSrc: "/projects/gantri-made/case-study-2-carousel-3.png",
+                                description: "3/3 - Once products are in development, view details, status and orders of units. "
+                            },
+                        ]
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "pt-6"
+                    }
+                },
+                {
+                    type: "infoGalleryCard",
+                    content: {
+                        items: [
+                            {
+                                title: "",
+                                imageSrc: ""
+                            },
+                            {
+                                title: "",
+                                imageSrc: ""
+                            },
+                            {
+                                title: "",
+                                imageSrc: ""
+                            },
+                        ],
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "mt-2"
+                    }
+                },
+                {
+                    type: "title",
+                    content: {
+                        value: "The solution - Factoryos (MES)"
+                    },
+                },
+                {
+                    type: "infoDescription",
+                    content: {
+                        value: "Some of the key MES features shipped to support the Made MVP."
+                    }
+                }
             ]
         },
         {
@@ -218,7 +286,8 @@ export const gantriMadeProject: ProjectContent = {
                             {
                                 type: "itemGridImage",
                                 content: {
-                                    src: "/projects/gantri-made/case-study-2-outcome.png"
+                                    src: "/projects/gantri-made/case-study-2-outcome.png",
+                                    linkedString: "<a target='_blank' href='https://rarify.co/products/cube-one-rarify-rarify-r-rari-086741'>Rarify - Cube One™ Light</a> - Launch Partner"
                                 }
                             }
                         ]

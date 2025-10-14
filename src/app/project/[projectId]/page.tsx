@@ -1,5 +1,5 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
@@ -14,6 +14,8 @@ import { placeholderProject2 } from "./content/Temp2";
 import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
 import { globalClassNames } from "@/components/StyleConstants";
+import SimpleCarousel from "@/components/project/SimpleCarousel/SimpleCarousel";
+
 
 export interface ProjectProps {
     projectId: string
@@ -152,6 +154,10 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                     case "spacer":
                         return (
                             <div key={itemIndex} className={(item.content as Spacer).paddingClassName} />
+                        )
+                    case "simpleCarousel": 
+                        return (
+                            <SimpleCarousel key={itemIndex} carouselContent={item.content as SimpleCarouselContent} />
                         )
                     default:
                         return null;
