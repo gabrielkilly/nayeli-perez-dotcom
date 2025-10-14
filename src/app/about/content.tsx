@@ -47,7 +47,7 @@ export const aboutContent: AboutContent = {
             {
                 yanrdingsIcon: "p",
                 textColorClassName: "text-icon-neutral",
-                title: "Curiosity", 
+                title: "Curious", 
                 description: "My curious nature seeks to understand how things work, how systems function, why things are the way they are - what led them to be this way?\n\nThis constant curiosity drives me to connect and dialogue with others to better deeply understand the context of any design problem. I am constantly grateful that my work as a designer fully engages my deep-seated sense of curiosity and openness!"
             },
         ]

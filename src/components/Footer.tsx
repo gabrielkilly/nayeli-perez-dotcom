@@ -1,4 +1,4 @@
-import { fontIbmPlexSerif, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
+import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Section from "./Section";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
                 <Section className="bg-gold-700">
                     <div className="flex w-full flex-col items-center justify-center">
                         <div className={`text-type-alt text-4xl font-normal ${fontYarndings12.className}`}>q</div>
-                        <p className={`self-stretch text-center justify-start text-type-alt text-2xl font-normal ${fontIbmPlexSerif.className} leading-loose`}>
+                        <p className={`self-stretch text-center justify-start text-type-alt text-2xl font-normal ${fontLora.className} leading-loose`}>
                             <i>I am currently open to new opportunities.</i>
                         </p>
                     </div>

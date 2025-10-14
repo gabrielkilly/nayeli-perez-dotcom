@@ -1,7 +1,7 @@
 "use client";
 import Section from "@/components/Section";
 import { ExperienceContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem } from "./content";
-import { fontFamiljenGrotesk, fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
+import { fontFamiljenGrotesk, fontLora, fontWorkSans } from "@/components/Fonts";
 import { SvgMinusSign, SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/ButtonLink';
 import YarndingsIcon from "@/components/YarndingsIcon";
@@ -21,7 +21,7 @@ export default function Home() {
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">
                             <div className="flex flex-col items-center lg:items-start space-y-10 w-full md:w-1/2">
                                 <h1 className={`${fontFamiljenGrotesk.className} text-5xl lead ng-10`}>{content.welcomeSection.welcomeTitle}</h1>
-                                <p className={`${fontIbmPlexSerif.className} italic text-2xl text-center`}><i>{content.welcomeSection.welcomeText}</i>
+                                <p className={`${fontLora.className} italic text-2xl text-center`}><i>{content.welcomeSection.welcomeText}</i>
                                     <YarndingsIcon textColorClassName="text-icon-plum" icon={content.welcomeSection.welcomeIcon} className="px-2" /></p>
                                 <div className="flex flex-row space-x-10">
                                     <ButtonLink {...content.welcomeSection.cta1} textColorClassName="text-type-2" />
@@ -87,7 +87,7 @@ function SkillItem({ skill } : SkillItemProps) {
         <div className="flex flex-col space-y-4 basis-1/2">
             <h3>
                 <YarndingsIcon icon={skill.yanrdingsIcon} textColorClassName={skill.textColorClassName} /> &nbsp; 
-                <span className={`${fontIbmPlexSerif.className} text-2xl text-black text-2xl font-normal text-type-1 leading-loose`}><i>{skill.title}</i></span>
+                <span className={`${fontLora.className} text-2xl text-black text-2xl font-normal text-type-1 leading-loose`}><i>{skill.title}</i></span>
             </h3>
             <p className={`${fontWorkSans.className} whitespace-pre-line text-black text-sm font-normal text-type-1 leading-tight`}>{skill.description}</p>
         </div>

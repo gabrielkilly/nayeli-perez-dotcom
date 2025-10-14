@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import { ExploreWorkContent, homeContent, SkillChipContent, WorkItemContent } from "./content";
 import Section from "@/components/Section";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from 'html-react-parser';
-import { fontFamiljenGrotesk, fontIbmPlexSerif, fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
+import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Link from "next/link";
 import Image from "next/image";
 import paperTextureImage from "@/assets/paper-texture.png";
@@ -31,12 +31,15 @@ export default function Home() {
                                     <span className={`text-4xl sm:text-4xl font-normal leading-10 italic ${fontLora.className}`}>{content.nayeliName}</span>
                                     &nbsp;{parse(content.introDescriptions[0], options)}
                                 </p>
-                                {content.introDescriptions.slice(1).map((desc, index) => (
-                                    <p key={index + 1} className={`text-type-2 text-xl leading-7 sm:text-[28px] sm:leading-9 font-normal ${fontFamiljenGrotesk.className}`}>
-                                        {parse(desc, options)}
-                                    </p>
-                                ))}
-                                <p className={`text-3xl sm:text-4xl text-icon-gold font-normal ${fontYarndings12.className}`}>e</p>
+                                {content.introDescriptions.slice(1).map((desc, index) => {
+                                    const isLast = index === content.introDescriptions.slice(1).length - 1;
+                                    return (
+                                        <p key={index + 1} className={`text-type-2 text-xl leading-7 sm:text-[28px] sm:leading-9 font-normal ${fontFamiljenGrotesk.className}`}>
+                                            {parse(desc, options)}
+                                            {isLast && <span className={`text-3xl sm:text-4xl text-icon-gold font-normal ${fontYarndings12.className}`}> e</span>}
+                                        </p>
+                                    );
+                                })}
                             </div>
                             <div className="flex flex-col items-start space-y-2">
                                 <h3 className={`text-type-2 text-xs font-semibold uppercase ${fontWorkSans.className}`}>{content.skillTitle}</h3>
@@ -57,7 +60,7 @@ function SkillsChips({skills}: {skills: SkillChipContent[]}) {
         <div className="self-stretch inline-flex items-center gap-x-3 gap-y-0 flex-wrap content-center">
             {skills.map((skill, index) => {
                 return <div className={`bg-neutral-1 inline-flex justify-center items-center`} key={index}>
-                    <div className={`${skill.textColorClassName} text-xl font-medium leading-7 sm:leading-10 sm:text-2xl ${fontLora.className}`}>
+                    <div className={`${skill.textColorClassName} text-2xl font-medium leading-7 sm:leading-10 sm:text-3xl ${fontLora.className}`}>
                         <i>{skill.title}</i>
                     </div>
                     {

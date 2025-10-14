@@ -1,6 +1,6 @@
 "use client"
 import { BeforeAfterCardContent } from "@/app/project/[projectId]/content/ProjectContent";
-import { fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
+import { fontLora, fontWorkSans } from "@/components/Fonts";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -55,7 +55,7 @@ export default function BeforeAfterCard({ cardContent }: BeforeAfterCardProps) {
     return (
         <>
             <div className="flex flex-col gap-4 py-4 justify-center">
-                <h3 className={`text-type-2 text-xl md:text-2xl font-normal ${fontIbmPlexSerif.className} leading-loose`}><i>{title}</i></h3>
+                <h3 className={`text-type-2 text-xl md:text-2xl font-normal ${fontLora.className} leading-loose`}><i>{title}</i></h3>
                 <div className="w-full px-3 md:px-4 pt-3 md:pt-4 pb-4 md:pb-6 bg-neutral-4 rounded-lg flex flex-col justify-center items-center gap-4 md:gap-8">
                     <div className="w-full flex gap-3 md:gap-4">
                         <button

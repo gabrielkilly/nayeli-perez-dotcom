@@ -1,12 +1,6 @@
 import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12, Lora } from "next/font/google";
 
 
-export const fontIbmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm",
-  subsets: ["latin"],
-  weight: "400"
-});
-
 export const fontWorkSans = Work_Sans({
   variable: "--font-work",
   subsets: ["latin"],

@@ -1,6 +1,6 @@
 "use client" 
 
-import { fontIbmPlexSerif, fontWorkSans } from "@/components/Fonts";
+import { fontLora, fontWorkSans } from "@/components/Fonts";
 import { globalClassNames } from "./StyleConstants";
 import { SvgLinkedIn, SvgMail, SvgMenu, SvgMenuOpen, SvgPin } from "./Svg";
 import { useEffect, useRef, useState } from "react";
@@ -75,17 +75,17 @@ export default function Navbar(props: NavbarProps) {
     return (
         <nav className="sticky top-0 z-40" ref={navRef}>
             <div className="bg-neutral-1 w-full flex justify-center px-8 border-b border-border-subtle backdrop-blur-sm">
-                <div className={`flex items-center justify-between w-full ${globalClassNames.maxWidth}`}>
+                <div className={`flex items-center justify-between w-full relative ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
                         {/* <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" /> */}
                         {/* <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} /> */}
                     </div>
-                    <Link href="/">
-                        <h2 className={`${fontIbmPlexSerif.className} text-type-1 text-xl hidden sm:inline`}><i>Nayeli A. Pérez T.</i></h2>
+                    <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+                        <h2 className={`${fontLora.className} text-type-2 text-xl font-medium hidden sm:inline`}><i>Nayeli A. Pérez T.</i></h2>
                     </Link>
                     <div>
-                        <ul className="flex items-center justify-between py-4 space-x-2">
+                        <ul className="flex items-center justify-between py-4 space-x-2 font-medium">
                             {
                                 pages.map(page => {
                                     const isCurrentPage = page.name == props.currentPage
