@@ -11,6 +11,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://t.contentsquare.net/uxa/79d198fbdbd04.js" />
+      </head>
       <body
         className={`${fontLora.variable} ${fontWorkSans.variable} ${fontYarndings12.variable} ${fontFamiljenGrotesk.variable} antialiased`}
       >
