@@ -1,5 +1,5 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader, HeaderAndDescription } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
@@ -127,6 +127,17 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                                 {(item.content as Description).value}
                             </p>
                         )
+                    case "headerAndDescription": {
+                        const {header, description} = item.content as HeaderAndDescription
+                        return (
+                            <div className="flex flex-col">
+                                <h3 className={`text-type-alt text-base font-semibold uppercase leading-normal uppercase ${fontWorkSans.className}`}>{header}</h3>
+                                <p key={itemIndex} className={`text-type-alt ${fontWorkSans.className} text-base font-normal leading normal`}>
+                                    {description}
+                                </p>
+                            </div>
+                        )
+                    }
                     case "presentationPager":
                         return (
                             <PresentationPager
@@ -160,12 +171,12 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                             <SimpleCarousel key={itemIndex} carouselContent={item.content as SimpleCarouselContent} />
                         )
                     case "numberedHeader": {
-                        const {number, header} = item.content as NumberedHeader
+                        const {number, header, numberClassName} = item.content as NumberedHeader
                         return (
                             <div className="flex flex-col">
-                                <span className="text-[#C5D194] text-xl font-semibold uppercase leading-relaxed">{number}</span>
-                                <h2 key={itemIndex} className={`text-type-alt ${fontLora.className} italic text-2xl font-normal leading-loose`}>
-                                    {header}
+                                <span className={`${numberClassName} text-xl font-semibold uppercase leading-relaxed`}>{number}</span>
+                                <h2 key={itemIndex} className={`text-type-alt ${fontLora.className} italic text-2xl font-normal leading-2`}>
+                                    <i>{header}</i>
                                 </h2>
                             </div>
                         )

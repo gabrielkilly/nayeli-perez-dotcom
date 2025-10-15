@@ -24,12 +24,12 @@ export interface HeaderLabel {
 export interface ProjectSectionContent {
     contentItems: ContentItem[],
     backgroundColorCssName?: string,
-    textColorCssName?: string
+    textColorCssName?: string,
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer" | "infoGalleryCard" | "simpleCarousel" | "numberedHeader"
-    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer | InfoGalleryCard | SimpleCarouselContent | NumberedHeader
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer" | "infoGalleryCard" | "simpleCarousel" | "numberedHeader" | "headerAndDescription"
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer | InfoGalleryCard | SimpleCarouselContent | NumberedHeader | HeaderAndDescription
 }
 
 export interface Spacer {
@@ -37,9 +37,14 @@ export interface Spacer {
 }
 
 export interface ItemGridContentItem {
-    type: "basicCard" | "itemGridImage",
-    content: BasicCardContent | ItemGridImage,
+    type: "basicCard" | "itemGridImage" | "imageCard",
+    content: BasicCardContent | ItemGridImage | ImageCard,
     fullWidth?: boolean
+}
+
+export interface ImageCard {
+    bgClassName: string, 
+    src: string
 }
 
 export interface Title {
@@ -54,8 +59,14 @@ export interface InfoDescription {
     value: string
 }
 
+export interface HeaderAndDescription {
+    header: string, 
+    description: string,
+}
+
 export interface NumberedHeader {
-    number: number, 
+    number: number,
+    numberClassName: string 
     header: string
 }
 

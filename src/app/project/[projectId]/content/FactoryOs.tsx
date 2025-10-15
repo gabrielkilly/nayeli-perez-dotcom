@@ -26,5 +26,81 @@ export const FactoryOS: ProjectContent = {
         },
         bgClassName: "bg-neutral-1"
     },
-    sections: []
+    sections: [
+        {
+            backgroundColorCssName: "bg-[#697632]",
+            textColorCssName: "text-type-alt",
+            contentItems: [
+                {
+                    type: "numberedHeader",
+                    content: {
+                        number: 1,
+                        numberClassName: "text-[#C5D194]",
+                        header: "Introduction of Minute Tracking Component for Production Team Self-tracking"
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "py-0"
+                    }
+                },
+                {
+                    type: "headerAndDescription",
+                    content: {
+                        header: "Timeframe", 
+                        description: "February - March 2025"
+                    }
+                },
+                {
+                    type: "headerAndDescription",
+                    content: {
+                        header: "Objective", 
+                        description: "Empower Production team members by providing a tracker for the work points (‘minutes’) they’ve completed each day."
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "py-2"
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#85934E]",
+                                    src: "/projects/factory-os/selected-work-gantri-tracker-1.png"
+                                }
+                            },
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#85934E]",
+                                    src: "/projects/factory-os/selected-work-gantri-tracker-2.png"
+                                }
+                            },
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#85934E]",
+                                    src: "/projects/factory-os/selected-work-gantri-tracker-3.png"
+                                }
+                            },
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#85934E]",
+                                    src: "/projects/factory-os/selected-work-gantri-tracker-4.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+        }
+    ]
 }

@@ -1,4 +1,4 @@
-import { BasicCardContent, ItemGrid as ItemGridContent, ItemGridImage } from "@/app/project/[projectId]/content/ProjectContent";
+import { BasicCardContent, ImageCard, ItemGrid as ItemGridContent, ItemGridImage } from "@/app/project/[projectId]/content/ProjectContent";
 import BasicCard from "../BasicCard/BasicCard";
 import Image from "next/image";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from "html-react-parser"
@@ -47,6 +47,23 @@ export default function ItemGrid({ gridContent }: ItemGridProps) {
                                 }
                             </div>
                         )
+                    }
+                    case "imageCard": {
+
+                        const { bgClassName, src } = item.content as ImageCard
+
+                        return (
+                            <div className={`self-stretch ${bgClassName} rounded shadow-[0px_2px_4px_0px_rgba(0,0,0,0.08)] border border-border-subtle inline-flex flex-col justify-between gap-2 overflow-hidden w-full ${sizeClassName}`}>
+                                <Image
+                                    width={600}
+                                    height={600}
+                                    src={src}
+                                    alt="Image"
+                                    className="object-cover object-center w-full h-auto"
+                                />
+                            </div>
+                        )
+                        
                     }
 
                 }
