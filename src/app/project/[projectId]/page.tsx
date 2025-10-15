@@ -1,10 +1,10 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection/IntroSection";
 import Section from "@/components/Section";
 import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
-import { fontFamiljenGrotesk, fontWorkSans } from "@/components/Fonts";
+import { fontFamiljenGrotesk, fontLora, fontWorkSans } from "@/components/Fonts";
 import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
 import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
@@ -159,6 +159,17 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                         return (
                             <SimpleCarousel key={itemIndex} carouselContent={item.content as SimpleCarouselContent} />
                         )
+                    case "numberedHeader": {
+                        const {number, header} = item.content as NumberedHeader
+                        return (
+                            <div className="flex flex-col">
+                                <span className="text-[#C5D194] text-xl font-semibold uppercase leading-relaxed">{number}</span>
+                                <h2 key={itemIndex} className={`text-type-alt ${fontLora.className} italic text-2xl font-normal leading-loose`}>
+                                    {header}
+                                </h2>
+                            </div>
+                        )
+                    }
                     default:
                         return null;
                 }

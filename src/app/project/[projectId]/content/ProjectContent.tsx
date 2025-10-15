@@ -28,8 +28,8 @@ export interface ProjectSectionContent {
 }
 
 export interface ContentItem {
-    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer" | "infoGalleryCard" | "simpleCarousel"
-    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer | InfoGalleryCard | SimpleCarouselContent
+    type: "title" | "description" | "infoDescription" | "presentationPager" | "beforeAfterCard" | "resultContent" | "itemGrid" | "spacer" | "infoGalleryCard" | "simpleCarousel" | "numberedHeader"
+    content: Title | Description | InfoDescription | PresentationPagerContent | BeforeAfterCardContent | ResultContent | ItemGrid | Spacer | InfoGalleryCard | SimpleCarouselContent | NumberedHeader
 }
 
 export interface Spacer {
@@ -52,6 +52,11 @@ export interface Description {
 
 export interface InfoDescription {
     value: string
+}
+
+export interface NumberedHeader {
+    number: number, 
+    header: string
 }
 
 export interface PresentationPagerContent {
