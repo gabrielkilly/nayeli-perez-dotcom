@@ -31,7 +31,7 @@ export default function ItemGridImage({ imageContent, cssName }: ItemGridImagePr
 
     return (
         <>
-            <div className={`self-stretch relative aspect-[21/16] cursor-pointer hover:opacity-90 transition-opacity ${cssName}`} onClick={handleImageClick}>
+            <div className={`self-stretch relative aspect-[21/16] cursor-pointer ${cssName}`} onClick={handleImageClick}>
                 <Image
                     width={600}
                     height={600}

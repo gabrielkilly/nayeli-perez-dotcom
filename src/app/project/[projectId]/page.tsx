@@ -1,5 +1,5 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
-import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader, HeaderAndDescription } from "./content/ProjectContent";
+import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader, HeaderAndDescription, PROJECT_CHARGIFY } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/project/IntroSection";
 import Section from "@/components/Section";
@@ -15,6 +15,7 @@ import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
 import { globalClassNames } from "@/components/StyleConstants";
 import SimpleCarousel from "@/components/project/SimpleCarousel";
+import { Chargify } from "./content/Chargify";
 
 
 export interface ProjectProps {
@@ -29,6 +30,7 @@ function getProjectContent(projectId: string): ProjectContent | null {
         case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
         case PROJECT_GANTRI_MADE: return gantriMadeProject;
         case PROJECT_FACTORY_OS: return FactoryOS;
+        case PROJECT_CHARGIFY: return Chargify;
         default: return null;
     }
 
@@ -130,7 +132,7 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                     case "headerAndDescription": {
                         const {header, description} = item.content as HeaderAndDescription
                         return (
-                            <div className="flex flex-col">
+                            <div key={itemIndex} className="flex flex-col">
                                 <h3 className={`text-type-alt text-base font-semibold uppercase leading-normal uppercase ${fontWorkSans.className}`}>{header}</h3>
                                 <p key={itemIndex} className={`text-type-alt ${fontWorkSans.className} text-base font-normal leading normal`}>
                                     {description}
@@ -173,7 +175,7 @@ function ProjectSection({sectionContent}: ProjectSectionProps) {
                     case "numberedHeader": {
                         const {number, header, numberClassName} = item.content as NumberedHeader
                         return (
-                            <div className="flex flex-col">
+                            <div key={itemIndex} className="flex flex-col">
                                 <span className={`${numberClassName} text-xl font-semibold uppercase leading-relaxed`}>{number}</span>
                                 <h2 key={itemIndex} className={`text-type-alt ${fontLora.className} italic text-2xl font-normal leading-2`}>
                                     <i>{header}</i>

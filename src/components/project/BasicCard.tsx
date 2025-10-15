@@ -55,7 +55,7 @@ export default function BasicCard({ cardContent, cssName }: BasicCardProps) {
                         alt="Image"
                         width={500}
                         height={500}
-                        className="object-cover obect-center w-full h-auto mt-3 cursor-pointer hover:opacity-90 transition-opacity max-w-xl"
+                        className="object-cover obect-center w-full h-auto mt-3 cursor-pointer max-w-xl"
                         onClick={handleImageClick}
                     />
                 </div>
