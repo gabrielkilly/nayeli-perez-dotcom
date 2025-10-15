@@ -26,7 +26,7 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
     }
 
     const BackButton = ({ additionalClasses }: {additionalClasses?: string}) =>
-        <Link className={`${fontWorkSans.className} inline text-base font-semibold uppercase ${additionalClasses}`} href="/">
+        <Link className={`${fontWorkSans.className} inline text-base font-semibold uppercase ${additionalClasses}`} href="/work">
             <SvgBack className="inline" colorCssValue="currentColor"/> Back to all work
         </Link>
 

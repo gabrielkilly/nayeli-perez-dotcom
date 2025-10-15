@@ -15,12 +15,12 @@ export const gantriMadeProject: ProjectContent = {
                     description: "UX Methods for Product Discovery and Solution Definition, UI Design, Prototyping, Handoff, Metrics identification"
                 },
                 {
-                    header: "Timeline",
+                    header: "Timeframe",
                     description: "April 2025 - July 2025"
                 },
                 {
-                    header: "Collaboration",
-                    description: "Product team, Industrial Design engineers, Software engineers, Sales director, Chief of Staff"
+                    header: "Collaborators",
+                    description: "Product Team, Industrial Design Engineers, Software Team, Sales Director, Chief of Staff"
                 }
             ]
         }

@@ -11,8 +11,8 @@ export const FactoryOS: ProjectContent = {
                     description: "Design Lead for Gantri’s Manufacturing Execution System"
                 },
                 {
-                    header: "Timerame",
-                    description: "2022-2004"
+                    header: "Timeframe",
+                    description: "2022-2025"
                 },
                 {
                     header: "Collaborators",
@@ -103,7 +103,7 @@ export const FactoryOS: ProjectContent = {
             ],
         },
         {
-            backgroundColorCssName: "bg-[#5F2446]",
+            backgroundColorCssName: "bg-plum-900",
             textColorCssName: "text-type-alt",
             contentItems: [
                 {
@@ -147,28 +147,28 @@ export const FactoryOS: ProjectContent = {
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#8A3867]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/factory-os/selected-work-gantri-cutsheet-1.png"
                                 }
                             },
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#8A3867]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/factory-os/selected-work-gantri-cutsheet-2.png"
                                 }
                             },
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#8A3867]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/factory-os/selected-work-gantri-cutsheet-3.png"
                                 }
                             },
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#8A3867]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/factory-os/selected-work-gantri-cutsheet-4.png"
                                 }
                             }

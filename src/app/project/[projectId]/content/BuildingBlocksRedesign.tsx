@@ -14,15 +14,15 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             headersAndLabels: [
                 {
                     header: "Role",
-                    description: "Lead design for Manufacturing Execution System (MES)"
+                    description: "End-to-end Design: Research, UI/UX Design, Prototyping, Handoff"
                 },
                 {
-                    header: "Timeline",
-                    description: "February 2023 – March 2024"
+                    header: "Timeframe",
+                    description: "January 2023 – March 2023"
                 },
                 {
-                    header: "Collaboration",
-                    description: "Head of Product, Production team, 7 Software engineers"
+                    header: "Collaborators",
+                    description: "Head of Product, Production Tean, Software Team"
                 }
             ]
         }

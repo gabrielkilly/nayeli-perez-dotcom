@@ -199,7 +199,7 @@ function ImpactItem({item}: {item: ImpactListItem}) {
                     <h5 className={`${fontWorkSans.className} text-base text-type-alt`}>{item.role} at <span className="font-bold">{item.company}</span></h5>
                 </div>
                 <div className={`border-b-[1px] border-dashed border-neutral-4 opacity-50 flex-grow h-4 mx-4 hidden lg:block`} />
-                <p className={`${fontWorkSans.className} text-sm text-type-alt font-normal lg:font-medium ml-8 lg:ml-0`}>{item.timeRange}</p>
+                <p className={`${fontWorkSans.className} text-sm text-type-alt font-normal lg:font-medium lg:ml-0`}>{item.timeRange}</p>
                 <div className={`border-b-[1px] border-dashed border-neutral-4 opacity-50 flex-grow h-3 my-2 lg:hidden`} />
             </div>
         </li>

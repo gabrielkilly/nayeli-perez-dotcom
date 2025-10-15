@@ -3,7 +3,7 @@ import { ProjectContent } from "./ProjectContent";
 export const Chargify: ProjectContent = {
     introContent: {
         title: "Selected Work: Chargify",
-        description: "My time at Chargify spanned from 2018 -2022. During this time I worked on subscription management and billing features that unlocked growth for our B2B SaaS customers.\n\nMy work entailed designing and maintaining billing tools that enabled usage and multi-attribute billing, payment collections, and business analytics.\n\nDuring this time, I became highly comfortable with complexity and realized I aspired to work on tools that simplify complexity.",
+        description: "My time at Chargify spanned from 2018 -2022. During this time I worked on subscription management and billing features that unlocked growth for our B2B SaaS customers.\n\nMy work entailed designing and maintaining billing tools that enabled usage and multi-attribute billing, payment collections, and business analytics.",
         details: {
             headersAndLabels: [
                 {
@@ -27,7 +27,7 @@ export const Chargify: ProjectContent = {
                     type: "numberedHeader",
                     content: {
                         number: 1,
-                        numberClassName: "text-[#487B40]",
+                        numberClassName: "text-[#90BC89]",
                         header: "Enabling Custom Pricing during Subscription Creation"
                     }
                 },
@@ -105,7 +105,7 @@ export const Chargify: ProjectContent = {
             ]
         },
         {
-            backgroundColorCssName: "bg-[#8A3867]",
+            backgroundColorCssName: "bg-plum-900",
             textColorCssName: "text-type-alt",
             contentItems: [
                 {
@@ -149,7 +149,7 @@ export const Chargify: ProjectContent = {
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#EDBCD8]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/chargify/selected-work-chargify-summary-1.png"
                                 },
                                 fullWidth: true
@@ -157,7 +157,7 @@ export const Chargify: ProjectContent = {
                             {
                                 type: "imageCard",
                                 content: {
-                                    bgClassName: "bg-[#EDBCD8]",
+                                    bgClassName: "bg-[#5F2446]",
                                     src: "/projects/chargify/selected-work-chargify-summary-2.png"
                                 },
                                 fullWidth: true
