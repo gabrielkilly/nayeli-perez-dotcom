@@ -18,7 +18,7 @@ export default function ItemGridImage({ imageContent, cssName }: ItemGridImagePr
     const options: HTMLReactParserOptions = {
         replace(domNode) {
             if (domNode instanceof Element && domNode.attribs && domNode.name === 'a') {
-                return <Link className="underline" href={domNode.attribs.href}>
+                return <Link className="underline" target="_blank" href={domNode.attribs.href}>
                     {domToReact(domNode.children as DOMNode[], options)}
                 </Link>
             }
@@ -26,12 +26,14 @@ export default function ItemGridImage({ imageContent, cssName }: ItemGridImagePr
     };
 
     const handleImageClick = () => {
-        setIsCarouselOpen(true);
+        if (!linkedString) {
+            setIsCarouselOpen(true);
+        }
     };
 
     return (
         <>
-            <div className={`self-stretch relative aspect-[21/16] cursor-pointer ${cssName}`} onClick={handleImageClick}>
+            <div className={`self-stretch relative aspect-[21/16] ${!linkedString ? 'cursor-pointer' : ''} ${cssName}`} onClick={handleImageClick}>
                 <Image
                     width={600}
                     height={600}

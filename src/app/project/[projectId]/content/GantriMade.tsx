@@ -287,7 +287,7 @@ export const gantriMadeProject: ProjectContent = {
                                 type: "itemGridImage",
                                 content: {
                                     src: "/projects/gantri-made/case-study-2-outcome.png",
-                                    linkedString: "<a target='_blank' href='https://rarify.co/products/cube-one-rarify-rarify-r-rari-086741'>Rarify - Cube One™ Light</a> - Launch Partner"
+                                    linkedString: "<a href='https://rarify.co/products/cube-one-rarify-rarify-r-rari-086741'>Rarify - Cube One™ Light</a> - Launch Partner"
                                 }
                             }
                         ]
