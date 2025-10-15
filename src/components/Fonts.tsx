@@ -1,4 +1,4 @@
-import { IBM_Plex_Serif, Work_Sans, Familjen_Grotesk, Yarndings_12, Lora } from "next/font/google";
+import { Work_Sans, Familjen_Grotesk, Yarndings_12, Lora } from "next/font/google";
 
 
 export const fontWorkSans = Work_Sans({

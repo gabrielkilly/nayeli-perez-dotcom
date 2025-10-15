@@ -38,7 +38,7 @@ export default function PasswordPrompt({ onSubmit, error }: PasswordPromptProps)
         </h2>
 
         <p className={`text-type-2 text-center text-base mb-12 ${fontWorkSans.className} leading-normal`}>
-          Work section is password protected. If you'd like to<br />learn more, please reach out to me!
+          Work section is password protected. If you&apos;d like to<br />learn more, please reach out to me!
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full">

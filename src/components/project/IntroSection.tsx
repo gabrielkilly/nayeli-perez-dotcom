@@ -72,13 +72,13 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
 
     return (
         <div className="w-full flex flex-col">
-            
-            { hasImages && //only add images section if it exists
+
+            { hasImages && introContent.imageSources && //only add images section if it exists
             <>
-                <ImageSectionWithBackButton images={introContent.imageSources!!} />
-                
+                <ImageSectionWithBackButton images={introContent.imageSources} />
+
                 <ImageCarousel //this carousel allows use to select an image to see it in a full-screen modal
-                    images={introContent.imageSources!!}
+                    images={introContent.imageSources}
                     isOpen={isCarouselOpen}
                     onClose={() => setIsCarouselOpen(false)}
                     initialIndex={selectedImageIndex}
@@ -86,7 +86,7 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
                 />
             </>
             }
-            
+
             <MainContent showBackButton={!hasImages} />
 
         </div>
