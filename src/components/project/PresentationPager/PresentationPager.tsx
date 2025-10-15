@@ -47,7 +47,7 @@ export default function PresentationPager({ pagerContent }: PresentationPagerPro
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <p className={`self-stretch justify-startpl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces`}>{item.description}</p>
+                        <p className={`self-stretch justify-startpl-1 text-base font-normal ${fontWorkSans.className} leading-normal whitespace-break-spaces cursor-pointer`}>{item.description}</p>
                         <AnimatePresence>
                             {selectedItemIndex === index && (
                                 <motion.div

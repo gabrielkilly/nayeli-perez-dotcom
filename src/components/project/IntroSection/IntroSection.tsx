@@ -18,31 +18,40 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
     const [isCarouselOpen, setIsCarouselOpen] = useState(false)
     const [selectedImageIndex, setSelectedImageIndex] = useState(0)
 
+    const hasImages = introContent.imageSources != undefined && introContent.imageSources.length > 0
+
     const handleImageClick = (index: number) => {
         setSelectedImageIndex(index)
         setIsCarouselOpen(true)
     }
 
-    return (
-        <div className="w-full flex flex-col">
-            <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} pt-16 ${introContent.bgClassName}`}>
-                <div className={`w-full ${globalClassNames.maxWidth}`}>
-                    <div className="flex flex-col w-full">
-                        <div className="flex">
-                            <Link className={`${fontWorkSans.className} inline text-base font-semibold text-white uppercase`} href="/">
-                                <SvgBack className="inline" colorCssValue="white"/> Back to all work
-                            </Link>
-                        </div>
-                        <IntroImageBanner
-                            imageSources={introContent.imageSources}
-                            onImageClick={handleImageClick}
-                        />
+    const BackButton = ({ additionalClasses }: {additionalClasses?: string}) =>
+        <Link className={`${fontWorkSans.className} inline text-base font-semibold uppercase ${additionalClasses}`} href="/">
+            <SvgBack className="inline" colorCssValue="currentColor"/> Back to all work
+        </Link>
+
+    const ImageSectionWithBackButton = ({images}: {images: string[]}) => 
+        <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} pt-16 ${introContent.bgClassName}`}>
+            <div className={`w-full ${globalClassNames.maxWidth}`}>
+                <div className="flex flex-col w-full">
+                    <div className="flex">
+                        <BackButton additionalClasses="text-white" />
                     </div>
+                    <IntroImageBanner
+                        imageSources={images}
+                        onImageClick={handleImageClick}
+                    />
                 </div>
             </div>
+        </div>
+
+    const MainContent = ({showBackButton} : {showBackButton: boolean}) =>
+        <>
+
             <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} border border-top-1 border-border-subtle py-20 bg-white`}>
                 <div className={`w-full ${globalClassNames.maxWidth}`}>
                     <div className="flex flex-col gap-12 w-full bg-white">
+                        { showBackButton && <BackButton additionalClasses="text-black" /> }
                         <h1 className={`${fontFamiljenGrotesk.className} text-type-1 text-4xl font-normal leading-10`}>
                             {introContent.title}
                         </h1>
@@ -58,13 +67,28 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
                 </div>
             </div>
 
-            <ImageCarousel
-                images={introContent.imageSources}
-                isOpen={isCarouselOpen}
-                onClose={() => setIsCarouselOpen(false)}
-                initialIndex={selectedImageIndex}
-                hideControls
-            />
+        </>
+
+
+    return (
+        <div className="w-full flex flex-col">
+            
+            { hasImages && //only add images section if it exists
+            <>
+                <ImageSectionWithBackButton images={introContent.imageSources!!} />
+                
+                <ImageCarousel //this carousel allows use to select an image to see it in a full-screen modal
+                    images={introContent.imageSources!!}
+                    isOpen={isCarouselOpen}
+                    onClose={() => setIsCarouselOpen(false)}
+                    initialIndex={selectedImageIndex}
+                    hideControls
+                />
+            </>
+            }
+            
+            <MainContent showBackButton={!hasImages} />
+
         </div>
     )
 }

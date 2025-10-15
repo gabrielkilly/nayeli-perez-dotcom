@@ -10,7 +10,7 @@ import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
 import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
 import Footer from "@/components/Footer";
 import { gantriMadeProject } from "./content/GantriMade";
-import { placeholderProject2 } from "./content/Temp2";
+import { FactoryOS } from "./content/FactoryOs";
 import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
 import { globalClassNames } from "@/components/StyleConstants";
@@ -28,7 +28,7 @@ function getProjectContent(projectId: string): ProjectContent | null {
     switch (projectId) {
         case PROJECT_ID_BUILDING_BLOCKS_REDESIGN: return buildingBlocksRedesignContent;
         case PROJECT_GANTRI_MADE: return gantriMadeProject;
-        case PROJECT_FACTORY_OS: return placeholderProject2;
+        case PROJECT_FACTORY_OS: return FactoryOS;
         default: return null;
     }
 
