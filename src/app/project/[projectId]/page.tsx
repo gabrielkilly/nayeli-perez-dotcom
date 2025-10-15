@@ -16,6 +16,7 @@ import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
 import { globalClassNames } from "@/components/StyleConstants";
 import SimpleCarousel from "@/components/project/SimpleCarousel";
 import { Chargify } from "./content/Chargify";
+import ProjectPageWrapper from "@/components/ProjectPageWrapper";
 
 
 export interface ProjectProps {
@@ -66,7 +67,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
         return notFound()
     } else {
         return (
-            <>
+            <ProjectPageWrapper>
                 <main>
                     <IntroSection introContent={projectContent.introContent} />
                     {
@@ -96,7 +97,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
                     </div>
                     <Footer />
                 </main>
-            </>
+            </ProjectPageWrapper>
         )
     }
 }

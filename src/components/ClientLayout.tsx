@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import Navbar from "./Navbar"
 import { ReactNode } from "react"
+import { ProjectAuthProvider } from "@/contexts/ProjectAuthContext"
 
 export default function ClientLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname()
@@ -16,9 +17,9 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
     }
 
     return (
-        <>
+        <ProjectAuthProvider>
             <Navbar currentPage={currentPage} />
             {children}
-        </>
+        </ProjectAuthProvider>
     )
 }
