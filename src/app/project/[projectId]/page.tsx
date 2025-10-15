@@ -1,20 +1,20 @@
 import { buildingBlocksRedesignContent } from "./content/BuildingBlocksRedesign";
 import { BeforeAfterCardContent, Description, indexProjectMap, ItemGrid as ItemGridContent, PresentationPagerContent, PROJECT_ID_BUILDING_BLOCKS_REDESIGN, PROJECT_GANTRI_MADE, PROJECT_FACTORY_OS, ProjectContent, projectIndexMap, ProjectSectionContent, ResultContent, Title, Spacer, SimpleCarouselContent, NumberedHeader, HeaderAndDescription } from "./content/ProjectContent";
 import { notFound } from "next/navigation";
-import IntroSection from "@/components/project/IntroSection/IntroSection";
+import IntroSection from "@/components/project/IntroSection";
 import Section from "@/components/Section";
-import PresentationPager from "@/components/project/PresentationPager/PresentationPager";
+import PresentationPager from "@/components/project/PresentationPager";
 import { fontFamiljenGrotesk, fontLora, fontWorkSans } from "@/components/Fonts";
-import BeforeAfterCard from "@/components/project/BeforeAfterCard/BeforeAfterCard";
-import ItemGrid from "@/components/project/ItemGrid/ItemGrid";
-import ResultListItems from "@/components/project/ResultListItems/ResultListItems";
+import BeforeAfterCard from "@/components/project/BeforeAfterCard";
+import ItemGrid from "@/components/project/ItemGrid";
+import ResultListItems from "@/components/project/ResultListItems";
 import Footer from "@/components/Footer";
 import { gantriMadeProject } from "./content/GantriMade";
 import { FactoryOS } from "./content/FactoryOs";
 import Link from "next/link";
 import { SvgArrowLeft, SvgArrowRight } from "@/components/Svg";
 import { globalClassNames } from "@/components/StyleConstants";
-import SimpleCarousel from "@/components/project/SimpleCarousel/SimpleCarousel";
+import SimpleCarousel from "@/components/project/SimpleCarousel";
 
 
 export interface ProjectProps {

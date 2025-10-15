@@ -3,12 +3,12 @@
 import { IntroContent } from "@/app/project/[projectId]/content/ProjectContent"
 import { fontFamiljenGrotesk, fontWorkSans } from "@/components/Fonts"
 import { SvgBack } from "@/components/Svg"
-import HeaderLabelCard from "../HeaderLabelCard/HeaderLabelCard"
+import HeaderLabelCard from "./HeaderLabelCard"
 import Link from "next/link"
 import Image from 'next/image';
 import { globalClassNames } from "@/components/StyleConstants"
 import { useState } from 'react'
-import ImageCarousel from '../ImageCarousel/ImageCarousel'
+import ImageCarousel from './ImageCarousel'
 
 interface IntroSectionProps {
     introContent: IntroContent

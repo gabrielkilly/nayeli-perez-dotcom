@@ -4,7 +4,7 @@ import { fontLora, fontWorkSans } from "@/components/Fonts";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import ImageCarousel from "./ImageCarousel";
 
 interface BeforeAfterCardProps {
     cardContent: BeforeAfterCardContent

@@ -3,7 +3,7 @@ import { BasicCardContent } from "@/app/project/[projectId]/content/ProjectConte
 import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import ImageCarousel from "./ImageCarousel";
 import { SvgUp, SvgDown, SvgNaycon } from "@/components/Svg";
 
 interface BasicCardProps {

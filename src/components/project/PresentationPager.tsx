@@ -4,7 +4,7 @@ import { fontWorkSans } from "@/components/Fonts";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import ImageCarousel from "./ImageCarousel";
 
 interface PresentationPagerProps {
     pagerContent: PresentationPagerContent
