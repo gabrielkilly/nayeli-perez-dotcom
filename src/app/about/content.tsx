@@ -4,6 +4,7 @@ export interface AboutContent {
     welcomeSection: WelcomeSectionContent,
     skillsSection: SkillsSectionContent,
     experienceContent: ExperienceContent,
+    impactContent: ImpactContent,
     opportunitiesSection: OpportunitiesSectionContent
 }
 
@@ -152,6 +153,56 @@ export const aboutContent: AboutContent = {
             url: "/Resume-NayeliPerez.pdf"
         }
     },
+    impactContent: {
+        title: "Impact", 
+        listItems: [
+            {
+                role: "Board Member",
+                 company: (
+                    <>
+                        <a href="https://www.circularsanantonio.org/" target="_blank" rel="noopener noreferrer">
+                            Circular San Antonio
+                        </a>
+                    </>
+                ),
+                timeRange: "January 2024 - June 2025",
+            },
+             {
+                role: "2023 Fellow",
+                company: (
+                        <>
+                            <a href="https://www.newleaderscouncil.org/chapter/san-antonio/" target="_blank" rel="noopener noreferrer">
+                                New Leaders Council
+                            </a>
+                        </>
+                    ),
+                timeRange: "SATX Chapter, 2023",
+            },
+             {
+                role: "Mentor / Design Systems Focus ",
+                company: (
+                        <>
+                            <a href="https://femmecubator.wordpress.com/what-we-do/" target="_blank" rel="noopener noreferrer">
+                                Femmecubator
+                            </a>
+                        </>
+                    ),
+                timeRange: "2021-2024",
+            },
+             {
+                role: "Course Completion",
+                company: (
+                        <>
+                            <a href="https://www.thecenterfortheadvancementofgarmentmaking.com/sustainable-leadership-masterclass" target="_blank" rel="noopener noreferrer">
+                                The Sustainable Leadership Masterclass
+                            </a>
+                        </>
+                    ),
+                timeRange: "2021",
+            }
+        ]
+
+    },
     opportunitiesSection: {
         yIcon: "q",
         title: "I am currently open to new opportunities.",
@@ -179,10 +230,18 @@ export interface Skill {
     textColorClassName: string
 }
 
+
+
+
 export interface ExperienceContent {
     title: string, 
     listItems: ExperienceListItem[],
     cta: CtaLink
+}
+
+export interface ImpactContent {
+    title: string, 
+    listItems: ImpactListItem[],
 }
 
 export interface ExperienceListItem {
@@ -190,6 +249,12 @@ export interface ExperienceListItem {
     company: string,
     timeRange: string,
     additionalDetails: ExperienceListItemDetails[]
+}
+
+export interface ImpactListItem {
+    role: string,
+    company: React.ReactNode,
+    timeRange: string,
 }
 
 export interface ExperienceListItemDetails {

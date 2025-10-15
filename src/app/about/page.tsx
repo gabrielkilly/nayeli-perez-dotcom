@@ -1,6 +1,6 @@
 "use client";
 import Section from "@/components/Section";
-import { ExperienceContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem } from "./content";
+import { ExperienceContent, ImpactContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem, ImpactListItem } from "./content";
 import { fontFamiljenGrotesk, fontLora, fontWorkSans } from "@/components/Fonts";
 import { SvgMinusSign, SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/ButtonLink';
@@ -33,6 +33,8 @@ export default function Home() {
                     </Section>
                     <SkillsSection content={content.skillsSection} />
                     <ExperienceSection content={content.experienceContent} />
+                    <ImpactSection content={content.impactContent} />
+
                 </div>
                 <Footer />
             </main>
@@ -101,10 +103,10 @@ interface ExperienceSectionProps {
 function ExperienceSection({content}: ExperienceSectionProps) {
     const [expandedItem, setExpandedItem] = useState<ExperienceListItem | null>(null);
     return (
-        <Section className="bg-plum-900">
+        <Section className="bg-plum-900" paddingVertical="Tight">
             <div id="experience" className="flex flex-col space-y-10 w-full">
                 <h4 className={`${fontWorkSans.className} text-type-alt text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
-                <ul className="flex flex-col space-y-2">
+                <ul className="flex flex-col">
                     {
                         content.listItems.map((item) => {
                             return (
@@ -117,7 +119,7 @@ function ExperienceSection({content}: ExperienceSectionProps) {
             </div>
         </Section>
     )
-}   
+}
 
 function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceListItem, isExpanded: boolean, setIsExpanded: (value: ExperienceListItem | null) => void}) {
 
@@ -162,6 +164,44 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
 
                         {/* <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}> */}
 
+        </li>
+    )
+}
+
+interface ImpactSectionProps {
+    content: ImpactContent
+}
+
+function ImpactSection({content}: ImpactSectionProps) {
+    return (
+        <Section className="bg-stone-900" paddingVertical="Tight">
+            <div id="experience" className="flex flex-col space-y-10 w-full">
+                <h4 className={`${fontWorkSans.className} text-type-alt text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
+                <ul className="flex flex-col">
+                    {
+                        content.listItems.map((item) => {
+                            return (
+                                <ImpactItem item={item} key={item.company + item.role + item.timeRange} />
+                            )
+                        })
+                    }
+                </ul>
+            </div>
+        </Section>
+    )
+}
+
+function ImpactItem({item}: {item: ImpactListItem}) {
+    return (
+        <li className="flex flex-col rounded pb-4">
+            <div className="flex flex-col lg:flex-row w-full justify-between">
+                <div className="flex flex-row space-x-4 items-center">
+                    <h5 className={`${fontWorkSans.className} text-base text-type-alt`}>{item.role} at <span className="font-bold">{item.company}</span></h5>
+                </div>
+                <div className={`border-b-[1px] border-dashed border-neutral-4 opacity-50 flex-grow h-4 mx-4 hidden lg:block`} />
+                <p className={`${fontWorkSans.className} text-sm text-type-alt font-normal lg:font-medium ml-8 lg:ml-0`}>{item.timeRange}</p>
+                <div className={`border-b-[1px] border-dashed border-neutral-4 opacity-50 flex-grow h-3 my-2 lg:hidden`} />
+            </div>
         </li>
     )
 }
