@@ -48,9 +48,9 @@ export default function IntroSection({ introContent }: IntroSectionProps) {
     const MainContent = ({showBackButton} : {showBackButton: boolean}) =>
         <>
 
-            <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} border border-top-1 border-border-subtle py-20 bg-white`}>
+            <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} border border-top-1 border-border-subtle py-20 bg-neutral-25`}>
                 <div className={`w-full ${globalClassNames.maxWidth}`}>
-                    <div className="flex flex-col gap-12 w-full bg-white">
+                    <div className="flex flex-col gap-12 w-full">
                         { showBackButton && <BackButton additionalClasses="text-black" /> }
                         <h1 className={`${fontFamiljenGrotesk.className} text-type-1 text-4xl font-normal leading-10`}>
                             {introContent.title}

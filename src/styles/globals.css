@@ -6,6 +6,7 @@
   --neutral-1: #F8F8F6;
   --neutral-1-overlay: #FFFFFF;
   --neutral-2: rgba(243, 243, 241, 1);
+  --neutral-25: #EAEAE6;
   --neutral-3: #E2E3DC;
   --neutral-4: #D2D3C8;
   --pine-1: #E8EEE7;
@@ -32,8 +33,10 @@
   --olive-5: rgba(175, 190, 117, 1);
   --olive-700: rgba(105, 118, 50, 1);
   --olive-800: rgba(69, 79, 25, 1);
+  --stone-400:#D2D3C8;
   --stone-700: rgba(132, 135, 111, 1);
   --stone-850: rgba(65, 67, 61, 1);
+  --plum-900: #3B2130;
   --type-1: #000000;
   --type-2: #323A3A;
   --type-3: #707070;

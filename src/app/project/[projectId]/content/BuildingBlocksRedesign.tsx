@@ -7,7 +7,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             "/projects/building-blocks-redesign/part-details-after.png",
             "/projects/building-blocks-redesign/stock-details-after-narrow.png"
         ],
-        bgClassName: "bg-[#B18C24]",
+        bgClassName: "bg-[#9F7E23]",
         title: "Project: Re-designing Gantri’s core building blocks, Parts and Stocks, for improved efficiency",
         description: "At Gantri, I lead design for our Manufacturing Execution System. Our MES is home-grown and built for 3D printing (additive) manufacturing. Jobs, parts and stocks (i) are the building blocks of Gantri's MES system.\n\nOver time, Part and Stock details pages had become exceedingly dense. In early 2023, I led a redesign of the Stocks and Parts details pages.",
         details: {
@@ -29,7 +29,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
     },
     sections: [
         {
-            backgroundColorCssName: "bg-[#8A3867]",
+            backgroundColorCssName: "bg-[#5F2446]",
             textColorCssName: "text-type-alt",
             contentItems: [
                 {
@@ -61,7 +61,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                                 imageSrc: "/projects/building-blocks-redesign/case-study-1-problem-3.png"
                             }
                         ],
-                        buttonBgColorCssClassName: "bg-[#AC5C8A]",
+                        buttonBgColorCssClassName: "bg-[#8A3867]",
                         buttonBgSelectedColorCssClassName: "bg-[#F3EFF1]",
                         buttonTextColorCssClassName: "text-type-alt",
                         buttonTextColorSelectedCssClassName: "text-type-1",
@@ -71,7 +71,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             ],
         },
         {
-            backgroundColorCssName: "bg-neutral-1-overlay",
+            backgroundColorCssName: "bg-neutral-25",
             contentItems: [
                 {
                     type: "title",
@@ -161,7 +161,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             ]
         },
         {
-            backgroundColorCssName: "bg-[#315B2B]",
+            backgroundColorCssName: "bg-[#294026]",
             textColorCssName: "text-type-alt",
             contentItems: [
                 {
@@ -180,7 +180,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                                     iconIdentifier: "down",
                                     title: "Contributed to 58% stock cycle time reduction (Based off of items with 2 failures)",
                                     description: "The new statuses and logic enabled the system to accurately reflect real factory outcomes (Discarded, Canceled, Failed items), which enabled team to mitigate delays more efficiently. This contributed to a reduction in cycle time for stocks that passed through failure workflows.\n\nMetrics: 2 Failure Stock Cycle time decreased from 49.6 in Q1 2023 to 16-21 days throughout the rest of 2023.",
-                                    bgClassName: "bg-[#487B40]",
+                                    bgClassName: "bg-[#315B2B]",
                                     textClassName: "text-type-alt"
                                 }
                                 
@@ -191,7 +191,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                                     iconIdentifier: "down",
                                     title: "Reduced ‘Time to Identify Issues’",
                                     description: "Supervisors were able to identify issues or reasons for delayed parts or parts more quickly. A few months after the release of the feature, supervisors described being able to identify issues 3x faster than the previous version.",
-                                    bgClassName: "bg-[#487B40]",
+                                    bgClassName: "bg-[#315B2B]",
                                     textClassName: "text-type-alt"
                                 }
                                 
@@ -202,7 +202,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                                     iconIdentifier: "up",
                                     title: "Increased ease of use",
                                     description: "Redesigned pages enabled team members to easily understand history and next required action for parts and stocks, enabling increased production efficiency. Team members described increased trust in system accuracy after the redesign.\n\nSince this re-design, these core system pages have stayed relatively unchanged.",
-                                    bgClassName: "bg-[#487B40]",
+                                    bgClassName: "bg-[#315B2B]",
                                     textClassName: "text-type-alt"
                                 }
                                 
@@ -220,7 +220,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             ]
         },  
         {
-            backgroundColorCssName: "bg-neutral-1",
+            backgroundColorCssName: "bg-neutral-25",
             contentItems: [
                 {
                     type: "title",

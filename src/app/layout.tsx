@@ -4,6 +4,11 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import ClientLayout from "@/components/ClientLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nayeli Perez",
+};
 
 export default function RootLayout({
   children,

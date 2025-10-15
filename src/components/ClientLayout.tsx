@@ -12,7 +12,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
     let currentPage: "About" | "Work" | undefined = undefined
     if (pathname === "/about") {
         currentPage = "About"
-    } else if (pathname === "/") {
+    } else if (pathname === "/work") {
         currentPage = "Work"
     }
 

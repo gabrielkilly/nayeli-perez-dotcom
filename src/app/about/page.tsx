@@ -17,14 +17,14 @@ export default function Home() {
         <>
             <main>
                 <div className="flex flex-col items-center justify-center">
-                    <Section className="bg-neutral-1">
+                    <Section className="bg-neutral-25">
                         <div className="flex flex-col lg:flex-row space-y-10 w-full justify-between items-center">
                             <div className="flex flex-col items-center lg:items-start space-y-10 w-full md:w-1/2">
                                 <h1 className={`${fontFamiljenGrotesk.className} text-5xl lead ng-10`}>{content.welcomeSection.welcomeTitle}</h1>
                                 <p className={`${fontLora.className} italic text-2xl text-center`}><i>{content.welcomeSection.welcomeText}</i>
                                     <YarndingsIcon textColorClassName="text-icon-plum" icon={content.welcomeSection.welcomeIcon} className="px-2" /></p>
                                 <div className="flex flex-row space-x-10">
-                                    <ButtonLink {...content.welcomeSection.cta1} textColorClassName="text-type-2" />
+                                    {/* <ButtonLink {...content.welcomeSection.cta1} textColorClassName="text-type-2" /> */}
                                     <ButtonLink {...content.welcomeSection.cta2} textColorClassName="text-type-2" />
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ function SkillsSection({content}: SkillsSectionProps) {
         throw Error("Skills content length is not equal to 4")
     }
     return (
-        <Section className="bg-neutral-1 pb-36 pt-8">
+        <Section className="bg-neutral-25 pb-36 pt-8">
             <div className="flex flex-col space-y-12"> 
                 <h2 className={`text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed lg:w-1/2`}>
                     {title}
@@ -101,7 +101,7 @@ interface ExperienceSectionProps {
 function ExperienceSection({content}: ExperienceSectionProps) {
     const [expandedItem, setExpandedItem] = useState<ExperienceListItem | null>(null);
     return (
-        <Section className="bg-olive-700">
+        <Section className="bg-plum-900">
             <div id="experience" className="flex flex-col space-y-10 w-full">
                 <h4 className={`${fontWorkSans.className} text-type-alt text-xl font-semibold uppercase leading-relaxed`}>{content.title}</h4>
                 <ul className="flex flex-col space-y-2">
@@ -134,11 +134,11 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
                     {svgIcon}
                     <h5 className={`${fontWorkSans.className} text-base text-type-alt`}>{item.role} at <span className="font-bold">{item.company}</span></h5>
                 </div>
-                <div className={`border-b-2 border-dashed border-type-alt border-border-medium flex-grow h-4 mx-4 hidden lg:block`} />
+                <div className={`border-b-[1px] border-dashed border-plum-4 opacity-50 flex-grow h-4 mx-4 hidden lg:block`} />
                 <p className={`${fontWorkSans.className} text-sm text-type-alt font-normal lg:font-medium ml-8 lg:ml-0`}>{item.timeRange}</p>
 
                 {!isExpanded && (
-                    <div className={`border-b-2 border-dashed border-type-alt opacity-50 flex-grow h-3 my-2 lg:hidden`} />
+                    <div className={`border-b-[1px] border-dashed border-plum-4 opacity-50 flex-grow h-3 my-2 lg:hidden`} />
                 )}
             </div>
             

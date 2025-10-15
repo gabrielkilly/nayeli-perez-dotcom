@@ -20,7 +20,7 @@ export const aboutContent: AboutContent = {
         },
         cta2: {
             title: "Resumé", 
-            url: "/resume.pdf",
+            url: "/Resume-NayeliPerez.pdf",
         }
     },
     skillsSection: {
@@ -58,7 +58,7 @@ export const aboutContent: AboutContent = {
             {
                 role: "Senior Product Designer", 
                 company: "Gantri", 
-                timeRange: "2020 - Present",
+                timeRange: "June 2022 - Present",
                 additionalDetails: [
                     {
                         label: "About Gantri",
@@ -149,7 +149,7 @@ export const aboutContent: AboutContent = {
         ],
         cta: {
             title: "Download Resumé", 
-            url: "/resume.pdf"
+            url: "/Resume-NayeliPerez.pdf"
         }
     },
     opportunitiesSection: {

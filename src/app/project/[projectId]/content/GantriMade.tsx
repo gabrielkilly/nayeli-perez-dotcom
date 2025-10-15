@@ -203,7 +203,7 @@ export const gantriMadeProject: ProjectContent = {
             ]
         },
         {
-            backgroundColorCssName: "bg-neutral-1",
+            backgroundColorCssName: "bg-neutral-25",
             textColorCssName: "text-type-2",
             contentItems: [
                 {

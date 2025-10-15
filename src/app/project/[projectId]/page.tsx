@@ -75,7 +75,7 @@ export default async function Page({params}: { params: Promise<{ projectId: stri
                             <ProjectSection key={index} sectionContent={section} />
                         ))
                     }
-                    <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} bg-neutral-1`}>
+                    <div className={`w-full flex flex-col items-center ${globalClassNames.defaultXPadding} bg-neutral-25`}>
                         <div className={`w-full py-10 ${globalClassNames.maxWidth} ${projectContent.navButtonsBorder && "border-t border-border-subtle"}`}>
                             <div className="w-full flex justify-between items-center py-8">
                             <Link

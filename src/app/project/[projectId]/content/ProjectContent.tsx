@@ -148,15 +148,15 @@ export const PROJECT_FACTORY_OS = "factory-os";
 export const PROJECT_CHARGIFY = "chargify"
 
 export const projectIndexMap = new Map<string, number>([
-    [PROJECT_ID_BUILDING_BLOCKS_REDESIGN, 0],
-    [PROJECT_GANTRI_MADE, 1],
+    [PROJECT_GANTRI_MADE, 0],
+    [PROJECT_ID_BUILDING_BLOCKS_REDESIGN, 1],
     [PROJECT_FACTORY_OS, 2],
     [PROJECT_CHARGIFY, 3]
 ])
 
 export const indexProjectMap = new Map<number, string>([
-    [0, PROJECT_ID_BUILDING_BLOCKS_REDESIGN],
-    [1, PROJECT_GANTRI_MADE],
+    [0, PROJECT_GANTRI_MADE],
+    [1, PROJECT_ID_BUILDING_BLOCKS_REDESIGN],
     [2, PROJECT_FACTORY_OS],
     [3, PROJECT_CHARGIFY]
 ])
