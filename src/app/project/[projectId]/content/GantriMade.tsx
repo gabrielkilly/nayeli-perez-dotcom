@@ -128,25 +128,6 @@ export const gantriMadeProject: ProjectContent = {
                     }
                 },
                 {
-                    type: "infoGalleryCard",
-                    content: {
-                        items: [
-                            {
-                                title: "",
-                                imageSrc: ""
-                            },
-                            {
-                                title: "",
-                                imageSrc: ""
-                            },
-                            {
-                                title: "",
-                                imageSrc: ""
-                            },
-                        ],
-                    }
-                },
-                {
                     type: "spacer",
                     content: {
                         paddingClassName: "mt-2"
@@ -162,6 +143,21 @@ export const gantriMadeProject: ProjectContent = {
                     type: "infoDescription",
                     content: {
                         value: "Some of the key MES features shipped to support the Made MVP."
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-neutral-3",
+                                    src: "/projects/gantri-made/case-study-2-FacOS-features.png"
+                                },
+                                fullWidth: true
+                            }
+                        ],
                     }
                 }
             ]

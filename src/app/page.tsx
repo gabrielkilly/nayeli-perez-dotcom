@@ -98,7 +98,7 @@ function ExploreWorkSection({ content }: ExploreWorkContentProps) {
 function WorkItem({workItem}: {workItem: WorkItemContent}) {
     return (
         <Link href={`/project/${workItem.projectId}`} className="flex flex-col w-full space-y-4 p-4 mt-6 w-full lg:w-1/2 hover:bg-olive-800 rounded-xl h-auto transition-colors duration-300 ease-in-out">
-            <div className={`w-full flex justify-center rounded-[9.75px] overflow-hidden outline outline-border-subtle outline-opacity-30 aspect-[21/16] ${workItem.bgColorClassName} relative`}>
+            <div className={`w-full flex justify-center rounded-[9.75px] aspect-[21/16] ${workItem.bgColorClassName} relative`}>
                 <Image
                     className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply"
                     src={paperTextureImage}
@@ -107,7 +107,7 @@ function WorkItem({workItem}: {workItem: WorkItemContent}) {
                     height={800}
                 />
                 <Image
-                    className="object-cover object-cemter rounded-lg shadow-[0px_5px_41px_0px_rgba(177,140,36,0.10)] border-opacity-60"
+                    className="object-cover object-cemter rounded-lg"
                     width={800}
                     height={800}
                     alt="Picture of project"

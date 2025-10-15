@@ -23,7 +23,7 @@ export default function ImageCard({ cardContent, cssName, fullWidth }: ImageCard
     return (
         <>
             <div
-                className={`self-stretch ${bgClassName} rounded shadow-[0px_2px_4px_0px_rgba(0,0,0,0.08)] border border-border-subtle inline-flex flex-col justify-between gap-2 overflow-hidden cursor-pointer ${cssName}`}
+                className={`self-stretch ${bgClassName} rounded inline-flex flex-col justify-between gap-2 overflow-hidden cursor-pointer ${cssName}`}
                 onClick={handleImageClick}
             >
                 <Image
