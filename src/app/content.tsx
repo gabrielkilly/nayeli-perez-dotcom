@@ -30,7 +30,7 @@ export interface WorkItemContent {
 export const homeContent: HomeContent = {
     nayeliName: "Nayeli A. Pérez T.",
     introDescriptions: [
-        "is a senior product designer with 8 years of experience working end-to-end across product strategy, product design, and user research.",
+        "is a product designer with 8 years of experience working end-to-end across product strategy, product design, and user research.",
         "Currently designing the Manufacturing Execution System at <a href='https://gantri.com'>Gantri</a>, previously designing for SaaS subscription management at <a href='https://www.maxio.com/chargify'>Chargify</a>.",
         //"She is most fulfilled when understanding & simplifying complexity and when uncovering & solving for real, human needs.",
     ],
