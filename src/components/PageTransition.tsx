@@ -22,10 +22,6 @@ export default function PageTransition({ children }: PageTransitionProps) {
     return (
         <div style={{ minHeight: '100vh' }}>
             <motion.div
-                initial={{ opacity: .4 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: .4 }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
             >
                 {children}
             </motion.div>
