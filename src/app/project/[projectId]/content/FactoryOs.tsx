@@ -2,8 +2,8 @@ import { ProjectContent } from "./ProjectContent";
 
 export const FactoryOS: ProjectContent = {
     introContent: {
-        title: "Selected Work: FactoryOS",
-        description: "At Gantri, I lead design for our Manufacturing Execution System. This platform is home-grown and built for 3D printing (additive) manufacturing. We call this system FactoryOS.  \n\nFactoryOS is used by various different teams, including the Production team (to track all jobs required to complete all orders), Industrial Design Engineers, Manufacturing Engineers, Customer Support, and leadership.",
+        title: "Selected Work: FactoryOS Platform",
+        description: "Gantri's Manufacturing Execution System is home-grown and built for 3D printing (additive) manufacturing. We call this system FactoryOS.  \n\nFactoryOS is used by various different teams, including the Production team (to track all jobs required to complete all orders), Industrial Design Engineers, Manufacturing Engineers, Customer Support, and leadership.",
         details: {
             headersAndLabels: [             
                 {

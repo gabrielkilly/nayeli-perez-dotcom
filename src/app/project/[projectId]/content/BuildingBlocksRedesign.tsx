@@ -8,8 +8,8 @@ export const buildingBlocksRedesignContent: ProjectContent = {
             "/projects/building-blocks-redesign/stock-details-after-narrow.png"
         ],
         bgClassName: "bg-[#9F7E23]",
-        title: "Project: Re-designing Gantri’s core building blocks, Parts and Stocks, for improved efficiency",
-        description: "At Gantri, I lead design for our Manufacturing Execution System. Our MES is home-grown and built for 3D printing (additive) manufacturing. Jobs, parts and stocks (i) are the building blocks of Gantri's MES system.\n\nOver time, Part and Stock details pages had become exceedingly dense. In early 2023, I led a redesign of the Stocks and Parts details pages.",
+        title: "Re-designing Gantri's core building blocks, Parts and Stocks, for improved efficiency",
+        description: "Gantri's Manufacturing Execution System is home-grown and built for 3D printing (additive) manufacturing. Jobs, parts and stocks are the building blocks of Gantri's MES system.\n\nOver time, Part and Stock details pages had become exceedingly dense. In 2023, I led a redesign of the Stocks and Parts details pages.",
         details: {
             headersAndLabels: [
                 {
