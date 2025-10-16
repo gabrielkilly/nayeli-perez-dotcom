@@ -18,7 +18,7 @@ export default function Work() {
             <main>
                 <div className="flex flex-col items-center justify-center">
                     <Section className="bg-neutral-25 space-y-2">
-                        <h2 className={`justify-start text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>Explore work</h2>
+                        <h2 className={`justify-start text-type-1 text-xl font-semibold ${fontWorkSans.className} uppercase leading-relaxed`}>Work</h2>
 
                         <div className="flex flex-wrap">
                             {content.workItems.map((workItem, index) => {

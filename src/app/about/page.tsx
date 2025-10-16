@@ -1,6 +1,6 @@
 "use client";
 import Section from "@/components/Section";
-import { ExperienceContent, ImpactContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem, ImpactListItem } from "./content";
+import { ExperienceContent, ImpactContent, BeyondWorkContent, aboutContent, Skill, SkillsSectionContent, ExperienceListItem, ImpactListItem } from "./content";
 import { fontFamiljenGrotesk, fontLora, fontWorkSans } from "@/components/Fonts";
 import { SvgMinusSign, SvgPlusSign } from '@/components/Svg';
 import ButtonLink from '@/components/ButtonLink';
@@ -34,6 +34,7 @@ export default function Home() {
                     <SkillsSection content={content.skillsSection} />
                     <ExperienceSection content={content.experienceContent} />
                     <ImpactSection content={content.impactContent} />
+                    <BeyondWorkSection content={content.beyondWorkContent} />
 
                 </div>
                 <Footer />
@@ -130,7 +131,7 @@ function ExperienceItem({item, isExpanded, setIsExpanded}: {item: ExperienceList
     const bgColorClassName = (isExpanded) ? "bg-white/10" : "";
     
     return (
-        <li className={`flex flex-col cursor-pointer rounded p-3 ${bgColorClassName}`} onClick={() => setIsExpanded(isExpanded ? null : item)}>
+        <li className={`flex flex-col cursor-pointer rounded p-3 hover:bg-plum-800 ${bgColorClassName}`} onClick={() => setIsExpanded(isExpanded ? null : item)}>
             <div className="flex flex-col lg:flex-row w-full justify-between">
                 <div className="flex flex-row space-x-4 items-center">
                     {svgIcon}
@@ -203,5 +204,29 @@ function ImpactItem({item}: {item: ImpactListItem}) {
                 <div className={`border-b-[1px] border-dashed border-neutral-4 opacity-50 flex-grow h-3 my-2 lg:hidden`} />
             </div>
         </li>
+    )
+}
+
+interface BeyondWorkSectionProps {
+    content: BeyondWorkContent
+}
+
+function BeyondWorkSection({content}: BeyondWorkSectionProps) {
+    return (
+        <Section className="bg-neutral-25" paddingVertical="Tight">
+            <div className="flex flex-col space-y-12 w-full">
+                <p className={`${fontLora.className} italic text-2xl leading-relaxed`}>
+                    {content.personalStatement}
+                </p>
+                <div className="flex flex-col space-y-2">
+                    <h4 className={`${fontWorkSans.className} text-type-1 text-xl font-semibold uppercase leading-relaxed`}>
+                        {content.interestsTitle}
+                    </h4>
+                    <p className={`${fontWorkSans.className} whitespace-pre-line text-type-1 text-lg font-normal leading-normal`}>
+                        {content.interestsDescription}
+                    </p>
+                </div>
+            </div>
+        </Section>
     )
 }

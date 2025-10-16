@@ -5,6 +5,7 @@ export interface AboutContent {
     skillsSection: SkillsSectionContent,
     experienceContent: ExperienceContent,
     impactContent: ImpactContent,
+    beyondWorkContent: BeyondWorkContent,
     opportunitiesSection: OpportunitiesSectionContent
 }
 
@@ -154,7 +155,7 @@ export const aboutContent: AboutContent = {
         }
     },
     impactContent: {
-        title: "Impact", 
+        title: "Impact",
         listItems: [
             {
                 role: "Board Member",
@@ -202,6 +203,11 @@ export const aboutContent: AboutContent = {
             }
         ]
 
+    },
+    beyondWorkContent: {
+        personalStatement: "From systems and services to the built environment around us, everything is designed and worth examining. I am fascinated by the idea that human-centered approaches, design-thinking, and continuous iteration can enable a future that better meets real, human needs.",
+        interestsTitle: "BEYOND WORK",
+        interestsDescription: "I enjoy writing, drawing, painting, and continuously learning about design, design & art history, and the systems that shape the world.\n\nHaving conversations about life, connecting with family/community, and spending time in prayer and contemplation bring joy and balance to my life.\n\nI love fashion and interior design (secondhand-first!). You can find me going on walks, doing Yoga, or trying to get back on the soccer field most days."
     },
     opportunitiesSection: {
         yIcon: "q",
@@ -270,4 +276,10 @@ export interface CtaLink {
 export interface OpportunitiesSectionContent {
     yIcon: string,
     title: string,
+}
+
+export interface BeyondWorkContent {
+    personalStatement: string,
+    interestsTitle: string,
+    interestsDescription: string,
 }
