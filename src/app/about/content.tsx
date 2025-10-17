@@ -205,9 +205,9 @@ export const aboutContent: AboutContent = {
 
     },
     beyondWorkContent: {
-        personalStatement: "From systems and services to the built environment around us, everything is designed and worth examining. I am fascinated by the idea that human-centered approaches, design-thinking, and continuous iteration can enable a future that better meets real, human needs.",
+        personalStatement: "From systems and services to the built environment around us, everything is designed and worth examining. I am fascinated by the idea that human-centered approaches, design-thinking, and continuous iteration can enable a future that better meets human needs.",
         interestsTitle: "BEYOND WORK",
-        interestsDescription: "I enjoy writing, drawing, painting, and continuously learning about design, design & art history, and the systems that shape the world.\n\nHaving conversations about life, connecting with family/community, and spending time in prayer and contemplation bring joy and balance to my life.\n\nI love fashion and interior design (secondhand-first!). You can find me going on walks, doing Yoga, or trying to get back on the soccer field most days."
+        interestsDescription: "I enjoy writing, drawing, painting, and continuously learning about design, design & art history, and the systems that shape the world.\n\nI love fashion and interior design (secondhand-first!). You can find me going on walks, doing Yoga, or trying to get back on the soccer field most days."
     },
     opportunitiesSection: {
         yIcon: "q",

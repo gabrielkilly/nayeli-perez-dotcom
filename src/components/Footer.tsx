@@ -19,14 +19,14 @@ export default function Footer() {
                         </p>
                     </div>
                 </Section>
-                <div className="w-full self-stretch px-20 border-2 border-t-border-subtle py-3 inline-flex flex-col justify-start items-center gap-16 bg-stone-400">
+                <div className="w-full self-stretch px-20 border-2 border-t-border-subtle py-2 inline-flex flex-col justify-start items-center gap-16 bg-stone-400">
                     <div className="w-full flex flex-col justify-start items-center gap-4">
                         <div className={`self-stretch text-center justify-start ${fontWorkSans.className} text-type-1`}>
                             <span className={`text-xs font-medium leading-none`}>{currentYear} - Thank you to my husband, </span>
                             <a className={`text-type-link text-xs font-medium underline leading-none`} target="_blank" href="https://www.linkedin.com/in/gabrielkilly/">Gabriel Killy</a>
                             <span className={`text-xs font-medium leading-none`}> </span>
                             <span className={`text-icon-plum ${fontYarndings12.className} text-xs font-normal leading-none`}>y</span>
-                            <span className={`text-xs font-medium leading-none`}>, for bringing this little site to life. </span>
+                            <span className={`text-xs font-medium leading-none`}>, (and Claude) for helping bring this site to life. </span>
                         </div>
                     </div>
                 </div>
