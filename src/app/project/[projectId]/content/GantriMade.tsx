@@ -7,7 +7,7 @@ export const gantriMadeProject: ProjectContent = {
         ],
         bgClassName: "bg-[#315B2B]",
         title: "Designing Gantri Made, From Zero to One",
-        description: "Gantri Made is a self-serve digital manufacturing platform that helps designers and brands rapidly create, iterate and produce lighting.\n\nThis year, I led the 0 → 1 design and feature definition for Gantri Made, a new platform built to connect external designers with our digital factory. The work included designing the platform experience and implementing key integrations with our internal MES.",
+        description: "Gantri Made is a self-serve digital manufacturing platform that helps designers and brands rapidly create, iterate and produce lighting.\n\nThis year, I led the 0 → 1 design and feature definition for Gantri Made, a new platform built to connect external designers with our digital factory and design engineering team.",
         details: {
             headersAndLabels: [
                 {
