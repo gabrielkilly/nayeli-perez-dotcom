@@ -7,7 +7,7 @@ import ClientLayout from "@/components/ClientLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nayeli Perez",
+  title: "Nayeli Pérez | Designer",
 };
 
 export default function RootLayout({

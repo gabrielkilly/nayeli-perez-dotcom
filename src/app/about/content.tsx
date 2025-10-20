@@ -2,7 +2,6 @@ import { ButtonIcon, ButtonLinkProps } from "@/components/ButtonLink"
 
 export interface AboutContent {
     welcomeSection: WelcomeSectionContent,
-    skillsSection: SkillsSectionContent,
     experienceContent: ExperienceContent,
     impactContent: ImpactContent,
     beyondWorkContent: BeyondWorkContent,
@@ -21,38 +20,9 @@ export const aboutContent: AboutContent = {
             icon: ButtonIcon.Download
         },
         cta2: {
-            title: "Resumé", 
+            title: "Download Resumé", 
             url: "/Resume-NayeliPerez.pdf",
         }
-    },
-    skillsSection: {
-        title: "My design approach is shaped by core values that guide me in both life and design:",
-        skills: [
-            {
-                yanrdingsIcon: "q",
-                textColorClassName: "text-icon-gold",
-                title: "Crafted", 
-                description: "Doing things well matters to me. I am ambitious when it comes to the quality I want to accomplish in my work.\n\nOver time, my aspiration of high-craft has shifted from just precise pixels and thorough handoff documentation towards the craft of impactful communication and of overcoming ambiguity in order to execute. I am excited to continue honing these skills!"
-            },
-            {
-                yanrdingsIcon: "m",
-                textColorClassName: "text-icon-green",
-                title: "Systems-Thinking First", 
-                description: "Systems thinking is all about keeping in mind that our actions, behaviors, and decisions have an impact on our community and our world. It’s also about realizing that as humans, we are all connected and rely on each other.\n\nMy commitment to practicing systems-thinking in my life translates to my approach to design and design strategy."
-            },
-            {
-                yanrdingsIcon: "I",
-                textColorClassName: "text-icon-plum",
-                title: "Pragmatic", 
-                description: "I firmly believe that designers should be committed to designing and shipping products and services that solve for real needs, while considering lasting ramifications.\n\nIn my work, I seek to understand what real, constant-over-time, needs a user has. Therefore, I am biased towards designing for platforms that aim to pragmatically & ethically solve for real user needs."
-            },
-            {
-                yanrdingsIcon: "p",
-                textColorClassName: "text-icon-neutral",
-                title: "Curious", 
-                description: "My curious nature seeks to understand how things work, how systems function, why things are the way they are - what led them to be this way?\n\nThis constant curiosity drives me to connect and dialogue with others to better deeply understand the context of any design problem. I am constantly grateful that my work as a designer fully engages my deep-seated sense of curiosity and openness!"
-            },
-        ]
     },
     experienceContent: {
         title: "Experience", 
@@ -205,9 +175,9 @@ export const aboutContent: AboutContent = {
 
     },
     beyondWorkContent: {
-        personalStatement: "From systems and services to the built environment around us, everything is designed and worth examining. I am fascinated by the idea that human-centered approaches, design-thinking, and continuous iteration can enable a future that better meets human needs.",
+        //personalStatement: "From systems and services to the built environment around us, everything is designed and worth examining. I am fascinated by the idea that human-centered approaches, design-thinking, and continuous iteration can enable a future that better meets human needs.",
         interestsTitle: "BEYOND WORK",
-        interestsDescription: "I enjoy writing, drawing, painting, and continuously learning about design, design & art history, and the systems that shape the world.\n\nI love fashion and interior design (secondhand-first!). You can find me going on walks, doing Yoga, or trying to get back on the soccer field most days."
+        interestsDescription: "Sometimes creative, piano-player, photographer, and writer. Walkability and urban-living enthusiast. Probably at a consignment or thrift store. Modernism and Bauhaus aficionado. F.C. Barcelona and Mexican National team fan. My roots are in CDMX! Most days you’ll find me going on walks, doing Yoga, or trying to get back on the soccer field."
     },
     opportunitiesSection: {
         yIcon: "q",
@@ -223,21 +193,6 @@ export interface WelcomeSectionContent {
     cta1: ButtonLinkProps,
     cta2: ButtonLinkProps
 }
-
-export interface SkillsSectionContent {
-    title: string, 
-    skills: Skill[]
-}
-
-export interface Skill {
-    title: string, 
-    description: string,
-    yanrdingsIcon: string,
-    textColorClassName: string
-}
-
-
-
 
 export interface ExperienceContent {
     title: string, 
@@ -279,7 +234,7 @@ export interface OpportunitiesSectionContent {
 }
 
 export interface BeyondWorkContent {
-    personalStatement: string,
+  //  personalStatement: string,
     interestsTitle: string,
     interestsDescription: string,
 }

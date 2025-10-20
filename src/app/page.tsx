@@ -1,10 +1,11 @@
 import Footer from "@/components/Footer";
-import { homeContent, SkillChipContent } from "./content";
+import { homeContent, SkillChipContent, ValuesSectionContent, Value } from "./content";
 import Section from "@/components/Section";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from 'html-react-parser';
 import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Link from "next/link";
 import { SvgSkillChipIcon } from "@/components/Svg";
+import YarndingsIcon from "@/components/YarndingsIcon";
 
 export default function Home() {
     const content = homeContent;
@@ -44,10 +45,65 @@ export default function Home() {
                             </div>
                         </div>
                     </Section>
+                    <ValuesSection content={content.valuesSection} />
                 </div>
                 <Footer />
             </main>
         </>
+    )
+}
+
+interface ValuesSectionProps {
+    content: ValuesSectionContent
+}
+
+function ValuesSection({content}: ValuesSectionProps) {
+    const {values, title} = content
+    const verticalLineClassName = "self-stretch relative origin-top-left ring-[0.675px] ring-overlay-subtle flex-shrink"
+    const horizontalLineClassName = "self-stretch h-0 relative ring-[0.675px] ring-overlay-subtle"
+
+    if (values.length != 4) {
+        throw Error("Values content length is not equal to 4")
+    }
+    return (
+        <Section className="bg-plum-800" paddingVertical="Wide">
+            <div className="flex flex-col space-y-12">
+                <h2 className={`text-type-alt text-xl font-semibold ${fontWorkSans.className} uppercase lg:w-1/2`}>
+                    {title}
+                </h2>
+                <div className="flex flex-col w-full space-y-8">
+                    <div className="flex flex-col lg:flex-row justify-around w-full space-y-8 lg:space-x-8 lg:space-y-0">
+                        <ValueItem value={values[0]}/>
+                        <div className={verticalLineClassName}></div>
+                        <ValueItem value={values[1]}/>
+                    </div>
+                    <div className={horizontalLineClassName}></div>
+                    <div className="flex flex-col lg:flex-row justify-around w-full space-y-8 lg:space-x-8 lg:space-y-0">
+                        <ValueItem value={values[2]}/>
+                        <div className={verticalLineClassName}></div>
+                        <ValueItem value={values[3]}/>
+                    </div>
+                </div>
+            </div>
+
+        </Section>
+
+    )
+}
+
+interface ValueItemProps {
+    value: Value
+}
+
+function ValueItem({ value } : ValueItemProps) {
+    return (
+        <div className="flex flex-col space-y-4 basis-1/2">
+            <h3>
+                <YarndingsIcon icon={value.yanrdingsIcon} textColorClassName={value.textColorClassName} className="text-2xl"/> &nbsp;
+                <span className={`${fontLora.className} text-2xl text-black text-2xl font-normal text-type-alt leading-loose`}><i>{value.title}</i></span>
+            </h3>
+            <p className={`${fontWorkSans.className} whitespace-pre-line text-black text-sm font-normal text-type-alt leading-tight`}>{value.description}</p>
+        </div>
     )
 }
 
