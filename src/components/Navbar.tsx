@@ -25,7 +25,7 @@ const pages: Page[] = [
 ]
 
 interface NavbarProps {
-    currentPage?: "About" | "Work"
+    currentPage?: "About" | "Work" | "Home"
 }
 
 export default function Navbar(props: NavbarProps) {
@@ -78,6 +78,12 @@ export default function Navbar(props: NavbarProps) {
                 <div className={`flex items-center justify-between w-full relative ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
+                        <Link
+                            href="/"
+                            className={`text-type-2 text-sm ${fontWorkSans.className} font-semibold uppercase px-4 py-2 sm:hidden ${props.currentPage === "Home" ? "bg-neutral-4 rounded-sm" : ""}`}
+                        >
+                            Home
+                        </Link>
                         {/* <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" /> */}
                         {/* <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} /> */}
                     </div>
