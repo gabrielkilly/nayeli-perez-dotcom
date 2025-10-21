@@ -39,7 +39,7 @@ export const gantriMadeProject: ProjectContent = {
                 {
                     type: "description",
                     content: {
-                        value: "Gantri’s vision is to empower brands of all sizes to efficiently bring their lighting products to market using sustainable 3D-printing based manufacturing.  However, previously, Gantri had no structured, repeatable way to manufacture custom designs for B2B designers and brands. Additionally, Gantri's internal platform did not have the necessary entities or structure to support new manufacturing self-serve workflows and data streams.ç"
+                        value: "Gantri’s vision is to empower brands of all sizes to efficiently bring their lighting products to market using sustainable 3D-printing based manufacturing.  However, previously, Gantri had no structured, repeatable way to manufacture custom designs for B2B designers and brands. Additionally, Gantri's internal platform did not have the necessary entities or structure to support new manufacturing self-serve workflows and data streams."
                     }
                 },
                 {
