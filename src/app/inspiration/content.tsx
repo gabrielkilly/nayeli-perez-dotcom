@@ -84,7 +84,7 @@ export const allInspirations: InspirationItem[] = [
     }
 ]
 
-interface InspirationItem {
+export interface InspirationItem {
     label: string
     mediaType?: string,
     date?: string,
@@ -92,3 +92,40 @@ interface InspirationItem {
     description: string,
     category: "design" | "thought" | "art" | "built-environment"
 }
+
+export interface CategoryConfigItem {
+    bgClassName: string, 
+    yIcon: string,
+    yIconClassName: string
+}
+
+export const categoryConfig: Map<string, CategoryConfigItem> = new Map([
+    [
+        "design", {
+            bgClassName: "bg-olive-700",
+            yIcon: "j",
+            yIconClassName: "text-olive-700"
+        }
+    ],
+    [
+        "thought", {
+            bgClassName: "bg-gold-700",
+            yIcon: "e",
+            yIconClassName: "text-gold-700"
+        }
+    ],
+    [
+        "art", {
+            bgClassName: "bg-plum-700",
+            yIcon: "g",
+            yIconClassName: "text-plum-700"
+        }
+    ],
+    [
+        "built-environment", {
+            bgClassName: "bg-stone-750",
+            yIcon: "Y",
+            yIconClassName: "text-stone-750"
+        }
+    ],
+])

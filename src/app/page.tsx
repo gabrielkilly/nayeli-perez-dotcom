@@ -6,6 +6,8 @@ import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/
 import Link from "next/link";
 import { SvgSkillChipIcon } from "@/components/Svg";
 import YarndingsIcon from "@/components/YarndingsIcon";
+import Image from "next/image";
+import { categoryConfig, currentInspirations, InspirationItem } from "./inspiration/content";
 
 export default function Home() {
     const content = homeContent;
@@ -46,6 +48,7 @@ export default function Home() {
                         </div>
                     </Section>
                     <ValuesSection content={content.valuesSection} />
+                    <InspirationSection />
                 </div>
                 <Footer />
             </main>
@@ -122,4 +125,60 @@ function SkillsChips({skills}: {skills: SkillChipContent[]}) {
             })}
         </div>
     )
+}
+
+function InspirationSection() {
+    return (
+        <Section className="bg-neutral-25" paddingVertical="Standard">
+            <div className="flex flex-col space-y-12">
+                <h2 className={`text-type-2 text-xs font-semibold uppercase ${fontWorkSans.className} tracking-wide`}>
+                    Currently Inspiring Me
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {currentInspirations.map((inspiration, index) => (
+                        <InspirationCard key={index} inspiration={inspiration} />
+                    ))}
+                </div>
+                <Link
+                    href="/inspiration"
+                    className={`text-type-2 text-xs font-semibold uppercase ${fontWorkSans.className} tracking-wide underline hover:no-underline transition-all`}
+                >
+                    View Inspiration Library
+                </Link>
+            </div>
+        </Section>
+    );
+}
+
+interface InspirationCardProps {
+    inspiration: InspirationItem;
+}
+
+function InspirationCard({ inspiration }: InspirationCardProps) {
+    const category = categoryConfig.get(inspiration.category)!!
+
+    return (
+        <div className="relative aspect-[4/5] overflow-hidden rounded-xl group cursor-pointer">
+            <Image
+                src={inspiration.imageSrc}
+                alt={inspiration.label}
+                fill
+                className="object-cover"
+            />
+
+            <div className={`absolute inset-0 ${category.bgClassName} mix-blend-multiply`} />
+
+            <div className={`absolute top-3 right-3 z-10 ${category.bgClassName}`}>
+                <span className={`${fontYarndings12.className} ${category.yIconClassName} text-white text-2xl`}>{category.yIcon}</span>
+            </div>
+
+            <div className={`absolute bottom-0 left-0 right-0 ${category.bgClassName} px-4 py-3 z-10`}>
+                <h3 className={`${fontFamiljenGrotesk.className} text-white text-sm sm:text-base font-normal leading-tight`}>
+                    {inspiration.label}
+                </h3>
+            </div>
+
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+        </div>
+    );
 }
