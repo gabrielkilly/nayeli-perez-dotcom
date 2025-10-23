@@ -78,12 +78,6 @@ export default function Navbar(props: NavbarProps) {
                 <div className={`flex items-center justify-between w-full relative ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
-                        <Link
-                            href="/"
-                            className={`text-type-2 text-sm ${fontWorkSans.className} font-semibold uppercase px-4 py-2 sm:hidden ${props.currentPage === "Home" ? "bg-neutral-4 rounded-sm" : ""}`}
-                        >
-                            Home
-                        </Link>
                         {/* <SvgVerticalLine colorCssValue="var(--icon-primary)" width="1" height="24" /> */}
                         {/* <DarkLightModeSelector selectorDisplayed={isDarkModeSelectorDisplayed} openSelector={openDarkModeSelector} closeSelector={() => updateDarkModeSelectorDisplayed(false)} /> */}
                     </div>
@@ -107,7 +101,7 @@ export default function Navbar(props: NavbarProps) {
                 </div>
             </div>
             {
-                (isMenuOpen) ? <Menu closeMenu={() => setIsMenuOpen(false)} isVisible={isMenuVisible} navbarHeight={navbarHeight} /> : <></>
+                (isMenuOpen) ? <Menu closeMenu={() => setIsMenuOpen(false)} isVisible={isMenuVisible} navbarHeight={navbarHeight} currentPage={props.currentPage} /> : <></>
             }
         </nav>
     )
@@ -117,9 +111,10 @@ interface MenuProps {
     closeMenu: () => void
     isVisible: boolean
     navbarHeight: number
+    currentPage?: "About" | "Work" | "Home"
 }
 
-function Menu({closeMenu, isVisible, navbarHeight}: MenuProps) {
+function Menu({closeMenu, isVisible, navbarHeight, currentPage}: MenuProps) {
     const menuRef = useRef<HTMLDivElement>(null);
     const imageWrapper = useRef<HTMLImageElement>(null);
     const [notification, setNotification] = useState<string | null>(null);
@@ -143,8 +138,9 @@ function Menu({closeMenu, isVisible, navbarHeight}: MenuProps) {
            <Section className={`absolute top-0 bg-neutral-25 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
+                        <Link href="/" className={`text-type-2 text-base font-medium ${fontWorkSans.className} sm:hidden leading-snug tracking-wide p-2 ${currentPage === "Home" ? "bg-neutral-4 rounded-sm" : ""}`}>Home</Link>
                         {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
-                        <a href="/Resume-NayeliPerez.pdf" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Download Resumé</a>
+                        <a href="/Resume-NayeliPerez.pdf" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide p-2`}>Download Resumé</a>
                     </div>
                     <div className="w-full h-0 relative ring-1 ring-border-subtle"></div>
                     <div className="flex flex-col px-2 space-y-2">
