@@ -96,7 +96,8 @@ export interface InspirationItem {
 export interface CategoryConfigItem {
     bgClassName: string, 
     yIcon: string,
-    yIconClassName: string
+    yIconClassName: string,
+    outlineClassName: string
 }
 
 export const categoryConfig: Map<string, CategoryConfigItem> = new Map([
@@ -104,28 +105,32 @@ export const categoryConfig: Map<string, CategoryConfigItem> = new Map([
         "design", {
             bgClassName: "bg-olive-700",
             yIcon: "j",
-            yIconClassName: "text-olive-700"
+            yIconClassName: "text-olive-700",
+            outlineClassName: "outline-olive-700"
         }
     ],
     [
         "thought", {
             bgClassName: "bg-gold-700",
             yIcon: "e",
-            yIconClassName: "text-gold-700"
+            yIconClassName: "text-gold-700",
+            outlineClassName: "outline-gold-700"
         }
     ],
     [
         "art", {
             bgClassName: "bg-plum-700",
             yIcon: "g",
-            yIconClassName: "text-plum-700"
+            yIconClassName: "text-plum-700",
+            outlineClassName: "outline-plum-700"
         }
     ],
     [
         "built-environment", {
             bgClassName: "bg-stone-750",
             yIcon: "Y",
-            yIconClassName: "text-stone-750"
+            yIconClassName: "text-stone-750",
+            outlineClassName: "outline-stone-750"
         }
     ],
 ])
