@@ -1,9 +1,6 @@
 import Footer from "@/components/Footer";
-import { inspirationContent } from "./content"
 
 export default function Inspiration() {
-    const content = inspirationContent;
-
     return (
         <>
             <main>
