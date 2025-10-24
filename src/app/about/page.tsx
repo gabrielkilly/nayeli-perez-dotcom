@@ -34,7 +34,6 @@ export default function Home() {
                     <ExperienceSection content={content.experienceContent} />
                     <ImpactSection content={content.impactContent} />
                     <BeyondWorkSection content={content.beyondWorkContent} />
-
                 </div>
                 <Footer />
             </main>
