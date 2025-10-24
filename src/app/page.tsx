@@ -6,9 +6,7 @@ import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/
 import Link from "next/link";
 import { SvgSkillChipIcon } from "@/components/Svg";
 import YarndingsIcon from "@/components/YarndingsIcon";
-import Image from "next/image";
-import { categoryConfig, currentInspirations, InspirationItem } from "./inspiration/content";
-import ButtonLink from "@/components/ButtonLink";
+import InspirationSection from "@/components/InspirationSection";
 
 export default function Home() {
     const content = homeContent;
@@ -126,56 +124,4 @@ function SkillsChips({skills}: {skills: SkillChipContent[]}) {
             })}
         </div>
     )
-}
-
-function InspirationSection() {
-    return (
-        <Section className="bg-neutral-25" paddingVertical="Standard">
-            <div className="flex flex-col space-y-12">
-                <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
-                    Currently Inspiring Me
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {currentInspirations.map((inspiration, index) => (
-                        <InspirationCard key={index} inspiration={inspiration} />
-                    ))}
-                </div>
-
-                <ButtonLink title="View Inspiration Library" url="/inspiration" textColorClassName="text-type-2" />
-            </div>
-        </Section>
-    );
-}
-
-interface InspirationCardProps {
-    inspiration: InspirationItem;
-}
-
-function InspirationCard({ inspiration }: InspirationCardProps) {
-    const category = categoryConfig.get(inspiration.category)!!;
-
-    return (
-        <div className={`self-stretch h-56 rounded-lg outline outline-2 ${category.outlineClassName} flex flex-col justify-start items-center overflow-hidden cursor-pointer`}>
-            <div className={`self-stretch px-1.5 py-0.5 ${category.bgClassName} flex justify-end items-center gap-2.5 overflow-hidden`}>
-                <div className={`justify-start text-white text-base font-normal ${fontYarndings12.className} leading-none`}>
-                    {category.yIcon}
-                </div>
-            </div>
-
-            <div className="self-stretch h-36 relative px-4 py-2.5">
-                <Image
-                    src={inspiration.imageSrc}
-                    alt={inspiration.label}
-                    fill
-                    className="object-cover"
-                />
-            </div>
-
-            <div className={`self-stretch flex-1 px-3 py-2 ${category.bgClassName} flex justify-start items-center gap-2.5 overflow-hidden`}>
-                <div className={`flex-1 self-stretch flex items-center justify-start text-white text-sm font-medium ${fontWorkSans.className} leading-tight`}>
-                    {inspiration.label}
-                </div>
-            </div>
-        </div>
-    );
 }
