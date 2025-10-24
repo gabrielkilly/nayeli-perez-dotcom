@@ -41,9 +41,9 @@ export const aboutContent: AboutContent = {
                     {
                         label: "My Role",
                         descriptions: [
-                            "JAN 2025 - Present: Lead design for Gantri Made, Gantri’s newest offering. Made is a self-serve digital manufacturing platform that helps designers and brands rapidly create, iterate and produce lighting.",
-                            "JUN 2022 - DEC 2024: Own end-to-end product design for the internal manufacturing execution system platform used by production team, industrial designers, process engineers, CX, and management.",
-                            "Overall: Execute user research to understand user needs in a complex factory environment. Support product team in early discovery work to understand problems and ideate solutions."
+                            "FEB 2025 - Present: Lead design for Gantri Made, Gantri’s B2B platform that enables brands and designers to self-serve product development and manufacturing.",
+                            "JUN 2022 - FEB 2025: End-to-end product design for Gantri’s internal Manufacturing Execution platform. This platform is used by teams across the org to produce items, fulfill orders, manage inventory, manage product versions, track revenue transactions, manage flow of production, and more.",
+                            "Drive product discovery by engaging user research, complex workflow mapping, and rapid prototyping to understand key problems and evaluate potential solutions. Own feature prioritization, based on impact and effort."
                         ]
                     }
                 ]
@@ -62,7 +62,8 @@ export const aboutContent: AboutContent = {
                     {
                         label: "My Role",
                         descriptions: [
-                            "Collaborated closely with Product and Engineering teams to ensure alignment in our processes. Engaged design-thinking methods to improve cross-function collaboration and align on design strategy. Managed a team of 2 product designers; lead design reviews and fostered an environment for continuous skill development."
+                            "Designed key billing management features for subscription businesses processing hundreds of millions in ARR. These features were key to Chargify’s strategic growth and market position (Multi-Currency Support, Custom Price Points, Re-architecting Product Catalog, etc.)",
+                            "Defined the collaboration process between Design, Product, and Engineering (PDLC) during the  Chargify / SaaSOptics merge into Maxio. Led the creation of a new Design System that standardized patterns across the Chargify and SaaSOptics platforms. "
                         ]
                     }
                 ]
@@ -81,7 +82,7 @@ export const aboutContent: AboutContent = {
                     {
                         label: "My Role",
                         descriptions: [
-                            "Collaborated closely with Product and Engineering teams to ensure alignment in our processes. Engaged design-thinking methods to improve cross-function collaboration and align on design strategy. Managed a team of 2 product designers; lead design reviews and fostered an environment for continuous skill development."
+                            "Designed, prototyped, and handed off complex interfaces for core billing features. Functioned within a tight-knit team of Product Manager and developers  to ensure technical feasibility and high-quality execution throughout handoff. Continuously improved Chargify’s design system through user research, maintaining Figma Tooling, and pushing changes to component library."
                         ]
                     }
                 ]
