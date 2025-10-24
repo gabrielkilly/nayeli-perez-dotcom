@@ -8,6 +8,7 @@ import { SvgSkillChipIcon } from "@/components/Svg";
 import YarndingsIcon from "@/components/YarndingsIcon";
 import Image from "next/image";
 import { categoryConfig, currentInspirations, InspirationItem } from "./inspiration/content";
+import ButtonLink from "@/components/ButtonLink";
 
 export default function Home() {
     const content = homeContent;
@@ -131,20 +132,16 @@ function InspirationSection() {
     return (
         <Section className="bg-neutral-25" paddingVertical="Standard">
             <div className="flex flex-col space-y-12">
-                <h2 className={`text-type-2 text-xs font-semibold uppercase ${fontWorkSans.className} tracking-wide`}>
+                <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
                     Currently Inspiring Me
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     {currentInspirations.map((inspiration, index) => (
                         <InspirationCard key={index} inspiration={inspiration} />
                     ))}
                 </div>
-                <Link
-                    href="/inspiration"
-                    className={`text-type-2 text-xs font-semibold uppercase ${fontWorkSans.className} tracking-wide underline hover:no-underline transition-all`}
-                >
-                    View Inspiration Library
-                </Link>
+
+                <ButtonLink title="View Inspiration Library" url="/inspiration" textColorClassName="text-type-2" />
             </div>
         </Section>
     );
@@ -175,7 +172,7 @@ function InspirationCard({ inspiration }: InspirationCardProps) {
             </div>
 
             <div className={`self-stretch flex-1 px-3 py-2 ${category.bgClassName} flex justify-start items-center gap-2.5 overflow-hidden`}>
-                <div className={`flex-1 self-stretch flex items-center justify-center text-white text-sm font-medium ${fontWorkSans.className} leading-tight`}>
+                <div className={`flex-1 self-stretch flex items-center justify-start text-white text-sm font-medium ${fontWorkSans.className} leading-tight`}>
                     {inspiration.label}
                 </div>
             </div>

@@ -1,3 +1,4 @@
+"use client"
 import { fontWorkSans } from "@/components/Fonts";
 import { SvgDownload } from "./Svg";
 
