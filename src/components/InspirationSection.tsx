@@ -12,7 +12,7 @@ export default function InspirationSection() {
 
     return (
         <>
-            <Section className="bg-neutral-25" paddingVertical="Standard">
+            <Section className="bg-neutral-3" paddingVertical="Standard">
                 <div className="flex flex-col space-y-12">
                     <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
                         Currently Inspiring Me
@@ -46,7 +46,7 @@ interface InspirationCardProps {
     onClick?: () => void;
 }
 
-function InspirationCard({ inspiration, onClick }: InspirationCardProps) {
+export function InspirationCard({ inspiration, onClick }: InspirationCardProps) {
     const category = categoryConfig.get(inspiration.category)!;
 
     return (
@@ -84,7 +84,7 @@ interface InspirationModalProps {
     onClose: () => void;
 }
 
-function InspirationModal({ inspiration, onClose }: InspirationModalProps) {
+export function InspirationModal({ inspiration, onClose }: InspirationModalProps) {
     const category = categoryConfig.get(inspiration.category)!;
 
     useEffect(() => {

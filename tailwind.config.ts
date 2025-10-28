@@ -15,6 +15,7 @@ export default {
         "neutral-25": "var(--neutral-25)",
         "neutral-3": "var(--neutral-3)",
         "neutral-4": "var(--neutral-4)",
+        "neutral-5": "var(--neutral-5)",
         "overlay-subtle": "var(--overlay-subtle)",
         "pine-1": "var(--pine-1)",
         "pine-2": "var(--pine-2)",
