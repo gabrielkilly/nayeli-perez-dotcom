@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { InspirationCard, InspirationModal } from "@/components/InspirationSection";
 import Section from "@/components/Section";
 import { allInspirations, currentInspirations, InspirationItem, categoryConfig } from "./content";
-import { fontLora, fontWorkSans } from "@/components/Fonts";
+import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import { useState } from "react";
 
 export default function Inspiration() {
@@ -40,7 +40,7 @@ export default function Inspiration() {
                             return (
                                 <div
                                     key={index}
-                                    className="flex items-center gap-4 p-1 bg-white rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+                                    className="flex items-center gap-4 p-1 bg-white rounded cursor-pointer"
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 >
                                     <div className="flex-shrink-0 w-16 h-16 bg-neutral-4 rounded overflow-hidden">
@@ -63,11 +63,11 @@ export default function Inspiration() {
                                     </div>
 
                                     {categoryInfo && (
-                                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-5">
-                                            <span className={`icon ${categoryInfo.yIconClassName} text-sm`}>
+                                        <div className="flex items-center gap-2 px-3 py-1.5">
+                                            <span className={`icon ${fontYarndings12.className} ${categoryInfo.yIconClassName} text-xl font-normal leading-5`}>
                                                 {categoryInfo.yIcon}
                                             </span>
-                                            <span className={`text-type-2 text-xs ${fontWorkSans.className} capitalize`}>
+                                            <span className={`text-type-1 text-sm ${fontWorkSans.className} capitalize font-medium leading-5`}>
                                                 {inspiration.category === 'built-environment' ? 'Built Environment' : inspiration.category}
                                             </span>
                                         </div>
