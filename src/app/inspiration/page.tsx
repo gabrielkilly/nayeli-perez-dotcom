@@ -40,7 +40,7 @@ export default function Inspiration() {
                             return (
                                 <div
                                     key={index}
-                                    className="flex items-center gap-4 p-1 bg-white rounded cursor-pointer"
+                                    className="flex items-center gap-4 p-1 bg-white rounded cursor-pointer hover:bg-neutral-5"
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 >
                                     <div className="flex-shrink-0 w-16 h-16 bg-neutral-4 rounded overflow-hidden">

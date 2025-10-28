@@ -162,7 +162,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                                     </div>
                                 </div>
                                 <div className="self-stretch flex flex-col justify-start items-start gap-2">
-                                    <div className="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-border-subtle"></div>
+                                    <div className="self-stretch h-0 border-t border-dashed border-border-subtle"></div>
                                     <div className="self-stretch inline-flex justify-between items-center">
                                         <div className="rounded flex justify-start items-center gap-0.5">
                                             <div className="w-7 h-7 p-1 rounded-3xl flex justify-center items-center gap-2">
