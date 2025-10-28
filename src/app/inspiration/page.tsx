@@ -40,10 +40,9 @@ export default function Inspiration() {
                             return (
                                 <div
                                     key={index}
-                                    className="flex items-center gap-4 bg-white p-4 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+                                    className="flex items-center gap-4 p-1 bg-white rounded-lg cursor-pointer hover:shadow-md transition-shadow"
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 >
-                                    {/* Thumbnail */}
                                     <div className="flex-shrink-0 w-16 h-16 bg-neutral-4 rounded overflow-hidden">
                                         <img
                                             src={inspiration.imageSrc}
@@ -52,7 +51,6 @@ export default function Inspiration() {
                                         />
                                     </div>
 
-                                    {/* Title and Media Type */}
                                     <div className="flex-1 min-w-0">
                                         <h4 className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-6`}>
                                             {inspiration.label}
@@ -64,7 +62,6 @@ export default function Inspiration() {
                                         )}
                                     </div>
 
-                                    {/* Category Badge */}
                                     {categoryInfo && (
                                         <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-5">
                                             <span className={`icon ${categoryInfo.yIconClassName} text-sm`}>
