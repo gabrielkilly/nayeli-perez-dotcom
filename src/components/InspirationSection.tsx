@@ -127,7 +127,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             </button>
 
             <div
-                className="w-[700px] h-[720px] bg-neutral-25 rounded-md overflow-hidden relative flex"
+                className="w-[700px] h-[720px] bg-neutral-2 rounded-md overflow-hidden relative flex"
                 onClick={(e) => e.stopPropagation()}
             >
 
@@ -137,7 +137,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                         alt={inspiration.label}
                         fill
                         className="object-cover"
-                        sizes="256px"
+                        sizes="1200px"
                     />
                 </div>
 
@@ -154,7 +154,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                     </div>
 
                     <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-2">
-                        <div className="self-stretch flex-1 p-4 bg-neutral-50 rounded-[3px] outline outline-1 flex flex-col justify-start items-end gap-4 overflow-hidden">
+                        <div className="self-stretch flex-1 p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4 overflow-hidden bg-neutral-3">
                             <div className="self-stretch flex-1 flex flex-col justify-between items-end">
                                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
                                     <div className={`self-stretch justify-start text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5`}>
