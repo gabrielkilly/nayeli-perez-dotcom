@@ -2,8 +2,8 @@
 import Footer from "@/components/Footer";
 import { InspirationCard, InspirationModal } from "@/components/InspirationSection";
 import Section from "@/components/Section";
-import { currentInspirations, InspirationItem } from "./content";
-import { fontWorkSans } from "@/components/Fonts";
+import { allInspirations, currentInspirations, InspirationItem } from "./content";
+import { fontLora, fontWorkSans } from "@/components/Fonts";
 import { useState } from "react";
 
 export default function Inspiration() {
@@ -26,6 +26,24 @@ export default function Inspiration() {
                                 />
                             ))}
                         </div>
+                    </div>
+                </Section>
+
+                <Section className="bg-neutral-3" paddingVertical="Standard">
+                    <h3 className={`text-type-2 text-2xl font-normal ${fontLora.className} leading-8`}>
+                        Inspiration & References Library
+                    </h3>
+
+                    <div className="flex flex-col w-full">
+                        {
+                            allInspirations.map((inspiration) => {
+                                return (
+                                    <div className="w-full">
+
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </Section>
     
