@@ -1,6 +1,3 @@
-export const inspirationContent = {
-
-}
 
 export const currentInspirations: InspirationItem[] = [
     {
@@ -8,7 +5,8 @@ export const currentInspirations: InspirationItem[] = [
         mediaType: "Book",
         imageSrc: "/inspiration/IL-Design for the Real World.png",
         description: "Victor Papanek's seminal work challenging designers to create meaningful, socially responsible solutions for real human needs rather than artificial wants.",
-        category: "design"
+        category: "design",
+        date: "10/20/2025"
     },
     {
         label: "Kirsten Dirksen",
@@ -60,7 +58,7 @@ export const allInspirations: InspirationItem[] = [
     },
     {
         label: "Juan O'Gorman",
-        imageSrc: "/inspiration/IL-Juan O'Gorman.png",
+        imageSrc: "/inspiration/IL-Juan OGorman.png",
         description: "Mexican architect and muralist who pioneered functionalist architecture while creating stunning mosaic murals celebrating Mexican history and culture.",
         category: "design"
     },
