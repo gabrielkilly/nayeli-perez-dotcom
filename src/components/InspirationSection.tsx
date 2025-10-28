@@ -116,7 +116,6 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
             onClick={onClose}
         >
-            {/* Close button - positioned at top right of viewport */}
             <button
                 onClick={onClose}
                 className="fixed top-4 right-4 z-[60] w-8 h-8 flex items-center justify-center text-white hover:text-gray-300 transition-colors"
@@ -128,65 +127,60 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             </button>
 
             <div
-                className="w-full max-w-[700px] h-auto max-h-[90vh] bg-neutral-25 rounded-md overflow-hidden relative flex flex-col md:flex-row"
+                className="w-[700px] h-[720px] bg-neutral-25 rounded-md overflow-hidden relative flex"
                 onClick={(e) => e.stopPropagation()}
             >
 
-                {/* Left side - Image */}
-                <div className="w-full md:w-64 h-48 md:h-auto flex-shrink-0 relative">
+                <div className="w-64 h-[720px] flex-shrink-0 relative">
                     <Image
                         src={inspiration.imageSrc}
                         alt={inspiration.label}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 256px"
+                        sizes="256px"
                     />
                 </div>
 
-                {/* Right side - Content */}
-                <div className="flex-1 p-4 flex flex-col gap-4 overflow-y-auto">
-                    {/* Title and Media Type */}
-                    <div className="flex flex-col items-center gap-2 py-4">
-                        <h2 className={`text-center text-type-1 text-2xl md:text-3xl font-normal ${fontLora.className} leading-10`}>
+                <div className="w-[466px] h-[720px] p-4 flex flex-col justify-start items-center gap-2">
+                    <div className="self-stretch flex-1 flex flex-col justify-center items-center gap-2">
+                        <div className={`text-center justify-center text-type-1 text-3xl font-normal ${fontLora.className} leading-10`}>
                             {inspiration.label}
-                        </h2>
+                        </div>
                         {inspiration.mediaType && (
-                            <div className={`text-center text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-4`}>
+                            <div className={`text-center justify-start text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-4`}>
                                 {inspiration.mediaType}
                             </div>
                         )}
                     </div>
 
-                    {/* Description Box */}
-                    <div className="flex-1 p-4 bg-neutral-50 rounded-[3px] outline outline-1 outline-border-subtle flex flex-col gap-4">
-                        <div className="flex-1">
-                            <p className={`text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5`}>
-                                {inspiration.description}
-                            </p>
-                        </div>
-
-                        {/* Divider and Footer */}
-                        <div className="flex flex-col gap-2">
-                            <div className="h-0 border-t border-dashed border-border-subtle"></div>
-                            <div className="flex justify-between items-center">
-                                {/* Category */}
-                                <div className="rounded flex items-center gap-0.5">
-                                    <div className="w-7 h-7 p-1 rounded-3xl flex justify-center items-center">
-                                        <div className={`${category.yIconClassName} text-lg font-normal ${fontYarndings12.className} leading-4`}>
-                                            {category.yIcon}
-                                        </div>
-                                    </div>
-                                    <div className={`${category.yIconClassName} text-sm font-medium ${fontWorkSans.className} leading-5 capitalize`}>
-                                        {inspiration.category === 'built-environment' ? 'Built Environment' : inspiration.category}
+                    <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-2">
+                        <div className="self-stretch flex-1 p-4 bg-neutral-50 rounded-[3px] outline outline-1 flex flex-col justify-start items-end gap-4 overflow-hidden">
+                            <div className="self-stretch flex-1 flex flex-col justify-between items-end">
+                                <div className="self-stretch flex flex-col justify-start items-start gap-1">
+                                    <div className={`self-stretch justify-start text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5`}>
+                                        {inspiration.description}
                                     </div>
                                 </div>
-
-                                {/* Date */}
-                                {inspiration.date && (
-                                    <div className={`${category.yIconClassName} text-sm font-medium ${fontWorkSans.className} leading-5`}>
-                                        {inspiration.date}
+                                <div className="self-stretch flex flex-col justify-start items-start gap-2">
+                                    <div className="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-border-subtle"></div>
+                                    <div className="self-stretch inline-flex justify-between items-center">
+                                        <div className="rounded flex justify-start items-center gap-0.5">
+                                            <div className="w-7 h-7 p-1 rounded-3xl flex justify-center items-center gap-2">
+                                                <div className={`justify-start ${category.yIconClassName} text-lg font-normal ${fontYarndings12.className} leading-4`}>
+                                                    {category.yIcon}
+                                                </div>
+                                            </div>
+                                            <div className={`justify-start ${category.yIconClassName} text-sm font-medium ${fontWorkSans.className} leading-5 capitalize`}>
+                                                {inspiration.category === 'built-environment' ? 'Built Environment' : inspiration.category}
+                                            </div>
+                                        </div>
+                                        {inspiration.date && (
+                                            <div className={`justify-start ${category.yIconClassName} text-sm font-medium ${fontWorkSans.className} leading-5`}>
+                                                {inspiration.date}
+                                            </div>
+                                        )}
                                     </div>
-                                )}
+                                </div>
                             </div>
                         </div>
                     </div>
