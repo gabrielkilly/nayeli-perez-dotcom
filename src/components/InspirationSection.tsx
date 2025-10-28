@@ -52,7 +52,7 @@ export function InspirationCard({ inspiration, onClick }: InspirationCardProps) 
     return (
         <div
             onClick={onClick}
-            className={`self-stretch h-64 sm:h-56 md:h-64 lg:h-56 rounded-lg outline outline-2 ${category.outlineClassName} flex flex-col justify-start items-center overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]`}
+            className={`self-stretch h-64 sm:h-56 md:h-64 lg:h-56 rounded-lg outline outline-2 ${category.outlineClassName} flex flex-col justify-start items-center overflow-hidden cursor-pointer relative before:absolute before:inset-0 before:bg-black before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-200 before:z-10`}
         >
             <div className={`self-stretch px-2 py-1 sm:px-1.5 sm:py-0.5 ${category.bgClassName} flex justify-end items-center gap-2.5 overflow-hidden`}>
                 <div className={`justify-start text-white text-lg sm:text-base font-normal ${fontYarndings12.className} leading-none`}>
