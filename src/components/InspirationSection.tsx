@@ -94,12 +94,20 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             }
         };
 
+        // Save current scroll position
+        const scrollY = window.scrollY;
+
         document.addEventListener('keydown', handleEscape);
-        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
 
         return () => {
             document.removeEventListener('keydown', handleEscape);
-            document.body.style.overflow = 'unset';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollY);
         };
     }, [onClose]);
 
@@ -108,20 +116,21 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
             onClick={onClose}
         >
+            {/* Close button - positioned at top right of viewport */}
+            <button
+                onClick={onClose}
+                className="fixed top-4 right-4 z-[60] w-8 h-8 flex items-center justify-center text-white hover:text-gray-300 transition-colors"
+                aria-label="Close modal"
+            >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
             <div
                 className="w-full max-w-[700px] h-auto max-h-[90vh] bg-neutral-25 rounded-md overflow-hidden relative flex flex-col md:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center text-type-2 hover:text-type-1 transition-colors"
-                    aria-label="Close modal"
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
 
                 {/* Left side - Image */}
                 <div className="w-full md:w-64 h-48 md:h-auto flex-shrink-0 relative">
