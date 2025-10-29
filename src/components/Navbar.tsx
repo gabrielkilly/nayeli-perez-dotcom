@@ -25,7 +25,7 @@ const pages: Page[] = [
 ]
 
 interface NavbarProps {
-    currentPage?: "About" | "Work" | "Home"
+    currentPage?: "About" | "Work" | "Home" | "Inspiration"
 }
 
 export default function Navbar(props: NavbarProps) {
@@ -72,9 +72,14 @@ export default function Navbar(props: NavbarProps) {
         }
     }, [isMenuOpen])
 
+    // Close menu when navigating to a different page
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [props.currentPage])
+
     return (
         <nav className="sticky top-0 z-40" ref={navRef}>
-            <div className="bg-neutral-25 w-full flex justify-center px-8 border-b border-border-subtle backdrop-blur-sm">
+            <div className="bg-neutral-25 px-8 md:px-0 w-full flex justify-center border-b border-border-subtle backdrop-blur-sm">
                 <div className={`flex items-center justify-between w-full relative ${globalClassNames.maxWidth}`}>
                     <div className="flex items-center justify-between py-2 space-x-2">
                         <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>{getMenuIcon()}</button>
@@ -111,7 +116,7 @@ interface MenuProps {
     closeMenu: () => void
     isVisible: boolean
     navbarHeight: number
-    currentPage?: "About" | "Work" | "Home"
+    currentPage?: "About" | "Work" | "Home" | "Inspiration"
 }
 
 function Menu({closeMenu, isVisible, navbarHeight, currentPage}: MenuProps) {
@@ -135,11 +140,11 @@ function Menu({closeMenu, isVisible, navbarHeight, currentPage}: MenuProps) {
 
     return (
         <div className={`h-full w-screen fixed left-0 transition-all duration-200 ease-in-out ${isVisible ? 'bg-black/50' : 'bg-transparent pointer-events-none'} z-30`} style={{top: `${navbarHeight}px`, height: `calc(100vh - ${navbarHeight}px)`}} ref={menuRef} onClick={(mouseEvent) => closeMenuWhenWrapperClicked(mouseEvent.target)}>
-           <Section className={`absolute top-0 bg-neutral-25 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+           <Section className={`absolute top-0 bg-neutral-25 transition-all duration-100 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`} paddingVertical="Tight">
                 <div className="w-full flex flex-col space-y-8">
                     <div className="flex flex-col space-y-2 px-2">
-                        <Link href="/" className={`text-type-2 text-base font-medium ${fontWorkSans.className} sm:hidden leading-snug tracking-wide p-2 ${currentPage === "Home" ? "bg-neutral-4 rounded-sm" : ""}`}>Home</Link>
-                        {/* <a href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide`}>Inspiration Library</a> */}
+                        <Link href="/" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide p-2 ${currentPage === "Home" ? "bg-neutral-4 rounded-sm" : ""}`}>Home</Link>
+                        <Link href="/inspiration" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide p-2 ${currentPage === "Inspiration" ? "bg-neutral-4 rounded-sm" : ""}`}>Inspiration Library</Link>
                         <a href="/Resume-NayeliPerez.pdf" className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-snug tracking-wide p-2`}>Download Resumé</a>
                     </div>
                     <div className="w-full h-0 relative ring-1 ring-border-subtle"></div>
