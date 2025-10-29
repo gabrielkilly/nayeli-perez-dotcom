@@ -52,7 +52,7 @@ export default function Inspiration() {
                                         />
                                     </div>
 
-                                    <div className="flex-1 min-w-[110px]">
+                                    <div className="flex-1 min-w-[100px]">
                                         <h4 className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-4`}>
                                             {inspiration.label}
                                         </h4>

@@ -71,8 +71,8 @@ export const allInspirations: InspirationItem[] = [
     {
         label: "Isamu Noguchi",
         imageSrc: "/inspiration/IL-Isamu Noguchi.png",
-        // description: "Sculptor and designer who bridged Eastern and Western aesthetics, creating iconic furniture, gardens, and public spaces that blend art with functionality.",
-        description: "Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.",
+        description: "Sculptor and designer who bridged Eastern and Western aesthetics, creating iconic furniture, gardens, and public spaces that blend art with functionality.",
+        // description: "Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.",
         category: "art"
     },
     {
