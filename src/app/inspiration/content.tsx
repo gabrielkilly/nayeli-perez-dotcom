@@ -5,8 +5,7 @@ export const currentInspirations: InspirationItem[] = [
         mediaType: "Book",
         imageSrc: "/inspiration/IL-Design for the Real World.png",
         description: "Victor Papanek's seminal work challenging designers to create meaningful, socially responsible solutions for real human needs rather than artificial wants.",
-        category: "design",
-        date: "10/20/2025"
+        category: "design"
     },
     {
         label: "Kirsten Dirksen - YouTube",
