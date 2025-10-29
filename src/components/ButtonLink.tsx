@@ -40,7 +40,8 @@ export default function ButtonLink(props: ButtonLinkProps) {
 
     return (
         <a
-            className={`${fontWorkSans.className} uppercase inline text-lg font-semibold border-b-2 ${props.textColorClassName} border-border-pine-medium w-fit`}
+            className={`${fontWorkSans.className} uppercase inline text-lg font-semibold border-b-2 ${props.textColorClassName} border-border-pine-medium w-fit transition-all hover:rounded-t hover:border-b-[3px] hover:border-[#6EA465] hover:bg-[rgba(125,116,82,0.10)]`}
+            style={{ padding: '8px 8px 8px 8px' }}
             href={props.url}
             onClick={handleClick}
         >

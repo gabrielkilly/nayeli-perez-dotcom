@@ -13,14 +13,15 @@ export default function Inspiration() {
         <main>
             <div className="flex flex-col items-center justify-center">
                 <Section className="bg-neutral-5" paddingVertical="Standard">
-                    <div className="flex flex-col space-y-12">
+                    <div className="flex flex-col space-y-8">
                         <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
                             Currently Inspiring Me
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-3">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-3">
                             {currentInspirations.map((inspiration, index) => (
                                 <InspirationCard
                                     key={index}
+                                    index={index}
                                     inspiration={inspiration}
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 />
@@ -40,7 +41,7 @@ export default function Inspiration() {
                             return (
                                 <div
                                     key={index}
-                                    className="group flex items-center gap-4 p-1 bg-white rounded cursor-pointer hover:bg-neutral-5"
+                                    className="group flex items-center gap-4 p-1 bg-neutral-2 rounded cursor-pointer hover:bg-neutral-5 transition-colors duration-300"
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 >
                                     <div className="flex-shrink-0 w-16 h-16 bg-neutral-4 rounded overflow-hidden">
@@ -52,7 +53,7 @@ export default function Inspiration() {
                                     </div>
 
                                     <div className="flex-1 min-w-0">
-                                        <h4 className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-6`}>
+                                        <h4 className={`text-type-2 text-base font-medium ${fontWorkSans.className} leading-4`}>
                                             {inspiration.label}
                                         </h4>
                                         {inspiration.mediaType && (

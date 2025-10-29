@@ -9,7 +9,8 @@ export const currentInspirations: InspirationItem[] = [
         date: "10/20/2025"
     },
     {
-        label: "Kirsten Dirksen",
+        label: "Kirsten Dirksen - YouTube",
+        mediaType: "Digital Media",
         imageSrc: "/inspiration/IL-Kirsten Dirksen - YouTube.png",
         description: "Exploring innovative living spaces, sustainable architecture, and creative solutions for small-space living through thoughtful documentary storytelling.",
         category: "built-environment"

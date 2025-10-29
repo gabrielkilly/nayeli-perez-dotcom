@@ -13,18 +13,21 @@ export default function InspirationSection() {
     return (
         <>
             <Section className="bg-neutral-3" paddingVertical="Standard">
-                <div className="flex flex-col space-y-12">
+                <div className="flex flex-col space-y-8">
                     <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
                         Currently Inspiring Me
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-3">
-                        {currentInspirations.map((inspiration, index) => (
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-3">
+                        {currentInspirations.map((inspiration, index) => {
+                            return (
                             <InspirationCard
                                 key={index}
+                                index={index}
                                 inspiration={inspiration}
                                 onClick={() => setSelectedInspiration(inspiration)}
                             />
-                        ))}
+                            )
+                        })}
                     </div>
 
                     <ButtonLink title="View Inspiration Library" url="/inspiration" textColorClassName="text-type-2" />
@@ -43,16 +46,19 @@ export default function InspirationSection() {
 
 interface InspirationCardProps {
     inspiration: InspirationItem;
+    index: number;
     onClick?: () => void;
 }
 
-export function InspirationCard({ inspiration, onClick }: InspirationCardProps) {
+export function InspirationCard({ inspiration, index: tiltLeft, onClick }: InspirationCardProps) {
     const category = categoryConfig.get(inspiration.category)!;
+    const hoverAnimation = tiltLeft % 2 === 0 ? "hover:rotate-1" : "hover:-rotate-1"
+    console.log(tiltLeft, "HELLLOOOO")
 
     return (
         <div
             onClick={onClick}
-            className={`group self-stretch h-64 sm:h-56 md:h-64 lg:h-56 rounded-lg outline outline-2 ${category.outlineClassName} flex flex-col justify-start items-center overflow-hidden cursor-pointer relative before:absolute before:inset-0 before:bg-black before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-200 before:z-10`}
+            className={`group self-stretch h-64 sm:h-56 md:h-64 lg:h-56 transition-all ${hoverAnimation} rounded-lg outline outline-2 ${category.outlineClassName} flex flex-col justify-start items-center overflow-hidden cursor-pointer relative before:absolute before:inset-0 before:bg-black before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-200 before:z-10`}
         >
             <div className={`self-stretch px-2 py-1 sm:px-1.5 sm:py-0.5 ${category.bgClassName} flex justify-end items-center gap-2.5 overflow-hidden`}>
                 <div className={`justify-start text-white text-lg sm:text-base font-normal ${fontYarndings12.className} leading-none`}>
@@ -113,12 +119,12 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 sm:p-4"
             onClick={onClose}
         >
             <button
                 onClick={onClose}
-                className="fixed top-4 right-4 z-[60] w-8 h-8 flex items-center justify-center text-white hover:text-gray-300 transition-colors"
+                className="fixed top-4 right-4 z-[60] w-12 h-12 sm:w-12 sm:h-12 flex items-center justify-center text-white hover:text-gray-300 transition-colors bg-black/25 rounded-full backdrop-blur-sm"
                 aria-label="Close modal"
             >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,11 +133,11 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             </button>
 
             <div
-                className="w-[700px] h-[720px] bg-neutral-2 rounded-md overflow-hidden relative flex"
+                className="w-full h-full sm:w-[700px] sm:h-[720px] bg-neutral-2 sm:rounded-md overflow-hidden relative flex flex-col sm:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
 
-                <div className="w-64 h-[720px] flex-shrink-0 relative">
+                <div className="w-full h-80 sm:w-64 sm:h-[720px] flex-shrink-0 relative">
                     <Image
                         src={inspiration.imageSrc}
                         alt={inspiration.label}
@@ -141,19 +147,19 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                     />
                 </div>
 
-                <div className="w-[466px] h-[720px] p-4 flex flex-col justify-start items-center gap-2">
-                    <div className="self-stretch flex-1 flex flex-col justify-center items-center gap-2">
+                <div className="flex-1 sm:w-[466px] sm:h-[720px] p-4 flex flex-col justify-start items-center gap-2">
+                    <div className="self-stretch h-[200px] sm:flex-1 flex flex-col justify-center items-center gap-2">
                         <div className={`text-center justify-center text-type-1 text-3xl font-normal ${fontLora.className} leading-10`}>
                             {inspiration.label}
                         </div>
                         {inspiration.mediaType && (
-                            <div className={`text-center justify-start text-type-3 text-xs font-semibold ${fontWorkSans.className} uppercase leading-4`}>
+                            <div className={`text-center justify-start text-type-3 text-xs font-normal ${fontWorkSans.className} uppercase leading-4`}>
                                 {inspiration.mediaType}
                             </div>
                         )}
                     </div>
 
-                    <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-2">
+                    <div className="self-stretch flex-1 sm:flex-1 flex flex-col justify-start items-start gap-2">
                         <div className="self-stretch flex-1 p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4 overflow-hidden bg-neutral-3">
                             <div className="self-stretch flex-1 flex flex-col justify-between items-end">
                                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
