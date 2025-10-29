@@ -12,7 +12,7 @@ export default function Inspiration() {
     return (
         <main>
             <div className="flex flex-col items-center justify-center">
-                <Section className="bg-neutral-5" paddingVertical="Standard">
+                <Section className="bg-neutral-5" paddingVertical="Tight">
                     <div className="flex flex-col space-y-8">
                         <h2 className={`text-type-1 text-base font-semibold uppercase ${fontWorkSans.className} leading-6`}>
                             Currently Inspiring Me
