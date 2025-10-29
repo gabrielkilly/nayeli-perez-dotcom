@@ -133,7 +133,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
             </button>
 
             <div
-                className="w-full h-full sm:w-[700px] sm:h-[720px] bg-neutral-2 sm:rounded-md overflow-hidden relative flex flex-col sm:flex-row"
+                className="w-full h-full sm:w-[700px] sm:h-[720px] bg-neutral-2 sm:rounded-md overflow-y-auto sm:overflow-hidden relative flex flex-col sm:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
 
@@ -148,7 +148,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                 </div>
 
                 <div className="flex-1 sm:w-[466px] sm:h-[720px] p-4 flex flex-col justify-start items-center gap-2">
-                    <div className="self-stretch h-[200px] sm:flex-1 flex flex-col justify-center items-center gap-2">
+                    <div className="self-stretch sm:flex-1 flex flex-col justify-center items-center gap-2 h-[280px]">
                         <div className={`text-center justify-center text-type-1 text-3xl font-normal ${fontLora.className} leading-10`}>
                             {inspiration.label}
                         </div>
@@ -159,9 +159,9 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                         )}
                     </div>
 
-                    <div className="self-stretch flex-1 sm:flex-1 flex flex-col justify-start items-start gap-2">
-                        <div className="self-stretch flex-1 p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4 overflow-hidden bg-neutral-3">
-                            <div className="self-stretch flex-1 flex flex-col justify-between items-end">
+                    <div className="h-full self-stretch sm:flex-1 flex flex-col justify-start items-start gap-2">
+                        <div className="h-full self-stretch p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4">
+                            <div className="h-full self-stretch flex flex-col justify-between items-end gap-4">
                                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
                                     <div className={`self-stretch justify-start text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5`}>
                                         {inspiration.description}
