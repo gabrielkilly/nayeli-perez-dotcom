@@ -4,7 +4,8 @@ export const currentInspirations: InspirationItem[] = [
         label: "Design for the Real World",
         mediaType: "Book",
         imageSrc: "/inspiration/IL-Design for the Real World.png",
-        description: "Victor Papanek's seminal work challenging designers to create meaningful, socially responsible solutions for real human needs rather than artificial wants.",
+        description: "This seminal work by Victor Papanek, published 1971, is especially exciting and inspiring to me because it challenged industrial designers, way back then, to consider the social, ethical, and ecological responsibilities of their work. \n\n Some key ideas I come back to: \n 1 - 'Designing for the people’s needs rather than for their wants, or artificially created wants, is the only meaningful direction now.’ \n 2 - The idea that designers can afford to give one-tenth of their time designing for social, real, needs and not just commercial goals. \n 3 -  The idea that there is a crucial need for design for experimental research and design for breakthrough concepts. This is in contrast to what Papanek describes as design for products that have reached a dead end, with ‘additive’, useless gadgets and feature sets.",
+        date: "06/2024",
         category: "design"
     },
     {

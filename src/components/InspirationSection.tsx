@@ -148,7 +148,7 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                 </div>
 
                 <div className="flex-1 sm:w-[466px] sm:h-[720px] p-4 flex flex-col justify-start items-center gap-2">
-                    <div className="self-stretch sm:flex-1 flex flex-col justify-center items-center gap-2 h-[280px]">
+                    <div className="self-stretch flex flex-col justify-center items-center gap-2 h-auto min-h-48 sm:min-h-64 flex-shrink-0">
                         <div className={`text-center justify-center text-type-1 text-3xl font-normal ${fontLora.className} leading-10`}>
                             {inspiration.label}
                         </div>
@@ -159,18 +159,18 @@ export function InspirationModal({ inspiration, onClose }: InspirationModalProps
                         )}
                     </div>
 
-                    <div className="h-full self-stretch sm:flex-1 flex flex-col justify-start items-start gap-2">
-                        <div className="h-full self-stretch p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4">
-                            <div className="h-full self-stretch flex flex-col justify-between items-end gap-4">
+                    <div className="h-full self-stretch sm:flex-1 flex flex-col justify-start items-start gap-2 sm:min-h-0">
+                        <div className="h-full self-stretch p-4 bg-neutral-3 rounded-[3px] flex flex-col justify-start items-end gap-4 sm:overflow-y-auto">
+                            <div className="self-stretch flex flex-col sm:justify-between justify-start items-end gap-4 sm:min-h-full">
                                 <div className="self-stretch flex flex-col justify-start items-start gap-1">
-                                    <div className={`self-stretch justify-start text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5`}>
+                                    <div className={`self-stretch justify-start text-type-2 text-sm font-normal ${fontWorkSans.className} leading-5 whitespace-pre-line`}>
                                         {inspiration.description}
                                     </div>
                                 </div>
                                 <div className="self-stretch flex flex-col justify-start items-start gap-2">
                                     <div className="self-stretch h-0 border-t border-dashed border-border-subtle"></div>
                                     <div className="self-stretch inline-flex justify-between items-center">
-                                        <div className="rounded flex justify-start items-center gap-0.5">
+                                        <div className="rounded flex justify-start items-center gap-0.5 pb-2">
                                             <div className="w-7 h-7 p-1 rounded-3xl flex justify-center items-center gap-2">
                                                 <div className={`justify-start ${category.yIconClassName} text-lg font-normal ${fontYarndings12.className} leading-4`}>
                                                     {category.yIcon}
