@@ -12,7 +12,7 @@ export const gantriMadeProject: ProjectContent = {
             headersAndLabels: [
                 {
                     header: "Role",
-                    description: "Product Discovery and Solution Definition, UI Design, Prototyping, Handoff, Metrics identification"
+                    description: "Product Discovery and Solution Definition, UI Design, Prototyping, Handoff"
                 },
                 {
                     header: "Timeframe",

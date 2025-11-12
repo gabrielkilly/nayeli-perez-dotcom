@@ -22,7 +22,7 @@ export const buildingBlocksRedesignContent: ProjectContent = {
                 },
                 {
                     header: "Collaborators",
-                    description: "Head of Product, Production Tean, Software Team"
+                    description: "Head of Product, Production Team, Software Team"
                 }
             ]
         }

@@ -49,7 +49,7 @@ export const Chargify: ProjectContent = {
                     type: "headerAndDescription",
                     content: {
                         header: "MY ROLE",
-                        description: "Planning and participated in a design sprint to align on the strategy and information architecture approach for this key page.\n\nExecuted the high-fidelity designs and completed handoff for the redesign."
+                        description: "Planned and facilitated a design sprint to align on the strategy and information architecture approach for this key page.\n\nExecuted high-fidelity designs and completed handoff for the redesign."
                     }
                 },
                 {
