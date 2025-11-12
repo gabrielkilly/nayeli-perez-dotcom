@@ -39,6 +39,7 @@ export default {
         "khaki-1": "var(--khaki-1)",
         "khaki-4": "var(--khaki-4)",
         "khaki-800": "var(--khaki-800)",
+        "olive-200": "var(--olive-200)",
         "olive-5": "var(--olive-5)",
         "olive-500": "var(--olive-500)",
         "olive-700": "var(--olive-700)",

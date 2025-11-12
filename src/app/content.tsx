@@ -41,14 +41,15 @@ export interface HomeContent {
 }
 
 export const homeContent: HomeContent = {
-    nayeliName: "Nayeli A. Pérez T.",
+    nayeliName: "Hello! I'm Nayeli.",
     introDescriptions: [
-        "is a senior product designer with 8 years of experience working end-to-end, across product strategy, product design, user research, and visual design.",
+        "Product designer with 8 years of end-to-end product design experience, with an affinity for making complex workflows and systems intuitive and streamlined.",
         //"She bridges product and design skillsets to bring clarity to complex systems, align cross-functional teams, and deliver thoughtful, user-centered solutions.",
-        "Currently designing the <a href='https://www.gantri.com/made'>Made</a> Digital Manufacturing platform at <a href='https://gantri.com'>Gantri</a>, previously designing for B2B SaaS subscription management & billing at <a href='https://www.maxio.com/chargify'>Chargify</a>.",
+        //"Currently designing the <a href='https://www.gantri.com/made'>Made</a> Digital Manufacturing platform at <a href='https://gantri.com'>Gantri</a>, previously designing for B2B SaaS subscription management & billing at <a href='https://www.maxio.com/chargify'>Chargify</a>.",
+        "I thrive in environments where I can navigate broad and fuzzy problem spaces and execute innovative, scalable solutions based on quick, but considered iterations.",
         //"She is most fulfilled when understanding & simplifying complexity and when uncovering & solving for real, human needs.",
     ],   
-    skillTitle: "Expertise In",
+    skillTitle: "Experience",
     valuesSection: {
         title: "My design approach is shaped by core values that guide me in both life and design:",
         values: [
@@ -80,29 +81,29 @@ export const homeContent: HomeContent = {
     },
     skillChips: [
         {
-            title: "Product Design",
+            title: "Currently: B2B, Nextgen Manufacturing at Scale at <a href='https://www.gantri.com/made'>Gantri</a>",
             textColorClassName: "text-type-link"
         },
         {
-            title: "User Research",
+            title: "Previously: B2B SaaS Billing & Sub. Management at <a href='https://www.maxio.com/'>Maxio</a>",
             textColorClassName: "text-icon-plum"
         },
-        {
-            title: "Design Strategy",
-            textColorClassName: "text-khaki-800"
-        },
-        {
-            title: "Visual Design",
-            textColorClassName: "text-khaki-800"
-        },
-        {
-            title: "Design Systems",
-            textColorClassName: "text-olive-800"
-        },
-        {
-            title: "Design-thinking Facilitation",
-            textColorClassName: "text-gold-800"
-        },
+        // {
+        //     title: "Design Strategy",
+        //     textColorClassName: "text-khaki-800"
+        // },
+        // {
+        //     title: "Visual Design",
+        //     textColorClassName: "text-khaki-800"
+        // },
+        // {
+        //     title: "Design Systems",
+        //     textColorClassName: "text-olive-800"
+        // },
+        // {
+        //     title: "Design-thinking Facilitation",
+        //     textColorClassName: "text-gold-800"
+        // },
     ],
     exploreWorkContent: {
         title: "Explore Work",

@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import { allInspirations, currentInspirations, InspirationItem, categoryConfig } from "./content";
 import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Inspiration() {
     const [selectedInspiration, setSelectedInspiration] = useState<InspirationItem | null>(null);
@@ -45,7 +46,7 @@ export default function Inspiration() {
                                     onClick={() => setSelectedInspiration(inspiration)}
                                 >
                                     <div className="flex-shrink-0 w-16 h-16 bg-neutral-4 rounded overflow-hidden">
-                                        <img
+                                        <Image
                                             src={inspiration.imageSrc}
                                             alt={inspiration.label}
                                             className="w-full h-full object-cover transition-all duration-200 group-hover:blur-[1px]"

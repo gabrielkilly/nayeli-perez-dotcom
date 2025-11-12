@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import parse, { HTMLReactParserOptions, Element, domToReact, DOMNode } from 'html-react-parser';
 import { fontFamiljenGrotesk, fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Link from "next/link";
-import { SvgSkillChipIcon } from "@/components/Svg";
+// import { SvgSkillChipIcon } from "@/components/Svg";
 import YarndingsIcon from "@/components/YarndingsIcon";
 import InspirationSection from "@/components/InspirationSection";
 
@@ -26,16 +26,22 @@ export default function Home() {
                     <Section className="bg-neutral-25">
                         <div className="flex flex-col space-y-20 w-full justify-between items-center py-10">
                             <div className="flex flex-col space-y-4 sm:space-y-6">
+                                {/* <Image className="self-center" width={80} height={80} src="/headshot-circle.png"/> */}
                                 <p className={`text-type-2 text-xl leading-7 sm:text-[28px] sm:leading-9 font-normal ${fontFamiljenGrotesk.className}`}>
-                                    <span className={`text-4xl sm:text-4xl font-normal leading-10 italic ${fontLora.className}`}>{content.nayeliName}</span>
-                                    &nbsp;{parse(content.introDescriptions[0], options)}
+                                    <div className={`sm:text-[40px] pb-4 text-4xl font-normal leading-10 italic ${fontLora.className}`}>
+                                        Hello! I&apos;m <Link href="/about" className="relative inline-block group cursor-pointer">
+                                            <span className="absolute inset-0 bg-olive-200 group-hover:bg-olive-500 transition-colors duration-300 -z-1 translate-y-[34px] h-2"></span>
+                                            <span className="relative">Nayeli</span>
+                                        </Link>.
+                                    </div>
+                                    {parse(content.introDescriptions[0], options)}
                                 </p>
                                 {content.introDescriptions.slice(1).map((desc, index) => {
                                     const isLast = index === content.introDescriptions.slice(1).length - 1;
                                     return (
                                         <p key={index + 1} className={`text-type-2 text-xl leading-7 sm:text-[28px] sm:leading-9 font-normal ${fontFamiljenGrotesk.className}`}>
                                             {parse(desc, options)}
-                                            {isLast && <span className={`text-3xl sm:text-4xl text-icon-gold font-normal ${fontYarndings12.className}`}> e</span>}
+                                            {isLast && <span className={`text-3xl sm:text-3xl text-icon-gold font-normal ${fontYarndings12.className}`}> e</span>}
                                         </p>
                                     );
                                 })}
@@ -110,16 +116,25 @@ function ValueItem({ value } : ValueItemProps) {
 }
 
 function SkillsChips({skills}: {skills: SkillChipContent[]}) {
+    const options: HTMLReactParserOptions = {
+        replace(domNode) {
+          if (domNode instanceof Element && domNode.attribs && domNode.name === 'a') {
+            return <Link className="underline hover:opacity-70 transition-opacity" href={domNode.attribs.href} target="_blank" rel="noopener noreferrer">
+              {domToReact(domNode.children as DOMNode[], options)}
+            </Link>
+          }
+        },
+      };
     return (
-        <div className="self-stretch inline-flex items-center gap-x-3 gap-y-0 flex-wrap content-center">
+        <div className="self-stretch inline-flex gap-x-3 gap-y-0 flex-wrap content-center">
             {skills.map((skill, index) => {
-                return <div className={`bg-neutral-25 inline-flex justify-center items-center`} key={index}>
-                    <div className={`${skill.textColorClassName} text-2xl font-medium leading-7 sm:leading-10 sm:text-3xl ${fontLora.className}`}>
-                        <i>{skill.title}</i>
+                return <div className={`bg-neutral-25 inline-flex`} key={index}>
+                    <div className={`${skill.textColorClassName} pb-4 sm:pb-1 text-2xl font-medium leading-7 sm:leading-10 ${fontLora.className}`}>
+                        <i>{parse(skill.title, options)}</i>
                     </div>
-                    {
+                    {/* {
                         (index < skills.length - 1) ? <SvgSkillChipIcon colorCssValue="#84876F" className="ml-4" /> : <></>
-                    }
+                    } */}
                 </div>
             })}
         </div>
