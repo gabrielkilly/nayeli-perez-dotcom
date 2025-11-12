@@ -20,13 +20,93 @@ export const Chargify: ProjectContent = {
     },
     sections: [
         {
-            backgroundColorCssName: "bg-[#315B2B]",
+            id: "redesigned-subscription-summary",
+            backgroundColorCssName: "bg-plum-900",
             textColorCssName: "text-type-alt",
             contentItems: [
                 {
                     type: "numberedHeader",
                     content: {
                         number: 1,
+                        numberClassName: "text-[#EDBCD8]",
+                        header: "Redesigned Subscription Summary"
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "py-0"
+                    }
+                },
+                {
+                    type: "headerAndDescription",
+                    content: {
+                        header: "TIMEFRAME",
+                        description: "2022"
+                    }
+                },
+                {
+                    type: "headerAndDescription",
+                    content: {
+                        header: "MY ROLE",
+                        description: "Planning and participated in a design sprint to align on the strategy and information architecture approach for this key page.\n\nExecuted the high-fidelity designs and completed handoff for the redesign."
+                    }
+                },
+                {
+                    type: "spacer",
+                    content: {
+                        paddingClassName: "py-2"
+                    }
+                },
+                {
+                    type: "itemGrid",
+                    content: {
+                        items: [
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#5F2446]",
+                                    src: "/projects/chargify/selected-work-chargify-summary-1.png"
+                                },
+                                fullWidth: true
+                            },
+                            {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#5F2446]",
+                                    src: "/projects/chargify/selected-work-chargify-summary-2.png"
+                                },
+                                fullWidth: true
+                            },
+                               {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#5F2446]",
+                                    src: "/projects/chargify/selected-work-chargify-summary-3.png"
+                                },
+                                fullWidth: true
+                            },
+                               {
+                                type: "imageCard",
+                                content: {
+                                    bgClassName: "bg-[#5F2446]",
+                                    src: "/projects/chargify/selected-work-chargify-summary-4.png"
+                                },
+                                fullWidth: true
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            backgroundColorCssName: "bg-[#315B2B]",
+            textColorCssName: "text-type-alt",
+            contentItems: [
+                {
+                    type: "numberedHeader",
+                    content: {
+                        number: 2,
                         numberClassName: "text-[#90BC89]",
                         header: "Enabling Custom Pricing during Subscription Creation"
                     }
@@ -103,69 +183,7 @@ export const Chargify: ProjectContent = {
                     }
                 }
             ]
-        },
-        {
-            backgroundColorCssName: "bg-plum-900",
-            textColorCssName: "text-type-alt",
-            contentItems: [
-                {
-                    type: "numberedHeader",
-                    content: {
-                        number: 2,
-                        numberClassName: "text-[#EDBCD8]",
-                        header: "Redesigned Subscription Summary"
-                    }
-                },
-                {
-                    type: "spacer",
-                    content: {
-                        paddingClassName: "py-0"
-                    }
-                },
-                {
-                    type: "headerAndDescription",
-                    content: {
-                        header: "TIMEFRAME",
-                        description: "2021"
-                    }
-                },
-                {
-                    type: "headerAndDescription",
-                    content: {
-                        header: "MY ROLE",
-                        description: "Collaborated in planning and participating in a Design Sprint to align on the strategy and information architecture approach for this key page.\n\nExecuted the high-fidelity designs and completed handoff for the redesign."
-                    }
-                },
-                {
-                    type: "spacer",
-                    content: {
-                        paddingClassName: "py-2"
-                    }
-                },
-                {
-                    type: "itemGrid",
-                    content: {
-                        items: [
-                            {
-                                type: "imageCard",
-                                content: {
-                                    bgClassName: "bg-[#5F2446]",
-                                    src: "/projects/chargify/selected-work-chargify-summary-1.png"
-                                },
-                                fullWidth: true
-                            },
-                            {
-                                type: "imageCard",
-                                content: {
-                                    bgClassName: "bg-[#5F2446]",
-                                    src: "/projects/chargify/selected-work-chargify-summary-2.png"
-                                },
-                                fullWidth: true
-                            }
-                        ]
-                    }
-                }
-            ]
         }
+        
     ]
 }

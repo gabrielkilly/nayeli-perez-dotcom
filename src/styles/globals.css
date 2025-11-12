@@ -107,6 +107,10 @@
   --icon-neutral: rgba(226, 227, 220, 1);
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
   overflow: auto;

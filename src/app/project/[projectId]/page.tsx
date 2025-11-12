@@ -108,7 +108,7 @@ interface ProjectSectionProps {
 
 function ProjectSection({sectionContent}: ProjectSectionProps) {
     return (
-        <Section className={`${sectionContent.backgroundColorCssName} ${sectionContent.textColorCssName}`}>
+        <Section id={sectionContent.id} className={`${sectionContent.backgroundColorCssName} ${sectionContent.textColorCssName}`}>
             <div className="flex flex-col space-y-6 w-full">
             {sectionContent.contentItems.map((item, itemIndex) => {
                 switch (item.type) {

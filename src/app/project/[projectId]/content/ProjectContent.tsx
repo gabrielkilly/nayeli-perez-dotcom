@@ -25,6 +25,7 @@ export interface ProjectSectionContent {
     contentItems: ContentItem[],
     backgroundColorCssName?: string,
     textColorCssName?: string,
+    id?: string,
 }
 
 export interface ContentItem {
