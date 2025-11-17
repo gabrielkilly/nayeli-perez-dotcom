@@ -1,14 +1,15 @@
 import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
 import Section from "./Section";
-import FooterBG from "@/assets/Footer-BG.png";
+// import FooterBG from "@/assets/Footer-BG.png";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
         <footer>
-            <div className="w-full flex-col border-2 border-t-border-subtle">
-                <Section
+            <div className="w-full flex-col">
+            {/* <div className="w-full flex-col border-2 border-t-border-subtle">*/}
+                {/* <Section
                     className="bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: `url(${FooterBG.src})` }}
                 >
@@ -18,7 +19,7 @@ export default function Footer() {
                             <i>I am currently open to new opportunities.</i>
                         </p>
                     </div>
-                </Section>
+                </Section> */}
                 <div className="w-full self-stretch px-20 border-2 border-t-border-subtle py-2 inline-flex flex-col justify-start items-center gap-16 bg-stone-400">
                     <div className="w-full flex flex-col justify-start items-center gap-4">
                         <div className={`self-stretch text-center justify-start ${fontWorkSans.className} text-type-1`}>
