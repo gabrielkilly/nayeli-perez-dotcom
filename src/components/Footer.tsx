@@ -1,5 +1,6 @@
-import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
-import Section from "./Section";
+import { fontWorkSans, fontYarndings12 } from "@/components/Fonts";  
+// import { fontLora, fontWorkSans, fontYarndings12 } from "@/components/Fonts";
+//import Section from "./Section";
 // import FooterBG from "@/assets/Footer-BG.png";
 
 export default function Footer() {
